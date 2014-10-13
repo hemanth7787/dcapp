@@ -26,7 +26,7 @@ $app = new Illuminate\Foundation\Application;
 
 $env = $app->detectEnvironment(array(
 
-	'local' => array('endurance'),
+	'local' => array('endurance', 'ip-172-31-36-229'),
 
 ));
 
