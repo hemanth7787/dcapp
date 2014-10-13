@@ -1,0 +1,3 @@
+$client = new SoapClient("http://path.to/wsdl?WSDL");
+$res = $client->SoapFunction(array('param1'=>'value','param2'=>'value'));
+echo $res->PaymentNotification->payment;

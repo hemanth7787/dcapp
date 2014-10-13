@@ -1,0 +1,4265 @@
+ <soapenv:Envelope  xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dcq="http://siebel.com/DCQueryMobCommDir" xmlns:dc="http://www.siebel.com/xml/DC%20Query%20Member%20Info"> 
+ <soapenv:Header> 
+ <wsse:Security  xmlns:wsse="http://schemas.xmlsoap.org/ws/2002/07/secext"> 
+ <wsse:UsernameToken  xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility"> 
+ <wsse:Username>SADMIN</wsse:Username> 
+ <wsse:Password  Type="wsse:PasswordText">SADMIN123</wsse:Password> 
+ </wsse:UsernameToken> 
+ </wsse:Security> 
+ </soapenv:Header> 
+ <soapenv:Body> 
+ <dcq:QBECommDir> 
+ <SiebelMessage> 
+ <dc:ListOfDcQueryMemberInfo> 
+ <!--Zero or more repetitions:--> 
+ <dc:Account> 
+ <!--Optional:--> 
+ <dc:CSN/> 
+ <dc:DCNameArabic/> 
+ <dc:DCNameEnglish>* Futtaim *</dc:DCNameEnglish> 
+ <!--Optional:--> 
+ <dc:MainEmailAddress/> 
+ <!--Optional:--> 
+ <dc:MainFaxNumber/> 
+ <!--Optional:--> 
+ <dc:MainPhoneNumber/> 
+ <!--Optional:--> 
+ <dc:Name/> 
+ <!--Optional:--> 
+ <dc:ListOfAccount_BusinessAddress> 
+ <!--Zero or more repetitions:--> 
+ <dc:Account_BusinessAddress> 
+ <!--Optional:--> 
+ <dc:ApartmentNumber/> 
+ <dc:City/> 
+ <!--Optional:--> 
+ <dc:Country/> 
+ <!--Optional:--> 
+ <dc:DCAreaPOBox/> 
+ <!--Optional:--> 
+ <dc:DCBuildingNameArabic/> 
+ <!--Optional:--> 
+ <dc:DCBuildingNammeEnglish/> 
+ <!--Optional:--> 
+ <dc:Province/> 
+ <dc:Street/> 
+ <dc:StreetAddress/> 
+ <dc:AddressName/> 
+ </dc:Account_BusinessAddress> 
+ </dc:ListOfAccount_BusinessAddress> 
+ <!--Optional:--> 
+ <dc:ListOfAccount_DCAccountActivity> 
+ <!--Zero or more repetitions:--> 
+ <dc:Account_DCAccountActivity> 
+ <!--Optional:--> 
+ <dc:DCActivityCode/> 
+ <!--Optional:--> 
+ <dc:DCActivityDesArabic/> 
+ <!--Optional:--> 
+ <dc:DCActivityDescriptionEng/> 
+ </dc:Account_DCAccountActivity> 
+ </dc:ListOfAccount_DCAccountActivity> 
+ </dc:Account> 
+ </dc:ListOfDcQueryMemberInfo> 
+ </SiebelMessage> 
+ </dcq:QBECommDir> 
+ </soapenv:Body> 
+ </soapenv:Envelope> 
+ 
+ 
+ 
+ 
+ 
+
+  
+ 
+   Response Document    
+ 
+
+ <soapenv:Envelope  xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"> 
+ <soapenv:Header/> 
+ <SOAP-ENV:Body  xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> 
+ <rpc:QBECommDirResponse  xmlns:rpc="http://siebel.com/DCQueryMobCommDir"> 
+ <SiebelMessage> 
+ <ListOfDcQueryMemberInfo  xmlns="http://www.siebel.com/xml/DC%20Query%20Member%20Info"> 
+ <Account> 
+ <CSN>6247</CSN> 
+ <DCNameArabic> 
+ شركة الفطيم للآليات والماكينات (ش.ذ.م.م) - فامكو 
+ </DCNameArabic> 
+ <DCNameEnglish> 
+ AL FUTTAIM AUTO &amp; MACHINERY COMPANY (L.L.C) - FAMCO 
+ </DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>971-4-2135100</MainPhoneNumber> 
+ <Name> 
+ AL FUTTAIM AUTO &amp; MACHINERY COMPANY (L.L.C) - FAMCO 
+ </Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber>N/A</ApartmentNumber> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>N/A</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>PLOT NO. B 131</DCBuildingNammeEnglish> 
+ <Province>Umm Ramool</Province> 
+ <Street>Al Rashidiya Road</Street> 
+ <StreetAddress>Al Rashidiya Road</StreetAddress> 
+ <AddressName>4102, 5599, 6247</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G514335</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الأبواب المقاومة للحريق</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Fire Resistant Doors Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G521904</DCActivityCode> 
+ <DCActivityDesArabic>تجارة عامة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>General Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>I630203</DCActivityCode> 
+ <DCActivityDesArabic>التخزين في مخازن عامة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>General Warehousing</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>186</CSN> 
+ <DCNameArabic>الفطيم كاريليون (ش.ذ.م.م)</DCNameArabic> 
+ <DCNameEnglish>AL FUTTAIM CARILLION (L.L.C)</DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>971-4-3331200</MainPhoneNumber> 
+ <Name>AL FUTTAIM CARILLION (L.L.C)</Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber>N/A</ApartmentNumber> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>N/A</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>ALFUTTAIM BLDG.</DCBuildingNammeEnglish> 
+ <Province>Ras Alkhor Industrial Area, 1s</Province> 
+ <Street>Ras Al Khor Road</Street> 
+ <StreetAddress>Ras Al Khor Road</StreetAddress> 
+ <AddressName>1155, 2652, 186</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>F452001</DCActivityCode> 
+ <DCActivityDesArabic>مقاولات البناء</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Building Contracting</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>F452009</DCActivityCode> 
+ <DCActivityDesArabic>مقاولات إنشاء الطرق</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Road Contracting</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>F452010</DCActivityCode> 
+ <DCActivityDesArabic> 
+ مقاولات إنشاء شبكات ومحطات الصرف الصحي وإصلاحها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Sewage and Drainage Contracting</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>F453005</DCActivityCode> 
+ <DCActivityDesArabic> 
+ أعمال تركيب المعدات الكهروميكانيكية وصيانتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Electromechanical Equipment Installation and Maintenance 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>2</CSN> 
+ <DCNameArabic>شركة الفطيم (ذ م م)</DCNameArabic> 
+ <DCNameEnglish>AL FUTTAIM COMPANY (L L C)</DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>971-4-7062300</MainPhoneNumber> 
+ <Name>AL FUTTAIM COMPANY (L L C)</Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber>N/A</ApartmentNumber> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>بناية الفطيم</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>Alfuttaim Bldg.</DCBuildingNammeEnglish> 
+ <Province>Al Muraqqabat</Province> 
+ <Street>Umer Ibn Al Khattab Street</Street> 
+ <StreetAddress>Umer Ibn Al Khattab Street</StreetAddress> 
+ <AddressName>74532, 2532, 2</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G521904</DCActivityCode> 
+ <DCActivityDesArabic>تجارة عامة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>General Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659901</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الإستثمار في المشروعات التجارية وتأسيسها وإدارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Commercial Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659902</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الإستثمار في المشروعات الصناعية وتأسيسها وإدارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Industrial Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659903</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الاستثمار في المشروعات الزراعية وتأسيسها وادارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Agricultural Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K749916</DCActivityCode> 
+ <DCActivityDesArabic>خدمات إدارة شركات ومؤسسات</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Management Services</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K749920</DCActivityCode> 
+ <DCActivityDesArabic>خدمات إدارة منشآت</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Facilities Management Services</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>4377</CSN> 
+ <DCNameArabic> 
+ شركة الفطيم لمنتجات البرامج الآلية للكمبيوتر (ش.ذ.م.م) 
+ </DCNameArabic> 
+ <DCNameEnglish> 
+ AL FUTTAIM COMPUTER SOFTWARE PRODUCTS COMPANY (L.L.C) 
+ </DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>971-4-3511150</MainPhoneNumber> 
+ <Name> 
+ AL FUTTAIM COMPUTER SOFTWARE PRODUCTS COMPANY (L.L.C) 
+ </Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber>N/A</ApartmentNumber> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>بناية مؤسسة جمعة الماجد</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>Juma Almajid Est. Bldg.</DCBuildingNammeEnglish> 
+ <Province>Al Mankhool</Province> 
+ <Street>Khalid Ibn Al Waleed Street</Street> 
+ <StreetAddress>Khalid Ibn Al Waleed Street</StreetAddress> 
+ <AddressName>3051, 4548, 4377</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G515102</DCActivityCode> 
+ <DCActivityDesArabic>تجارة نظم الحاسب الآلي وبرامجه</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Computer Software Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G515104</DCActivityCode> 
+ <DCActivityDesArabic>تجارة أجهزة الحاسب الآلي ولوازمه</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Computer Equipment Requisites Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G521904</DCActivityCode> 
+ <DCActivityDesArabic>تجارة عامة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>General Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K722901</DCActivityCode> 
+ <DCActivityDesArabic>تصميم نظم الحاسب الآلي</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Computer Software House</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K725001</DCActivityCode> 
+ <DCActivityDesArabic>إصلاح أجهزة الحاسب الآلي وصيانتها</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Computer Repair and Maintenance</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>5099</CSN> 
+ <DCNameArabic>شركة الفطيم للإلكترونيات (ش.ذ.م.م)</DCNameArabic> 
+ <DCNameEnglish>AL FUTTAIM ELECTRONICS COMPANY (L.L.C)</DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>971-4-3599970</MainPhoneNumber> 
+ <Name>AL FUTTAIM ELECTRONICS COMPANY (L.L.C)</Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber>N/A</ApartmentNumber> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>N/A</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>MUSALAM BIN SALEM BIN HAM BLDG.</DCBuildingNammeEnglish> 
+ <Province>Al Mankhool</Province> 
+ <Street>Sheikh Khalifa Bin Zayed Road</Street> 
+ <StreetAddress>Sheikh Khalifa Bin Zayed Road</StreetAddress> 
+ <AddressName>3470, 4967, 5099</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G521904</DCActivityCode> 
+ <DCActivityDesArabic>تجارة عامة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>General Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659901</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الإستثمار في المشروعات التجارية وتأسيسها وإدارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Commercial Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659902</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الإستثمار في المشروعات الصناعية وتأسيسها وإدارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Industrial Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659903</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الاستثمار في المشروعات الزراعية وتأسيسها وادارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Agricultural Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>2945</CSN> 
+ <DCNameArabic>الفطيم الهندسية</DCNameArabic> 
+ <DCNameEnglish>AL FUTTAIM ENGINEERING</DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>971-4-2119111</MainPhoneNumber> 
+ <Name>AL FUTTAIM ENGINEERING</Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber>N/A</ApartmentNumber> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>بناء ملك الفطيم</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>Alfuttaim Bldg.</DCBuildingNammeEnglish> 
+ <Province>Port Saeed</Province> 
+ <Street>Airport Road</Street> 
+ <StreetAddress>Airport Road</StreetAddress> 
+ <AddressName>2212, 3709, 2945</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G515916</DCActivityCode> 
+ <DCActivityDesArabic>تجارة مكيفات الهواء</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Air-Condition Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G515923</DCActivityCode> 
+ <DCActivityDesArabic> 
+ تجارة معدات وآلات إزالة ملوحة المياه ولوازمها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Water Desalination Equipment Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G515951</DCActivityCode> 
+ <DCActivityDesArabic> 
+ تجارة المصاعد والسلالم المتحركة وقطع غيارها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Lifts, Escalators and Spare Parts Trading 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G515952</DCActivityCode> 
+ <DCActivityDesArabic> 
+ تجارة المضخات والمحركات والصمامات ولوازمها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Pumps, Engines, Valves and Spare Parts Trading 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>4520</CSN> 
+ <DCNameArabic>الفطيم الهندسية (ش.ذ.م.م)</DCNameArabic> 
+ <DCNameEnglish>AL FUTTAIM ENGINEERING (L.L.C)</DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>971-4-2119111</MainPhoneNumber> 
+ <Name>AL FUTTAIM ENGINEERING (L.L.C)</Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber>N/A</ApartmentNumber> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>N/A</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>ALFUTTAIM ENGINEERING CO. BLDG.</DCBuildingNammeEnglish> 
+ <Province>Al Garhoud</Province> 
+ <Street>Airport Road</Street> 
+ <StreetAddress>Airport Road</StreetAddress> 
+ <AddressName>3136, 4633, 4520</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>F453001</DCActivityCode> 
+ <DCActivityDesArabic> 
+ تركيب أنظمة التكييف والتهوية وتنقية الهواء وصيانتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Air-Condition, Ventilations, Air Filtration Systems Installation &amp; Maintenance 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>F453008</DCActivityCode> 
+ <DCActivityDesArabic> 
+ تركيب معدات وأجهزة الأمن والمراقبة وصيانتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Security and Surveillance Systems Installation and Maintenance 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>F453011</DCActivityCode> 
+ <DCActivityDesArabic>تركيب التجهيزات والأجزاء المعدنية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Metal Parts Fixtures Contracting</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>F453012</DCActivityCode> 
+ <DCActivityDesArabic> 
+ تركيب معدات وأجهزة القياس والتحكم وإصلاحها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Measuring, Control Systems Installation and Repair 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>F453013</DCActivityCode> 
+ <DCActivityDesArabic>أعمال التمديدات والتركيبات الصحية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Plumbing and Sanitary Contracting</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>F453014</DCActivityCode> 
+ <DCActivityDesArabic>أعمال التمديدات الكهربائية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Electrical Fitting Contracting</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>F453019</DCActivityCode> 
+ <DCActivityDesArabic>تركيب معدات السلامة وإطفاء الحريق</DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Fire Fighting and Safety Equipment Installation 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>F454012</DCActivityCode> 
+ <DCActivityDesArabic>تركيب الأسقف المعلقة والقواطع الخفيفة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Partitions and False Ceilings Contracting 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G514325</DCActivityCode> 
+ <DCActivityDesArabic>تجارة السقالات</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Scaffolds Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G514335</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الأبواب المقاومة للحريق</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Fire Resistant Doors Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G515909</DCActivityCode> 
+ <DCActivityDesArabic>تجارة معدات وأجهزة السلامة وإطفاء الحريق</DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Fire Fighting and Safety Equipment Trading 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G515920</DCActivityCode> 
+ <DCActivityDesArabic>تجارة معدات وآلات الرفع والتحميل</DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Handling, Loading and lifting Equipment Trading 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G515959</DCActivityCode> 
+ <DCActivityDesArabic>تجارة أجهزة ومعدات الإنذار والمراقبة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Security Control and Alarm Equipment Trading 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G515966</DCActivityCode> 
+ <DCActivityDesArabic> 
+ إصلاح المكائن والمعدات الثقيلة وصيانتها وتشغيلها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Heavy Duty Equipment, Machinery Repair, Operations and Maintenance 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G515985</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الأجهزة والمعدات الأمنية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Security Devices, Equipment Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G526008</DCActivityCode> 
+ <DCActivityDesArabic> 
+ إصلاح أجهزة ومعدات الإنذار والمراقبة وصيانتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Security, Alarm Systems Repair and Maintenance 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659901</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الإستثمار في المشروعات التجارية وتأسيسها وإدارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Commercial Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659902</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الإستثمار في المشروعات الصناعية وتأسيسها وإدارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Industrial Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659903</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الاستثمار في المشروعات الزراعية وتأسيسها وادارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Agricultural Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K749301</DCActivityCode> 
+ <DCActivityDesArabic>خدمات تنظيف المباني والمساكن</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Building Cleaning Services</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>147707</CSN> 
+ <DCNameArabic>شركة الفطيم للتمويل مساهمة خاصة</DCNameArabic> 
+ <DCNameEnglish>AL FUTTAIM FINANCE PV JSC P.S.C.</DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>971-4-3047600</MainPhoneNumber> 
+ <Name>AL FUTTAIM FINANCE PV JSC P.S.C.</Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber/> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>n/a</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>N/A</DCBuildingNammeEnglish> 
+ <Province/> 
+ <Street/> 
+ <StreetAddress/> 
+ <AddressName>4675918, 5546703, 147707</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659201</DCActivityCode> 
+ <DCActivityDesArabic>إجراء عمليات التمويل</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Financing Operations</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>407</CSN> 
+ <DCNameArabic>شركة الفطيم للصناعات (ش.ذ.م.م)</DCNameArabic> 
+ <DCNameEnglish>AL FUTTAIM INDUSTIRES COMPANY (L.L.C)</DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>971-4-2177777</MainPhoneNumber> 
+ <Name>AL FUTTAIM INDUSTIRES COMPANY (L.L.C)</Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber>N/A</ApartmentNumber> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>بناية الفطيم</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>Alfuttaim Bldg.</DCBuildingNammeEnglish> 
+ <Province>Al Rigga</Province> 
+ <Street>Umer Ibn Al Khattab Street</Street> 
+ <StreetAddress>Umer Ibn Al Khattab Street</StreetAddress> 
+ <AddressName>1293, 2790, 407</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659902</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الإستثمار في المشروعات الصناعية وتأسيسها وإدارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Industrial Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>3906</CSN> 
+ <DCNameArabic> 
+ شركة الفطيم للإدارة العلمية للانظمة الإلية (ش.ذ.م.م) 
+ </DCNameArabic> 
+ <DCNameEnglish> 
+ AL FUTTAIM MANAGEMENT SCIENCE SOFTWARE CO.(L.L.C) 
+ </DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>971-4-2177777</MainPhoneNumber> 
+ <Name> 
+ AL FUTTAIM MANAGEMENT SCIENCE SOFTWARE CO.(L.L.C) 
+ </Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber>N/A</ApartmentNumber> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>بناية الفطيم</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>Alfuttaim Bldg.</DCBuildingNammeEnglish> 
+ <Province>Al Rigga</Province> 
+ <Street>Al Maktoum Street</Street> 
+ <StreetAddress>Al Maktoum Street</StreetAddress> 
+ <AddressName>2776, 4273, 3906</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G515102</DCActivityCode> 
+ <DCActivityDesArabic>تجارة نظم الحاسب الآلي وبرامجه</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Computer Software Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G515103</DCActivityCode> 
+ <DCActivityDesArabic> 
+ تجارة مستلزمات الحاسب الآلي ومعالجة البيانات 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Computer and Data Processing Requisites Trading 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G515104</DCActivityCode> 
+ <DCActivityDesArabic>تجارة أجهزة الحاسب الآلي ولوازمه</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Computer Equipment Requisites Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G521904</DCActivityCode> 
+ <DCActivityDesArabic>تجارة عامة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>General Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K725001</DCActivityCode> 
+ <DCActivityDesArabic>إصلاح أجهزة الحاسب الآلي وصيانتها</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Computer Repair and Maintenance</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>35</CSN> 
+ <DCNameArabic>الفطيم للسيارات</DCNameArabic> 
+ <DCNameEnglish>AL FUTTAIM MOTORS</DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>971-4-2282261</MainPhoneNumber> 
+ <Name>AL FUTTAIM MOTORS</Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber>N/A</ApartmentNumber> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>بناية الفطيم للعقارات</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>Alfutaim Real Estate Bldg.</DCBuildingNammeEnglish> 
+ <Province>Port Saeed</Province> 
+ <Street>Beniyas Road</Street> 
+ <StreetAddress>Beniyas Road</StreetAddress> 
+ <AddressName>1057, 2554, 35</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G521904</DCActivityCode> 
+ <DCActivityDesArabic>تجارة عامة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>General Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>9195</CSN> 
+ <DCNameArabic>الفطيم للسيارات (تويوتا)</DCNameArabic> 
+ <DCNameEnglish>AL FUTTAIM MOTORS (TOYOTA)</DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>971-4-2282261</MainPhoneNumber> 
+ <Name>AL FUTTAIM MOTORS (TOYOTA)</Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber>N/A</ApartmentNumber> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>برج الفطيم</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>Alfuttaim Tower</DCBuildingNammeEnglish> 
+ <Province>Al Rigga</Province> 
+ <Street>Baniyas Square</Street> 
+ <StreetAddress>Baniyas Square</StreetAddress> 
+ <AddressName>5542, 7039, 9195</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G501001</DCActivityCode> 
+ <DCActivityDesArabic>تجارة سيارات الركاب</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Automobile Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G501002</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الحافلات والشاحنات والقاطرات</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Buses and Trucks Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>8822</CSN> 
+ <DCNameArabic>شركة الفطيم للسيارات (ش.ذ.م.م)</DCNameArabic> 
+ <DCNameEnglish>AL FUTTAIM MOTORS COMPANY (L.L.C)</DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>971-4-2282261</MainPhoneNumber> 
+ <Name>AL FUTTAIM MOTORS COMPANY (L.L.C)</Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber>N/A</ApartmentNumber> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>برج الفطيم</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>Alfuttaim Tower</DCBuildingNammeEnglish> 
+ <Province>Al Rigga</Province> 
+ <Street>Baniyas Square</Street> 
+ <StreetAddress>Baniyas Square</StreetAddress> 
+ <AddressName>5372, 6869, 8822</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G501001</DCActivityCode> 
+ <DCActivityDesArabic>تجارة سيارات الركاب</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Automobile Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G501002</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الحافلات والشاحنات والقاطرات</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Buses and Trucks Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G503001</DCActivityCode> 
+ <DCActivityDesArabic> 
+ تجارة قطع غيار السيارات والمركبات ومكوناتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Auto Spare Parts and components Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G521904</DCActivityCode> 
+ <DCActivityDesArabic>تجارة عامة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>General Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659901</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الإستثمار في المشروعات التجارية وتأسيسها وإدارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Commercial Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659902</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الإستثمار في المشروعات الصناعية وتأسيسها وإدارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Industrial Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659903</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الاستثمار في المشروعات الزراعية وتأسيسها وادارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Agricultural Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>201148</CSN> 
+ <DCNameArabic>شركة الفطيم للسيارات (ش.ذ.م.م) (فرع)</DCNameArabic> 
+ <DCNameEnglish> 
+ AL FUTTAIM MOTORS COMPANY (L.L.C) (BRANCH) 
+ </DCNameEnglish> 
+ <MainEmailAddress/> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber/> 
+ <Name> 
+ AL FUTTAIM MOTORS COMPANY (L.L.C) (BRANCH) 
+ </Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber/> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic> 
+ مكتب رقم (502) ملك هيئة الهلال الاحمر لدولة الامار 
+ </DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish/> 
+ <Province/> 
+ <Street>N/A</Street> 
+ <StreetAddress>N/A</StreetAddress> 
+ <AddressName>1-7IXWR</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K749907</DCActivityCode> 
+ <DCActivityDesArabic>مكتب إدارة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Managing Office</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>5118</CSN> 
+ <DCNameArabic>شركة الفطيم باناتيك (ش.ذ.م.م)</DCNameArabic> 
+ <DCNameEnglish>AL FUTTAIM PANATECH COMPANY (L.L.C)</DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>-050-5371331</MainPhoneNumber> 
+ <Name>AL FUTTAIM PANATECH COMPANY (L.L.C)</Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber>N/A</ApartmentNumber> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>بناية الفطيم</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>ALFUTTAIM BLDG.</DCBuildingNammeEnglish> 
+ <Province>Al Mateena</Province> 
+ <Street>Salah Al Din Street</Street> 
+ <StreetAddress>Salah Al Din Street</StreetAddress> 
+ <AddressName>3483, 4980, 5118</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G521904</DCActivityCode> 
+ <DCActivityDesArabic>تجارة عامة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>General Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659901</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الإستثمار في المشروعات التجارية وتأسيسها وإدارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Commercial Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659902</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الإستثمار في المشروعات الصناعية وتأسيسها وإدارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Industrial Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659903</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الاستثمار في المشروعات الزراعية وتأسيسها وادارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Agricultural Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>39187</CSN> 
+ <DCNameArabic>شركة الفطيم باناتيك (ذ.م.م)</DCNameArabic> 
+ <DCNameEnglish>AL FUTTAIM PANATECH COMPANY (L.L.C)</DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>971-4-2719379</MainPhoneNumber> 
+ <Name>AL FUTTAIM PANATECH COMPANY (L.L.C)</Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber>N/A</ApartmentNumber> 
+ <City>JEBEL ALI FREE ZONE, DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>N/A</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>N/A</DCBuildingNammeEnglish> 
+ <Province>Jebel Ali Free Zone</Province> 
+ <Street>Sheikh Zayed Road</Street> 
+ <StreetAddress>Sheikh Zayed Road</StreetAddress> 
+ <AddressName>24676, 26173, 39187</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513914</DCActivityCode> 
+ <DCActivityDesArabic> 
+ تجارة الأجهزة السمعية والمرئية وأجهزة التسجيل ولوازمها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Audio-visual, Recording Equipment and Accessories Trading 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513915</DCActivityCode> 
+ <DCActivityDesArabic> 
+ تجارة الثلاجات والغسالات والأجهزة الكهربائية المنزلية 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Refrigerators, Washing Machines and Household Electrical Appliances Trading 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513921</DCActivityCode> 
+ <DCActivityDesArabic> 
+ تجارة قطع غيار أجهزة التكييف والتبريد ومكوناتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Air-Condition, Refrigeration Spare Parts and Components Trading 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513947</DCActivityCode> 
+ <DCActivityDesArabic>تجارة آلات وأدوات التصوير ولوازمها</DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Photographic Equipment and Accessories Trading 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G515205</DCActivityCode> 
+ <DCActivityDesArabic> 
+ تجارة قطع غيار الأجهزة الكهربائية والإلكترونية 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Electrical and Electronic Appliances Spare Parts Trading 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G515206</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الهواتف وأجهزة الإتصال السلكي</DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Telephones and Telecommunications Equipment Trading 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G515207</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الهواتف المتحركة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Mobile Phones Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>474</CSN> 
+ <DCNameArabic>شركة الفطيم الخصوصية (ذ م م)</DCNameArabic> 
+ <DCNameEnglish>AL FUTTAIM PRIVATE COMPANY (L L C)</DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>971-4-2177777</MainPhoneNumber> 
+ <Name>AL FUTTAIM PRIVATE COMPANY (L L C)</Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber>N/A</ApartmentNumber> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>بناية الفطيم</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>Alfuttaim Bldg.</DCBuildingNammeEnglish> 
+ <Province>Al Muraqqabat</Province> 
+ <Street>Al Rigga Street</Street> 
+ <StreetAddress>Al Rigga Street</StreetAddress> 
+ <AddressName>1338, 2835, 474</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G521904</DCActivityCode> 
+ <DCActivityDesArabic>تجارة عامة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>General Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659901</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الإستثمار في المشروعات التجارية وتأسيسها وإدارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Commercial Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659902</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الإستثمار في المشروعات الصناعية وتأسيسها وإدارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Industrial Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K701001</DCActivityCode> 
+ <DCActivityDesArabic>شراء الأراضي والعقارات وبيعها</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Real Estate Agent</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K701014</DCActivityCode> 
+ <DCActivityDesArabic>خدمات تأجير وإدارة العقارات الخاصة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Self- owned Property Management Services</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K749916</DCActivityCode> 
+ <DCActivityDesArabic>خدمات إدارة شركات ومؤسسات</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Management Services</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>409</CSN> 
+ <DCNameArabic>شركة الفطيم العقارية (ذ م م)</DCNameArabic> 
+ <DCNameEnglish>AL FUTTAIM REAL ESTATE COMPANY (L L C)</DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>971-4-2034147</MainPhoneNumber> 
+ <Name>AL FUTTAIM REAL ESTATE COMPANY (L L C)</Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber>N/A</ApartmentNumber> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>بناية الفطيم</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>Alfuttaim Bldg.</DCBuildingNammeEnglish> 
+ <Province>Al Garhoud</Province> 
+ <Street>Al Garhoud Road</Street> 
+ <StreetAddress>Al Garhoud Road</StreetAddress> 
+ <AddressName>1295, 2792, 409</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G521904</DCActivityCode> 
+ <DCActivityDesArabic>تجارة عامة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>General Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659901</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الإستثمار في المشروعات التجارية وتأسيسها وإدارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Commercial Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659902</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الإستثمار في المشروعات الصناعية وتأسيسها وإدارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Industrial Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659903</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الاستثمار في المشروعات الزراعية وتأسيسها وادارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Agricultural Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K701001</DCActivityCode> 
+ <DCActivityDesArabic>شراء الأراضي والعقارات وبيعها</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Real Estate Agent</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K701014</DCActivityCode> 
+ <DCActivityDesArabic>خدمات تأجير وإدارة العقارات الخاصة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Self- owned Property Management Services</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K702001</DCActivityCode> 
+ <DCActivityDesArabic>الوساطة في بيع العقارات وشرائها</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Real Estate Buying and Selling Brokerage</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K749916</DCActivityCode> 
+ <DCActivityDesArabic>خدمات إدارة شركات ومؤسسات</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Management Services</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>10</CSN> 
+ <DCNameArabic>الفطيم تاورا اسكافولدنج</DCNameArabic> 
+ <DCNameEnglish>AL FUTTAIM TOWER SCAFFOLDING</DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>971-4-2858697</MainPhoneNumber> 
+ <Name>AL FUTTAIM TOWER SCAFFOLDING</Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber>N/A</ApartmentNumber> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>بناء ملك ماجد الفطيم</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>Majid Alfuttaim Bldg.</DCBuildingNammeEnglish> 
+ <Province>Umm Ramool</Province> 
+ <Street>Airport Road</Street> 
+ <StreetAddress>Airport Road</StreetAddress> 
+ <AddressName>1042, 2539, 10</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>F454008</DCActivityCode> 
+ <DCActivityDesArabic>إقامة السقالات</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Scaffolding Contracting</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K712201</DCActivityCode> 
+ <DCActivityDesArabic>تأجير معدات وآليات التشييد والبناء</DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Construction Equipment and Machinery Rental 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>6958</CSN> 
+ <DCNameArabic>شركة الفطيم تاور اسكافولدنج (ش.ذ.م.م)</DCNameArabic> 
+ <DCNameEnglish>AL FUTTAIM TOWER SCAFFOLDING CO. (L.L.C)</DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>971-4-2858861</MainPhoneNumber> 
+ <Name>AL FUTTAIM TOWER SCAFFOLDING CO. (L.L.C)</Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber>N/A</ApartmentNumber> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>بناء ملك ماجد الفطيم</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>Majid Alfuttaim Bldg.</DCBuildingNammeEnglish> 
+ <Province>Umm Ramool</Province> 
+ <Street>Airport Road</Street> 
+ <StreetAddress>Airport Road</StreetAddress> 
+ <AddressName>4470, 5967, 6958</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G514325</DCActivityCode> 
+ <DCActivityDesArabic>تجارة السقالات</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Scaffolds Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G515920</DCActivityCode> 
+ <DCActivityDesArabic>تجارة معدات وآلات الرفع والتحميل</DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Handling, Loading and lifting Equipment Trading 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>509</CSN> 
+ <DCNameArabic>شركة الفطيم التجارية (ذ م م)</DCNameArabic> 
+ <DCNameEnglish>AL FUTTAIM TRADING COMPANY (L L C)</DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>971-4-2177777</MainPhoneNumber> 
+ <Name>AL FUTTAIM TRADING COMPANY (L L C)</Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber>N/A</ApartmentNumber> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>بناية الفطيم</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>Alfuttaim Bldg.</DCBuildingNammeEnglish> 
+ <Province>Al Muraqqabat</Province> 
+ <Street>Al Rigga Street</Street> 
+ <StreetAddress>Al Rigga Street</StreetAddress> 
+ <AddressName>1356, 2853, 509</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G521904</DCActivityCode> 
+ <DCActivityDesArabic>تجارة عامة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>General Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659901</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الإستثمار في المشروعات التجارية وتأسيسها وإدارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Commercial Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659902</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الإستثمار في المشروعات الصناعية وتأسيسها وإدارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Industrial Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659903</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الاستثمار في المشروعات الزراعية وتأسيسها وادارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Agricultural Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K701001</DCActivityCode> 
+ <DCActivityDesArabic>شراء الأراضي والعقارات وبيعها</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Real Estate Agent</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K701014</DCActivityCode> 
+ <DCActivityDesArabic>خدمات تأجير وإدارة العقارات الخاصة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Self- owned Property Management Services</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K702001</DCActivityCode> 
+ <DCActivityDesArabic>الوساطة في بيع العقارات وشرائها</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Real Estate Buying and Selling Brokerage</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>5117</CSN> 
+ <DCNameArabic>الفطيم للساعات والمجوهرات</DCNameArabic> 
+ <DCNameEnglish>AL FUTTAIM WATCHES & JEWELLERY</DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>971-4-2224142</MainPhoneNumber> 
+ <Name>AL FUTTAIM WATCHES & JEWELLERY</Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber>N/A</ApartmentNumber> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>N/A</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>ALFUTTAIM BLDG.</DCBuildingNammeEnglish> 
+ <Province>Al Rigga</Province> 
+ <Street>Al Maktoum Street</Street> 
+ <StreetAddress>Al Maktoum Street</StreetAddress> 
+ <AddressName>3482, 4979, 5117</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G521904</DCActivityCode> 
+ <DCActivityDesArabic>تجارة عامة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>General Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>211428</CSN> 
+ <DCNameArabic> 
+ اسبريت الفطيم (فرع من شركة الفطيم التجارية (ذ م م) ) 
+ </DCNameArabic> 
+ <DCNameEnglish> 
+ ESPRIT AL FUTTAIM (BR OF AL FUTTAIM TRADING COMPANY (L L C)) 
+ </DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>--</MainPhoneNumber> 
+ <Name> 
+ ESPRIT AL FUTTAIM (BR OF AL FUTTAIM TRADING COMPANY (L L C)) 
+ </Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber/> 
+ <City/> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic/> 
+ <DCBuildingNammeEnglish>N/A</DCBuildingNammeEnglish> 
+ <Province/> 
+ <Street/> 
+ <StreetAddress/> 
+ <AddressName>18500006, 20128364, 211428</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G521904</DCActivityCode> 
+ <DCActivityDesArabic>تجارة عامة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>General Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>201302</CSN> 
+ <DCNameArabic> 
+ اف اند اف الفطيم للتجارة العامة (فرع من شركة الفطيم التجارية (ذ م م) ) 
+ </DCNameArabic> 
+ <DCNameEnglish> 
+ F AND F ALFUTTAIM GENERAL TRADING (BR OF AL FUTTAIM TRADING COMPANY (L L C)) 
+ </DCNameEnglish> 
+ <MainEmailAddress/> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber/> 
+ <Name> 
+ F AND F ALFUTTAIM GENERAL TRADING (BR OF AL FUTTAIM TRADING COMPANY (L L C)) 
+ </Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber/> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic> 
+ محل رقم (M-205) ملك مركز الواحة - بردبي / القوز 
+ </DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish/> 
+ <Province/> 
+ <Street>N/A</Street> 
+ <StreetAddress>N/A</StreetAddress> 
+ <AddressName>1-7JW4F</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G521904</DCActivityCode> 
+ <DCActivityDesArabic>تجارة عامة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>General Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>211323</CSN> 
+ <DCNameArabic> 
+ جس (فرع من شركة الفطيم التجارية (ذ م م) ) 
+ </DCNameArabic> 
+ <DCNameEnglish> 
+ GUESS (BR OF AL FUTTAIM TRADING COMPANY (L L C)) 
+ </DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>--</MainPhoneNumber> 
+ <Name> 
+ GUESS (BR OF AL FUTTAIM TRADING COMPANY (L L C)) 
+ </Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber/> 
+ <City/> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic/> 
+ <DCBuildingNammeEnglish>N/A</DCBuildingNammeEnglish> 
+ <Province/> 
+ <Street/> 
+ <StreetAddress/> 
+ <AddressName>18449006, 20075364, 211323</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513101</DCActivityCode> 
+ <DCActivityDesArabic>تجارة المنسوجات والأقمشة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Textile Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513102</DCActivityCode> 
+ <DCActivityDesArabic> 
+ تجارة البطانيات والمناشف والمفارش المنزلية 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Blankets, Towels and Linens Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513107</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الملابس الجاهزة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Ready-made Garments Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513117</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الأحذية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Shoe Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513901</DCActivityCode> 
+ <DCActivityDesArabic>تجارة حقائب اليد والمنتجات الجلدية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Handbags and Leather Products Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513927</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الساعات وقطع غيارها</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Watches and Spare Parts Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513930</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الحلي من غير المعادن الثمينة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Imitation Jewellery Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513931</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الهدايا</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Gifts Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513933</DCActivityCode> 
+ <DCActivityDesArabic>تجارة لعب الأطفال</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Toys and Games Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513945</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الحقائب ولوازم السفر</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Suitcases and Travel Requisites Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513958</DCActivityCode> 
+ <DCActivityDesArabic>تجارة العطور ومستحضرات التجميل</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Perfumes and Cosmetics Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513961</DCActivityCode> 
+ <DCActivityDesArabic>تجارة النظارات الشمسية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Sunglasses Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>37</CSN> 
+ <DCNameArabic>شركة حمد ومحمد الفطيم (ش.ذ.م.م)</DCNameArabic> 
+ <DCNameEnglish> 
+ HAMAD &amp; MOHAMED AL FUTTAIM COMPANY (L.L.C) 
+ </DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>971-4-2177777</MainPhoneNumber> 
+ <Name> 
+ HAMAD &amp; MOHAMED AL FUTTAIM COMPANY (L.L.C) 
+ </Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber>N/A</ApartmentNumber> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>بناية الفطيم</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>Alfuttaim Bldg.</DCBuildingNammeEnglish> 
+ <Province>Al Muraqqabat</Province> 
+ <Street>Umer Ibn Al Khattab Street</Street> 
+ <StreetAddress>Umer Ibn Al Khattab Street</StreetAddress> 
+ <AddressName>1058, 2555, 37</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G501002</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الحافلات والشاحنات والقاطرات</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Buses and Trucks Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G502001</DCActivityCode> 
+ <DCActivityDesArabic>الصيانة والإصلاح العام للمركبات</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Auto General Repair</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G503001</DCActivityCode> 
+ <DCActivityDesArabic> 
+ تجارة قطع غيار السيارات والمركبات ومكوناتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Auto Spare Parts and components Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G503003</DCActivityCode> 
+ <DCActivityDesArabic>تجارة إطارات السيارات</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Tyres and Rims Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G503006</DCActivityCode> 
+ <DCActivityDesArabic>تجارة البطاريات السائلة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Batteries Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G514101</DCActivityCode> 
+ <DCActivityDesArabic>تجارة النفط الخام</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Crude Oil Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G514102</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الشحوم وزيوت التزليق</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Lubricants and Grease Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G514103</DCActivityCode> 
+ <DCActivityDesArabic>تجارة مشتقات تكرير النفط</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Refined Oil Products Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G521904</DCActivityCode> 
+ <DCActivityDesArabic>تجارة عامة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>General Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659901</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الإستثمار في المشروعات التجارية وتأسيسها وإدارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Commercial Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659902</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الإستثمار في المشروعات الصناعية وتأسيسها وإدارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Industrial Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659903</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الاستثمار في المشروعات الزراعية وتأسيسها وادارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Agricultural Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K701001</DCActivityCode> 
+ <DCActivityDesArabic>شراء الأراضي والعقارات وبيعها</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Real Estate Agent</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K701014</DCActivityCode> 
+ <DCActivityDesArabic>خدمات تأجير وإدارة العقارات الخاصة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Self- owned Property Management Services</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K702001</DCActivityCode> 
+ <DCActivityDesArabic>الوساطة في بيع العقارات وشرائها</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Real Estate Buying and Selling Brokerage</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K749916</DCActivityCode> 
+ <DCActivityDesArabic>خدمات إدارة شركات ومؤسسات</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Management Services</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>200579</CSN> 
+ <DCNameArabic> 
+ ¿¿¿¿ ¿¿¿¿¿¿ ¿¿¿¿¿¿¿¿ (¿¿¿ ¿¿ ¿¿¿¿ ¿¿¿¿¿ ¿¿¿¿¿¿ (¿ . ¿. ¿. ¿)) 
+ </DCNameArabic> 
+ <DCNameEnglish> 
+ HERTZ RENTAL CAR (BR OF AL FUTTAIM SONS CO.(L.L.C.)) 
+ </DCNameEnglish> 
+ <MainEmailAddress/> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber/> 
+ <Name> 
+ HERTZ RENTAL CAR (BR OF AL FUTTAIM SONS CO.(L.L.C.)) 
+ </Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber/> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic> 
+ ¿¿¿ ¿¿¿ (5) ¿¿¿ ¿¿¿¿¿ ¿¿¿ ¿¿¿¿¿ ¿¿¿¿¿¿ - ¿¿¿¿ ¿¿¿¿ 
+ </DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish/> 
+ <Province/> 
+ <Street>N/A</Street> 
+ <StreetAddress>N/A</StreetAddress> 
+ <AddressName>1-6CXB5</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K711105</DCActivityCode> 
+ <DCActivityDesArabic>تأجير السيارات</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Car Rental</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>200715</CSN> 
+ <DCNameArabic> 
+ ¿¿¿¿ ¿¿¿¿¿¿ ¿¿¿¿¿¿¿¿ (¿¿¿ ¿¿ ¿¿¿¿ ¿¿¿¿¿ ¿¿¿¿¿¿ (¿ . ¿. ¿. ¿)) 
+ </DCNameArabic> 
+ <DCNameEnglish> 
+ HERTZ RENTAL CAR (BR OF AL FUTTAIM SONS CO.(L.L.C.)) 
+ </DCNameEnglish> 
+ <MainEmailAddress/> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber/> 
+ <Name> 
+ HERTZ RENTAL CAR (BR OF AL FUTTAIM SONS CO.(L.L.C.)) 
+ </Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber/> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic> 
+ ¿¿¿ ¿¿¿ (5) ¿¿¿ ¿¿¿¿¿ ¿¿¿ ¿¿¿¿¿ ¿¿¿¿¿¿ - ¿¿¿¿ ¿¿¿¿ 
+ </DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish/> 
+ <Province/> 
+ <Street>N/A</Street> 
+ <StreetAddress>N/A</StreetAddress> 
+ <AddressName>1-77HSN</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K711105</DCActivityCode> 
+ <DCActivityDesArabic>تأجير السيارات</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Car Rental</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>201069</CSN> 
+ <DCNameArabic> 
+ هرتز لتأجير السيارات (فرع من شركة ابناء الفطيم (ش . ذ. م. م)) 
+ </DCNameArabic> 
+ <DCNameEnglish> 
+ HERTZ RENTAL CAR (BR OF AL FUTTAIM SONS CO.(L.L.C.)) 
+ </DCNameEnglish> 
+ <MainEmailAddress/> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber/> 
+ <Name> 
+ HERTZ RENTAL CAR (BR OF AL FUTTAIM SONS CO.(L.L.C.)) 
+ </Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber/> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic> 
+ محل رقم (5) ملك صندوق دبي للدعم المالي - مبنى الات 
+ </DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish/> 
+ <Province/> 
+ <Street>N/A</Street> 
+ <StreetAddress>N/A</StreetAddress> 
+ <AddressName>1-7HHOH</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K711105</DCActivityCode> 
+ <DCActivityDesArabic>تأجير السيارات</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Car Rental</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>201021</CSN> 
+ <DCNameArabic> 
+ هرتز لتأجير السيارات (فرع من شركة ابناء الفطيم (ش . ذ. م. م)) 
+ </DCNameArabic> 
+ <DCNameEnglish> 
+ HERTZ RENTAL CAR (BR OF AL FUTTAIM SONS CO.(L.L.C.)) 
+ </DCNameEnglish> 
+ <MainEmailAddress/> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber/> 
+ <Name> 
+ HERTZ RENTAL CAR (BR OF AL FUTTAIM SONS CO.(L.L.C.)) 
+ </Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber/> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic> 
+ محل رقم (5) ملك صندوق دبي للدعم المالي - مبنى الات 
+ </DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish/> 
+ <Province/> 
+ <Street>N/A</Street> 
+ <StreetAddress>N/A</StreetAddress> 
+ <AddressName>1-7GQDF</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K711105</DCActivityCode> 
+ <DCActivityDesArabic>تأجير السيارات</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Car Rental</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>100261</CSN> 
+ <DCNameArabic>ماجد الفطيم فاشن (ش ذ م م)</DCNameArabic> 
+ <DCNameEnglish>MAJID AL FUTTAIM FASHION (L L C)</DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>971-4-2062700</MainPhoneNumber> 
+ <Name>MAJID AL FUTTAIM FASHION (L L C)</Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber>N/A</ApartmentNumber> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>بناية الفتان العقارية</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>ALFATAN REAL ESTATE BLDG.</DCBuildingNammeEnglish> 
+ <Province>Al Qusais 1st</Province> 
+ <Street>N/A</Street> 
+ <StreetAddress>N/A</StreetAddress> 
+ <AddressName>83815, 85542, 100261</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513107</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الملابس الجاهزة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Ready-made Garments Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513109</DCActivityCode> 
+ <DCActivityDesArabic>تجارة ملابس الأطفال</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Baby Wear Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513111</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الملابس الجاهزة الرجالية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Men's Garment Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513112</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الملابس الجاهزة النسائية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Ladies Garment Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513113</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الملابس الرياضية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Sports Wear Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513117</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الأحذية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Shoe Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513901</DCActivityCode> 
+ <DCActivityDesArabic>تجارة حقائب اليد والمنتجات الجلدية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Handbags and Leather Products Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513930</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الحلي من غير المعادن الثمينة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Imitation Jewellery Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513958</DCActivityCode> 
+ <DCActivityDesArabic>تجارة العطور ومستحضرات التجميل</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Perfumes and Cosmetics Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513961</DCActivityCode> 
+ <DCActivityDesArabic>تجارة النظارات الشمسية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Sunglasses Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G521904</DCActivityCode> 
+ <DCActivityDesArabic>تجارة عامة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>General Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>200994</CSN> 
+ <DCNameArabic>مكس (فرع من ماجد الفطيم فاشن (ش ذ م م))</DCNameArabic> 
+ <DCNameEnglish> 
+ MEXX (BR OF MAJID AL FUTTAIM FASHION (L L C)) 
+ </DCNameEnglish> 
+ <MainEmailAddress/> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber/> 
+ <Name> 
+ MEXX (BR OF MAJID AL FUTTAIM FASHION (L L C)) 
+ </Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber/> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic> 
+ محل (F029) ملك مردف سيتي سنتر (فرع من ماجد الفطيم 
+ </DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish/> 
+ <Province/> 
+ <Street>N/A</Street> 
+ <StreetAddress>N/A</StreetAddress> 
+ <AddressName>1-7GFLN</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513109</DCActivityCode> 
+ <DCActivityDesArabic>تجارة ملابس الأطفال</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Baby Wear Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513111</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الملابس الجاهزة الرجالية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Men's Garment Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513107</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الملابس الجاهزة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Readymade Garments Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513112</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الملابس الجاهزة النسائية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Ladies Garment Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513113</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الملابس الرياضية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Sports Wear Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G521904</DCActivityCode> 
+ <DCActivityDesArabic>تجارة عامة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>General Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513901</DCActivityCode> 
+ <DCActivityDesArabic>تجارة حقائب اليد والمنتجات الجلدية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Handbags and Leather Products Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513930</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الحلي من غير المعادن الثمينة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Imitation Jewellery Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513958</DCActivityCode> 
+ <DCActivityDesArabic>تجارة العطور ومستحضرات التجميل</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Perfumes and Cosmetics Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513961</DCActivityCode> 
+ <DCActivityDesArabic>تجارة النظارات الشمسية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Sunglasses Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513117</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الأحذية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Shoe Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>201653</CSN> 
+ <DCNameArabic>مكس (فرع من ماجد الفطيم فاشن (ش ذ م م))</DCNameArabic> 
+ <DCNameEnglish> 
+ MEXX (BR OF MAJID AL FUTTAIM FASHION (L L C)) 
+ </DCNameEnglish> 
+ <MainEmailAddress/> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber/> 
+ <Name> 
+ MEXX (BR OF MAJID AL FUTTAIM FASHION (L L C)) 
+ </Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber/> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic> 
+ محل (F029) ملك مردف سيتي سنتر (فرع من ماجد الفطيم 
+ </DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish/> 
+ <Province/> 
+ <Street>N/A</Street> 
+ <StreetAddress>N/A</StreetAddress> 
+ <AddressName>1-7LXGP</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513109</DCActivityCode> 
+ <DCActivityDesArabic>تجارة ملابس الأطفال</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Baby Wear Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513111</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الملابس الجاهزة الرجالية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Men's Garment Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513107</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الملابس الجاهزة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Ready-made Garments Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513112</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الملابس الجاهزة النسائية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Ladies Garment Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513113</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الملابس الرياضية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Sports Wear Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G521904</DCActivityCode> 
+ <DCActivityDesArabic>تجارة عامة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>General Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513901</DCActivityCode> 
+ <DCActivityDesArabic>تجارة حقائب اليد والمنتجات الجلدية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Handbags & Leather Products Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513930</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الحلي من غير المعادن الثمينة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Imitation Jewellery Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513958</DCActivityCode> 
+ <DCActivityDesArabic>تجارة العطور ومستحضرات التجميل</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Perfumes and Cosmetics Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513961</DCActivityCode> 
+ <DCActivityDesArabic>تجارة النظارات الشمسية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Sunglasses Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513117</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الأحذية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Shoe Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ </ListOfDcQueryMemberInfo> 
+ </SiebelMessage> 
+ </rpc:QBECommDirResponse> 
+ </SOAP-ENV:Body> 
+ </soapenv:Envelope> 
+ 
+ 
+ 
+ 
+ 
+
+  
+ 
+   Response Metadata    
+ 
+
+ <con:metadata  xmlns:con="http://www.bea.com/wli/sb/test/config"> 
+ <tran:headers  xsi:type="http:HttpResponseHeaders" xmlns:http="http://www.bea.com/wli/sb/transports/http" xmlns:tran="http://www.bea.com/wli/sb/transports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> 
+ <http:Content-Type>text/xml; charset=utf-8</http:Content-Type> 
+ </tran:headers> 
+ <tran:response-code  xmlns:tran="http://www.bea.com/wli/sb/transports">0</tran:response-code> 
+ <tran:encoding  xmlns:tran="http://www.bea.com/wli/sb/transports">utf-8</tran:encoding> 
+ </con:metadata> 
+ 
+ 
+ 
+ 
+ 
+
+  
+ 
+   Invocation Trace    
+ 
+
+   (receiving request) 
+
+ Initial Message Context 
+   added $body 
+ <soapenv:Body  xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dcq="http://siebel.com/DCQueryMobCommDir" xmlns:dc="http://www.siebel.com/xml/DC%20Query%20Member%20Info"> 
+ <dcq:QBECommDir> 
+ <SiebelMessage> 
+ <dc:ListOfDcQueryMemberInfo> 
+ <!--Zero or more repetitions:--> 
+ <dc:Account> 
+ <!--Optional:--> 
+ <dc:CSN/> 
+ <dc:DCNameArabic/> 
+ <dc:DCNameEnglish>* Futtaim *</dc:DCNameEnglish> 
+ <!--Optional:--> 
+ <dc:MainEmailAddress/> 
+ <!--Optional:--> 
+ <dc:MainFaxNumber/> 
+ <!--Optional:--> 
+ <dc:MainPhoneNumber/> 
+ <!--Optional:--> 
+ <dc:Name/> 
+ <!--Optional:--> 
+ <dc:ListOfAccount_BusinessAddress> 
+ <!--Zero or more repetitions:--> 
+ <dc:Account_BusinessAddress> 
+ <!--Optional:--> 
+ <dc:ApartmentNumber/> 
+ <dc:City/> 
+ <!--Optional:--> 
+ <dc:Country/> 
+ <!--Optional:--> 
+ <dc:DCAreaPOBox/> 
+ <!--Optional:--> 
+ <dc:DCBuildingNameArabic/> 
+ <!--Optional:--> 
+ <dc:DCBuildingNammeEnglish/> 
+ <!--Optional:--> 
+ <dc:Province/> 
+ <dc:Street/> 
+ <dc:StreetAddress/> 
+ <dc:AddressName/> 
+ </dc:Account_BusinessAddress> 
+ </dc:ListOfAccount_BusinessAddress> 
+ <!--Optional:--> 
+ <dc:ListOfAccount_DCAccountActivity> 
+ <!--Zero or more repetitions:--> 
+ <dc:Account_DCAccountActivity> 
+ <!--Optional:--> 
+ <dc:DCActivityCode/> 
+ <!--Optional:--> 
+ <dc:DCActivityDesArabic/> 
+ <!--Optional:--> 
+ <dc:DCActivityDescriptionEng/> 
+ </dc:Account_DCAccountActivity> 
+ </dc:ListOfAccount_DCAccountActivity> 
+ </dc:Account> 
+ </dc:ListOfDcQueryMemberInfo> 
+ </SiebelMessage> 
+ </dcq:QBECommDir> 
+ </soapenv:Body> 
+   added $header 
+ <soapenv:Header  xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dcq="http://siebel.com/DCQueryMobCommDir" xmlns:dc="http://www.siebel.com/xml/DC%20Query%20Member%20Info"> 
+ <wsse:Security  xmlns:wsse="http://schemas.xmlsoap.org/ws/2002/07/secext"> 
+ <wsse:UsernameToken  xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility"> 
+ <wsse:Username>SADMIN</wsse:Username> 
+ <wsse:Password  Type="wsse:PasswordText">SADMIN123</wsse:Password> 
+ </wsse:UsernameToken> 
+ </wsse:Security> 
+ </soapenv:Header> 
+   added $inbound 
+ <con:endpoint  name="ProxyService$DCCICommercialDirectory$ProxyServices$DCCICommercialDirectoryProxy" xmlns:con="http://www.bea.com/wli/sb/context"> 
+ <con:service> 
+ <con:operation>QBECommDir</con:operation> 
+ </con:service> 
+ <con:transport> 
+ <con:uri> 
+ /DCCICommercialDirectory/ProxyServices/DCCICommercialDirectoryProxy 
+ </con:uri> 
+ <con:mode>request-response</con:mode> 
+ <con:qualityOfService>best-effort</con:qualityOfService> 
+ <con:request  xsi:type="http:HttpRequestMetaData" xmlns:http="http://www.bea.com/wli/sb/transports/http" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> 
+ <tran:headers  xsi:type="http:HttpRequestHeaders" xmlns:tran="http://www.bea.com/wli/sb/transports"> 
+ <http:Content-Type>text/xml; charset=utf-8</http:Content-Type> 
+ <http:SOAPAction> 
+ "rpc/http://siebel.com/DCQueryMobCommDir:QBECommDir" 
+ </http:SOAPAction> 
+ </tran:headers> 
+ <tran:encoding  xmlns:tran="http://www.bea.com/wli/sb/transports">utf-8</tran:encoding> 
+ <http:query-parameters/> 
+ </con:request> 
+ <con:response  xsi:type="http:HttpResponseMetaData" xmlns:http="http://www.bea.com/wli/sb/transports/http" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> 
+ <tran:headers  xsi:type="http:HttpResponseHeaders" xmlns:tran="http://www.bea.com/wli/sb/transports"> 
+ <http:Content-Type>text/xml</http:Content-Type> 
+ </tran:headers> 
+ <tran:response-code  xmlns:tran="http://www.bea.com/wli/sb/transports">0</tran:response-code> 
+ </con:response> 
+ </con:transport> 
+ <con:security> 
+ <con:transportClient> 
+ <con:username><anonymous></con:username> 
+ </con:transportClient> 
+ </con:security> 
+ </con:endpoint> 
+   added $messageID 
+7675750147116460107--5c6702c.145d5c037b0.-343e 
+ 
+ 
+   RouteTo_DCCICommercialDirectoryBS 
+
+ Routed Service 
+   Route to: "DCCICommercialDirectoryBS" 
+  $outbound: 
+ <con:endpoint  name="BusinessService$DCCICommercialDirectory$BusinessServices$DCCICommercialDirectoryBS" xmlns:con="http://www.bea.com/wli/sb/context"> 
+ <con:service> 
+ <con:operation>QBECommDir</con:operation> 
+ </con:service> 
+ <con:transport> 
+ <con:mode>request-response</con:mode> 
+ <con:qualityOfService>best-effort</con:qualityOfService> 
+ <con:request  xsi:type="http:HttpRequestMetaData" xmlns:http="http://www.bea.com/wli/sb/transports/http" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> 
+ <tran:headers  xsi:type="http:HttpRequestHeaders" xmlns:tran="http://www.bea.com/wli/sb/transports"> 
+ <http:Content-Type>text/xml</http:Content-Type> 
+ <http:SOAPAction> 
+ "rpc/http://siebel.com/DCQueryMobCommDir:QBECommDir" 
+ </http:SOAPAction> 
+ </tran:headers> 
+ </con:request> 
+ </con:transport> 
+ <con:security> 
+ <con:doOutboundWss>false</con:doOutboundWss> 
+ </con:security> 
+ </con:endpoint> 
+ 
+  $body  (request): 
+ <soapenv:Body  xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dcq="http://siebel.com/DCQueryMobCommDir" xmlns:dc="http://www.siebel.com/xml/DC%20Query%20Member%20Info"> 
+ <dcq:QBECommDir> 
+ <SiebelMessage> 
+ <dc:ListOfDcQueryMemberInfo> 
+ <!--Zero or more repetitions:--> 
+ <dc:Account> 
+ <!--Optional:--> 
+ <dc:CSN/> 
+ <dc:DCNameArabic/> 
+ <dc:DCNameEnglish>* Futtaim *</dc:DCNameEnglish> 
+ <!--Optional:--> 
+ <dc:MainEmailAddress/> 
+ <!--Optional:--> 
+ <dc:MainFaxNumber/> 
+ <!--Optional:--> 
+ <dc:MainPhoneNumber/> 
+ <!--Optional:--> 
+ <dc:Name/> 
+ <!--Optional:--> 
+ <dc:ListOfAccount_BusinessAddress> 
+ <!--Zero or more repetitions:--> 
+ <dc:Account_BusinessAddress> 
+ <!--Optional:--> 
+ <dc:ApartmentNumber/> 
+ <dc:City/> 
+ <!--Optional:--> 
+ <dc:Country/> 
+ <!--Optional:--> 
+ <dc:DCAreaPOBox/> 
+ <!--Optional:--> 
+ <dc:DCBuildingNameArabic/> 
+ <!--Optional:--> 
+ <dc:DCBuildingNammeEnglish/> 
+ <!--Optional:--> 
+ <dc:Province/> 
+ <dc:Street/> 
+ <dc:StreetAddress/> 
+ <dc:AddressName/> 
+ </dc:Account_BusinessAddress> 
+ </dc:ListOfAccount_BusinessAddress> 
+ <!--Optional:--> 
+ <dc:ListOfAccount_DCAccountActivity> 
+ <!--Zero or more repetitions:--> 
+ <dc:Account_DCAccountActivity> 
+ <!--Optional:--> 
+ <dc:DCActivityCode/> 
+ <!--Optional:--> 
+ <dc:DCActivityDesArabic/> 
+ <!--Optional:--> 
+ <dc:DCActivityDescriptionEng/> 
+ </dc:Account_DCAccountActivity> 
+ </dc:ListOfAccount_DCAccountActivity> 
+ </dc:Account> 
+ </dc:ListOfDcQueryMemberInfo> 
+ </SiebelMessage> 
+ </dcq:QBECommDir> 
+ </soapenv:Body> 
+  $header  (request): 
+ <soapenv:Header  xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dcq="http://siebel.com/DCQueryMobCommDir" xmlns:dc="http://www.siebel.com/xml/DC%20Query%20Member%20Info"> 
+ <wsse:Security  xmlns:wsse="http://schemas.xmlsoap.org/ws/2002/07/secext"> 
+ <wsse:UsernameToken  xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility"> 
+ <wsse:Username>SADMIN</wsse:Username> 
+ <wsse:Password  Type="wsse:PasswordText">SADMIN123</wsse:Password> 
+ </wsse:UsernameToken> 
+ </wsse:Security> 
+ </soapenv:Header> 
+  $attachments  (request): 
+ <con:attachments  xmlns:con="http://www.bea.com/wli/sb/context"/> 
+ 
+Message Context Changes 
+   added $outbound 
+ <con:endpoint  name="BusinessService$DCCICommercialDirectory$BusinessServices$DCCICommercialDirectoryBS" xmlns:con="http://www.bea.com/wli/sb/context"> 
+ <con:service> 
+ <con:operation>QBECommDir</con:operation> 
+ </con:service> 
+ <con:transport> 
+ <con:uri> 
+ https://dcpatchsgapps.dubaichamber.com:8086/eai_anon_enu/start.swe?SWEExtSource=SecureWebService&amp;SWEExtCmd=Execute 
+ </con:uri> 
+ <con:mode>request-response</con:mode> 
+ <con:qualityOfService>best-effort</con:qualityOfService> 
+ <con:request  xsi:type="http:HttpRequestMetaData" xmlns:http="http://www.bea.com/wli/sb/transports/http" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> 
+ <tran:headers  xsi:type="http:HttpRequestHeaders" xmlns:tran="http://www.bea.com/wli/sb/transports"> 
+ <http:Content-Type>text/xml; charset=utf-8</http:Content-Type> 
+ <http:SOAPAction> 
+ "rpc/http://siebel.com/DCQueryMobCommDir:QBECommDir" 
+ </http:SOAPAction> 
+ </tran:headers> 
+ <tran:encoding  xmlns:tran="http://www.bea.com/wli/sb/transports">utf-8</tran:encoding> 
+ </con:request> 
+ <con:response  xsi:type="http:HttpResponseMetaData" xmlns:http="http://www.bea.com/wli/sb/transports/http" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> 
+ <tran:headers  xsi:type="http:HttpResponseHeaders" xmlns:tran="http://www.bea.com/wli/sb/transports"> 
+ <tran:user-header  name="_charset" value="UTF-8"/> 
+ <http:Cache-Control>no-cache, must-revalidate, max-age=0</http:Cache-Control> 
+ <http:Content-Length>82772</http:Content-Length> 
+ <http:Content-Type>text/xml;charset=UTF-8</http:Content-Type> 
+ <http:Date>Sun, 29 Jun 2014 05:14:38 GMT</http:Date> 
+ <http:Pragma>no-cache</http:Pragma> 
+ <http:Server>Oracle-iPlanet-Web-Server/7.0</http:Server> 
+ </tran:headers> 
+ <tran:response-code  xmlns:tran="http://www.bea.com/wli/sb/transports">0</tran:response-code> 
+ <tran:response-message  xmlns:tran="http://www.bea.com/wli/sb/transports">OK</tran:response-message> 
+ <tran:encoding  xmlns:tran="http://www.bea.com/wli/sb/transports">UTF-8</tran:encoding> 
+ <http:http-response-code>200</http:http-response-code> 
+ </con:response> 
+ </con:transport> 
+ <con:security> 
+ <con:doOutboundWss>false</con:doOutboundWss> 
+ </con:security> 
+ </con:endpoint> 
+   changed $body 
+ <SOAP-ENV:Body  xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"> 
+ <rpc:QBECommDirResponse  xmlns:rpc="http://siebel.com/DCQueryMobCommDir"> 
+ <SiebelMessage> 
+ <ListOfDcQueryMemberInfo  xmlns="http://www.siebel.com/xml/DC%20Query%20Member%20Info"> 
+ <Account> 
+ <CSN>6247</CSN> 
+ <DCNameArabic> 
+ شركة الفطيم للآليات والماكينات (ش.ذ.م.م) - فامكو 
+ </DCNameArabic> 
+ <DCNameEnglish> 
+ AL FUTTAIM AUTO &amp; MACHINERY COMPANY (L.L.C) - FAMCO 
+ </DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>971-4-2135100</MainPhoneNumber> 
+ <Name> 
+ AL FUTTAIM AUTO &amp; MACHINERY COMPANY (L.L.C) - FAMCO 
+ </Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber>N/A</ApartmentNumber> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>N/A</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>PLOT NO. B 131</DCBuildingNammeEnglish> 
+ <Province>Umm Ramool</Province> 
+ <Street>Al Rashidiya Road</Street> 
+ <StreetAddress>Al Rashidiya Road</StreetAddress> 
+ <AddressName>4102, 5599, 6247</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G514335</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الأبواب المقاومة للحريق</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Fire Resistant Doors Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G521904</DCActivityCode> 
+ <DCActivityDesArabic>تجارة عامة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>General Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>I630203</DCActivityCode> 
+ <DCActivityDesArabic>التخزين في مخازن عامة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>General Warehousing</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>186</CSN> 
+ <DCNameArabic>الفطيم كاريليون (ش.ذ.م.م)</DCNameArabic> 
+ <DCNameEnglish>AL FUTTAIM CARILLION (L.L.C)</DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>971-4-3331200</MainPhoneNumber> 
+ <Name>AL FUTTAIM CARILLION (L.L.C)</Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber>N/A</ApartmentNumber> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>N/A</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>ALFUTTAIM BLDG.</DCBuildingNammeEnglish> 
+ <Province>Ras Alkhor Industrial Area, 1s</Province> 
+ <Street>Ras Al Khor Road</Street> 
+ <StreetAddress>Ras Al Khor Road</StreetAddress> 
+ <AddressName>1155, 2652, 186</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>F452001</DCActivityCode> 
+ <DCActivityDesArabic>مقاولات البناء</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Building Contracting</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>F452009</DCActivityCode> 
+ <DCActivityDesArabic>مقاولات إنشاء الطرق</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Road Contracting</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>F452010</DCActivityCode> 
+ <DCActivityDesArabic> 
+ مقاولات إنشاء شبكات ومحطات الصرف الصحي وإصلاحها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Sewage and Drainage Contracting</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>F453005</DCActivityCode> 
+ <DCActivityDesArabic> 
+ أعمال تركيب المعدات الكهروميكانيكية وصيانتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Electromechanical Equipment Installation and Maintenance 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>2</CSN> 
+ <DCNameArabic>شركة الفطيم (ذ م م)</DCNameArabic> 
+ <DCNameEnglish>AL FUTTAIM COMPANY (L L C)</DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>971-4-7062300</MainPhoneNumber> 
+ <Name>AL FUTTAIM COMPANY (L L C)</Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber>N/A</ApartmentNumber> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>بناية الفطيم</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>Alfuttaim Bldg.</DCBuildingNammeEnglish> 
+ <Province>Al Muraqqabat</Province> 
+ <Street>Umer Ibn Al Khattab Street</Street> 
+ <StreetAddress>Umer Ibn Al Khattab Street</StreetAddress> 
+ <AddressName>74532, 2532, 2</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G521904</DCActivityCode> 
+ <DCActivityDesArabic>تجارة عامة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>General Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659901</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الإستثمار في المشروعات التجارية وتأسيسها وإدارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Commercial Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659902</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الإستثمار في المشروعات الصناعية وتأسيسها وإدارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Industrial Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659903</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الاستثمار في المشروعات الزراعية وتأسيسها وادارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Agricultural Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K749916</DCActivityCode> 
+ <DCActivityDesArabic>خدمات إدارة شركات ومؤسسات</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Management Services</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K749920</DCActivityCode> 
+ <DCActivityDesArabic>خدمات إدارة منشآت</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Facilities Management Services</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>4377</CSN> 
+ <DCNameArabic> 
+ شركة الفطيم لمنتجات البرامج الآلية للكمبيوتر (ش.ذ.م.م) 
+ </DCNameArabic> 
+ <DCNameEnglish> 
+ AL FUTTAIM COMPUTER SOFTWARE PRODUCTS COMPANY (L.L.C) 
+ </DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>971-4-3511150</MainPhoneNumber> 
+ <Name> 
+ AL FUTTAIM COMPUTER SOFTWARE PRODUCTS COMPANY (L.L.C) 
+ </Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber>N/A</ApartmentNumber> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>بناية مؤسسة جمعة الماجد</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>Juma Almajid Est. Bldg.</DCBuildingNammeEnglish> 
+ <Province>Al Mankhool</Province> 
+ <Street>Khalid Ibn Al Waleed Street</Street> 
+ <StreetAddress>Khalid Ibn Al Waleed Street</StreetAddress> 
+ <AddressName>3051, 4548, 4377</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G515102</DCActivityCode> 
+ <DCActivityDesArabic>تجارة نظم الحاسب الآلي وبرامجه</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Computer Software Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G515104</DCActivityCode> 
+ <DCActivityDesArabic>تجارة أجهزة الحاسب الآلي ولوازمه</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Computer Equipment Requisites Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G521904</DCActivityCode> 
+ <DCActivityDesArabic>تجارة عامة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>General Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K722901</DCActivityCode> 
+ <DCActivityDesArabic>تصميم نظم الحاسب الآلي</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Computer Software House</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K725001</DCActivityCode> 
+ <DCActivityDesArabic>إصلاح أجهزة الحاسب الآلي وصيانتها</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Computer Repair and Maintenance</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>5099</CSN> 
+ <DCNameArabic>شركة الفطيم للإلكترونيات (ش.ذ.م.م)</DCNameArabic> 
+ <DCNameEnglish>AL FUTTAIM ELECTRONICS COMPANY (L.L.C)</DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>971-4-3599970</MainPhoneNumber> 
+ <Name>AL FUTTAIM ELECTRONICS COMPANY (L.L.C)</Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber>N/A</ApartmentNumber> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>N/A</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>MUSALAM BIN SALEM BIN HAM BLDG.</DCBuildingNammeEnglish> 
+ <Province>Al Mankhool</Province> 
+ <Street>Sheikh Khalifa Bin Zayed Road</Street> 
+ <StreetAddress>Sheikh Khalifa Bin Zayed Road</StreetAddress> 
+ <AddressName>3470, 4967, 5099</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G521904</DCActivityCode> 
+ <DCActivityDesArabic>تجارة عامة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>General Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659901</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الإستثمار في المشروعات التجارية وتأسيسها وإدارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Commercial Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659902</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الإستثمار في المشروعات الصناعية وتأسيسها وإدارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Industrial Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659903</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الاستثمار في المشروعات الزراعية وتأسيسها وادارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Agricultural Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>2945</CSN> 
+ <DCNameArabic>الفطيم الهندسية</DCNameArabic> 
+ <DCNameEnglish>AL FUTTAIM ENGINEERING</DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>971-4-2119111</MainPhoneNumber> 
+ <Name>AL FUTTAIM ENGINEERING</Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber>N/A</ApartmentNumber> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>بناء ملك الفطيم</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>Alfuttaim Bldg.</DCBuildingNammeEnglish> 
+ <Province>Port Saeed</Province> 
+ <Street>Airport Road</Street> 
+ <StreetAddress>Airport Road</StreetAddress> 
+ <AddressName>2212, 3709, 2945</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G515916</DCActivityCode> 
+ <DCActivityDesArabic>تجارة مكيفات الهواء</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Air-Condition Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G515923</DCActivityCode> 
+ <DCActivityDesArabic> 
+ تجارة معدات وآلات إزالة ملوحة المياه ولوازمها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Water Desalination Equipment Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G515951</DCActivityCode> 
+ <DCActivityDesArabic> 
+ تجارة المصاعد والسلالم المتحركة وقطع غيارها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Lifts, Escalators and Spare Parts Trading 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G515952</DCActivityCode> 
+ <DCActivityDesArabic> 
+ تجارة المضخات والمحركات والصمامات ولوازمها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Pumps, Engines, Valves and Spare Parts Trading 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>4520</CSN> 
+ <DCNameArabic>الفطيم الهندسية (ش.ذ.م.م)</DCNameArabic> 
+ <DCNameEnglish>AL FUTTAIM ENGINEERING (L.L.C)</DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>971-4-2119111</MainPhoneNumber> 
+ <Name>AL FUTTAIM ENGINEERING (L.L.C)</Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber>N/A</ApartmentNumber> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>N/A</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>ALFUTTAIM ENGINEERING CO. BLDG.</DCBuildingNammeEnglish> 
+ <Province>Al Garhoud</Province> 
+ <Street>Airport Road</Street> 
+ <StreetAddress>Airport Road</StreetAddress> 
+ <AddressName>3136, 4633, 4520</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>F453001</DCActivityCode> 
+ <DCActivityDesArabic> 
+ تركيب أنظمة التكييف والتهوية وتنقية الهواء وصيانتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Air-Condition, Ventilations, Air Filtration Systems Installation &amp; Maintenance 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>F453008</DCActivityCode> 
+ <DCActivityDesArabic> 
+ تركيب معدات وأجهزة الأمن والمراقبة وصيانتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Security and Surveillance Systems Installation and Maintenance 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>F453011</DCActivityCode> 
+ <DCActivityDesArabic>تركيب التجهيزات والأجزاء المعدنية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Metal Parts Fixtures Contracting</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>F453012</DCActivityCode> 
+ <DCActivityDesArabic> 
+ تركيب معدات وأجهزة القياس والتحكم وإصلاحها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Measuring, Control Systems Installation and Repair 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>F453013</DCActivityCode> 
+ <DCActivityDesArabic>أعمال التمديدات والتركيبات الصحية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Plumbing and Sanitary Contracting</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>F453014</DCActivityCode> 
+ <DCActivityDesArabic>أعمال التمديدات الكهربائية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Electrical Fitting Contracting</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>F453019</DCActivityCode> 
+ <DCActivityDesArabic>تركيب معدات السلامة وإطفاء الحريق</DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Fire Fighting and Safety Equipment Installation 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>F454012</DCActivityCode> 
+ <DCActivityDesArabic>تركيب الأسقف المعلقة والقواطع الخفيفة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Partitions and False Ceilings Contracting 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G514325</DCActivityCode> 
+ <DCActivityDesArabic>تجارة السقالات</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Scaffolds Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G514335</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الأبواب المقاومة للحريق</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Fire Resistant Doors Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G515909</DCActivityCode> 
+ <DCActivityDesArabic>تجارة معدات وأجهزة السلامة وإطفاء الحريق</DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Fire Fighting and Safety Equipment Trading 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G515920</DCActivityCode> 
+ <DCActivityDesArabic>تجارة معدات وآلات الرفع والتحميل</DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Handling, Loading and lifting Equipment Trading 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G515959</DCActivityCode> 
+ <DCActivityDesArabic>تجارة أجهزة ومعدات الإنذار والمراقبة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Security Control and Alarm Equipment Trading 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G515966</DCActivityCode> 
+ <DCActivityDesArabic> 
+ إصلاح المكائن والمعدات الثقيلة وصيانتها وتشغيلها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Heavy Duty Equipment, Machinery Repair, Operations and Maintenance 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G515985</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الأجهزة والمعدات الأمنية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Security Devices, Equipment Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G526008</DCActivityCode> 
+ <DCActivityDesArabic> 
+ إصلاح أجهزة ومعدات الإنذار والمراقبة وصيانتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Security, Alarm Systems Repair and Maintenance 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659901</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الإستثمار في المشروعات التجارية وتأسيسها وإدارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Commercial Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659902</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الإستثمار في المشروعات الصناعية وتأسيسها وإدارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Industrial Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659903</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الاستثمار في المشروعات الزراعية وتأسيسها وادارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Agricultural Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K749301</DCActivityCode> 
+ <DCActivityDesArabic>خدمات تنظيف المباني والمساكن</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Building Cleaning Services</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>147707</CSN> 
+ <DCNameArabic>شركة الفطيم للتمويل مساهمة خاصة</DCNameArabic> 
+ <DCNameEnglish>AL FUTTAIM FINANCE PV JSC P.S.C.</DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>971-4-3047600</MainPhoneNumber> 
+ <Name>AL FUTTAIM FINANCE PV JSC P.S.C.</Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber/> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>n/a</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>N/A</DCBuildingNammeEnglish> 
+ <Province/> 
+ <Street/> 
+ <StreetAddress/> 
+ <AddressName>4675918, 5546703, 147707</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659201</DCActivityCode> 
+ <DCActivityDesArabic>إجراء عمليات التمويل</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Financing Operations</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>407</CSN> 
+ <DCNameArabic>شركة الفطيم للصناعات (ش.ذ.م.م)</DCNameArabic> 
+ <DCNameEnglish>AL FUTTAIM INDUSTIRES COMPANY (L.L.C)</DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>971-4-2177777</MainPhoneNumber> 
+ <Name>AL FUTTAIM INDUSTIRES COMPANY (L.L.C)</Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber>N/A</ApartmentNumber> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>بناية الفطيم</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>Alfuttaim Bldg.</DCBuildingNammeEnglish> 
+ <Province>Al Rigga</Province> 
+ <Street>Umer Ibn Al Khattab Street</Street> 
+ <StreetAddress>Umer Ibn Al Khattab Street</StreetAddress> 
+ <AddressName>1293, 2790, 407</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659902</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الإستثمار في المشروعات الصناعية وتأسيسها وإدارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Industrial Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>3906</CSN> 
+ <DCNameArabic> 
+ شركة الفطيم للإدارة العلمية للانظمة الإلية (ش.ذ.م.م) 
+ </DCNameArabic> 
+ <DCNameEnglish> 
+ AL FUTTAIM MANAGEMENT SCIENCE SOFTWARE CO.(L.L.C) 
+ </DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>971-4-2177777</MainPhoneNumber> 
+ <Name> 
+ AL FUTTAIM MANAGEMENT SCIENCE SOFTWARE CO.(L.L.C) 
+ </Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber>N/A</ApartmentNumber> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>بناية الفطيم</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>Alfuttaim Bldg.</DCBuildingNammeEnglish> 
+ <Province>Al Rigga</Province> 
+ <Street>Al Maktoum Street</Street> 
+ <StreetAddress>Al Maktoum Street</StreetAddress> 
+ <AddressName>2776, 4273, 3906</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G515102</DCActivityCode> 
+ <DCActivityDesArabic>تجارة نظم الحاسب الآلي وبرامجه</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Computer Software Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G515103</DCActivityCode> 
+ <DCActivityDesArabic> 
+ تجارة مستلزمات الحاسب الآلي ومعالجة البيانات 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Computer and Data Processing Requisites Trading 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G515104</DCActivityCode> 
+ <DCActivityDesArabic>تجارة أجهزة الحاسب الآلي ولوازمه</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Computer Equipment Requisites Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G521904</DCActivityCode> 
+ <DCActivityDesArabic>تجارة عامة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>General Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K725001</DCActivityCode> 
+ <DCActivityDesArabic>إصلاح أجهزة الحاسب الآلي وصيانتها</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Computer Repair and Maintenance</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>35</CSN> 
+ <DCNameArabic>الفطيم للسيارات</DCNameArabic> 
+ <DCNameEnglish>AL FUTTAIM MOTORS</DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>971-4-2282261</MainPhoneNumber> 
+ <Name>AL FUTTAIM MOTORS</Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber>N/A</ApartmentNumber> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>بناية الفطيم للعقارات</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>Alfutaim Real Estate Bldg.</DCBuildingNammeEnglish> 
+ <Province>Port Saeed</Province> 
+ <Street>Beniyas Road</Street> 
+ <StreetAddress>Beniyas Road</StreetAddress> 
+ <AddressName>1057, 2554, 35</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G521904</DCActivityCode> 
+ <DCActivityDesArabic>تجارة عامة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>General Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>9195</CSN> 
+ <DCNameArabic>الفطيم للسيارات (تويوتا)</DCNameArabic> 
+ <DCNameEnglish>AL FUTTAIM MOTORS (TOYOTA)</DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>971-4-2282261</MainPhoneNumber> 
+ <Name>AL FUTTAIM MOTORS (TOYOTA)</Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber>N/A</ApartmentNumber> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>برج الفطيم</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>Alfuttaim Tower</DCBuildingNammeEnglish> 
+ <Province>Al Rigga</Province> 
+ <Street>Baniyas Square</Street> 
+ <StreetAddress>Baniyas Square</StreetAddress> 
+ <AddressName>5542, 7039, 9195</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G501001</DCActivityCode> 
+ <DCActivityDesArabic>تجارة سيارات الركاب</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Automobile Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G501002</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الحافلات والشاحنات والقاطرات</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Buses and Trucks Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>8822</CSN> 
+ <DCNameArabic>شركة الفطيم للسيارات (ش.ذ.م.م)</DCNameArabic> 
+ <DCNameEnglish>AL FUTTAIM MOTORS COMPANY (L.L.C)</DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>971-4-2282261</MainPhoneNumber> 
+ <Name>AL FUTTAIM MOTORS COMPANY (L.L.C)</Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber>N/A</ApartmentNumber> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>برج الفطيم</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>Alfuttaim Tower</DCBuildingNammeEnglish> 
+ <Province>Al Rigga</Province> 
+ <Street>Baniyas Square</Street> 
+ <StreetAddress>Baniyas Square</StreetAddress> 
+ <AddressName>5372, 6869, 8822</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G501001</DCActivityCode> 
+ <DCActivityDesArabic>تجارة سيارات الركاب</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Automobile Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G501002</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الحافلات والشاحنات والقاطرات</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Buses and Trucks Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G503001</DCActivityCode> 
+ <DCActivityDesArabic> 
+ تجارة قطع غيار السيارات والمركبات ومكوناتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Auto Spare Parts and components Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G521904</DCActivityCode> 
+ <DCActivityDesArabic>تجارة عامة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>General Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659901</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الإستثمار في المشروعات التجارية وتأسيسها وإدارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Commercial Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659902</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الإستثمار في المشروعات الصناعية وتأسيسها وإدارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Industrial Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659903</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الاستثمار في المشروعات الزراعية وتأسيسها وادارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Agricultural Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>201148</CSN> 
+ <DCNameArabic>شركة الفطيم للسيارات (ش.ذ.م.م) (فرع)</DCNameArabic> 
+ <DCNameEnglish> 
+ AL FUTTAIM MOTORS COMPANY (L.L.C) (BRANCH) 
+ </DCNameEnglish> 
+ <MainEmailAddress/> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber/> 
+ <Name> 
+ AL FUTTAIM MOTORS COMPANY (L.L.C) (BRANCH) 
+ </Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber/> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic> 
+ مكتب رقم (502) ملك هيئة الهلال الاحمر لدولة الامار 
+ </DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish/> 
+ <Province/> 
+ <Street>N/A</Street> 
+ <StreetAddress>N/A</StreetAddress> 
+ <AddressName>1-7IXWR</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K749907</DCActivityCode> 
+ <DCActivityDesArabic>مكتب إدارة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Managing Office</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>5118</CSN> 
+ <DCNameArabic>شركة الفطيم باناتيك (ش.ذ.م.م)</DCNameArabic> 
+ <DCNameEnglish>AL FUTTAIM PANATECH COMPANY (L.L.C)</DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>-050-5371331</MainPhoneNumber> 
+ <Name>AL FUTTAIM PANATECH COMPANY (L.L.C)</Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber>N/A</ApartmentNumber> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>بناية الفطيم</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>ALFUTTAIM BLDG.</DCBuildingNammeEnglish> 
+ <Province>Al Mateena</Province> 
+ <Street>Salah Al Din Street</Street> 
+ <StreetAddress>Salah Al Din Street</StreetAddress> 
+ <AddressName>3483, 4980, 5118</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G521904</DCActivityCode> 
+ <DCActivityDesArabic>تجارة عامة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>General Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659901</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الإستثمار في المشروعات التجارية وتأسيسها وإدارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Commercial Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659902</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الإستثمار في المشروعات الصناعية وتأسيسها وإدارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Industrial Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659903</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الاستثمار في المشروعات الزراعية وتأسيسها وادارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Agricultural Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>39187</CSN> 
+ <DCNameArabic>شركة الفطيم باناتيك (ذ.م.م)</DCNameArabic> 
+ <DCNameEnglish>AL FUTTAIM PANATECH COMPANY (L.L.C)</DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>971-4-2719379</MainPhoneNumber> 
+ <Name>AL FUTTAIM PANATECH COMPANY (L.L.C)</Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber>N/A</ApartmentNumber> 
+ <City>JEBEL ALI FREE ZONE, DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>N/A</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>N/A</DCBuildingNammeEnglish> 
+ <Province>Jebel Ali Free Zone</Province> 
+ <Street>Sheikh Zayed Road</Street> 
+ <StreetAddress>Sheikh Zayed Road</StreetAddress> 
+ <AddressName>24676, 26173, 39187</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513914</DCActivityCode> 
+ <DCActivityDesArabic> 
+ تجارة الأجهزة السمعية والمرئية وأجهزة التسجيل ولوازمها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Audio-visual, Recording Equipment and Accessories Trading 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513915</DCActivityCode> 
+ <DCActivityDesArabic> 
+ تجارة الثلاجات والغسالات والأجهزة الكهربائية المنزلية 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Refrigerators, Washing Machines and Household Electrical Appliances Trading 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513921</DCActivityCode> 
+ <DCActivityDesArabic> 
+ تجارة قطع غيار أجهزة التكييف والتبريد ومكوناتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Air-Condition, Refrigeration Spare Parts and Components Trading 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513947</DCActivityCode> 
+ <DCActivityDesArabic>تجارة آلات وأدوات التصوير ولوازمها</DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Photographic Equipment and Accessories Trading 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G515205</DCActivityCode> 
+ <DCActivityDesArabic> 
+ تجارة قطع غيار الأجهزة الكهربائية والإلكترونية 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Electrical and Electronic Appliances Spare Parts Trading 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G515206</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الهواتف وأجهزة الإتصال السلكي</DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Telephones and Telecommunications Equipment Trading 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G515207</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الهواتف المتحركة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Mobile Phones Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>474</CSN> 
+ <DCNameArabic>شركة الفطيم الخصوصية (ذ م م)</DCNameArabic> 
+ <DCNameEnglish>AL FUTTAIM PRIVATE COMPANY (L L C)</DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>971-4-2177777</MainPhoneNumber> 
+ <Name>AL FUTTAIM PRIVATE COMPANY (L L C)</Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber>N/A</ApartmentNumber> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>بناية الفطيم</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>Alfuttaim Bldg.</DCBuildingNammeEnglish> 
+ <Province>Al Muraqqabat</Province> 
+ <Street>Al Rigga Street</Street> 
+ <StreetAddress>Al Rigga Street</StreetAddress> 
+ <AddressName>1338, 2835, 474</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G521904</DCActivityCode> 
+ <DCActivityDesArabic>تجارة عامة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>General Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659901</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الإستثمار في المشروعات التجارية وتأسيسها وإدارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Commercial Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659902</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الإستثمار في المشروعات الصناعية وتأسيسها وإدارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Industrial Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K701001</DCActivityCode> 
+ <DCActivityDesArabic>شراء الأراضي والعقارات وبيعها</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Real Estate Agent</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K701014</DCActivityCode> 
+ <DCActivityDesArabic>خدمات تأجير وإدارة العقارات الخاصة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Self- owned Property Management Services</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K749916</DCActivityCode> 
+ <DCActivityDesArabic>خدمات إدارة شركات ومؤسسات</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Management Services</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>409</CSN> 
+ <DCNameArabic>شركة الفطيم العقارية (ذ م م)</DCNameArabic> 
+ <DCNameEnglish>AL FUTTAIM REAL ESTATE COMPANY (L L C)</DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>971-4-2034147</MainPhoneNumber> 
+ <Name>AL FUTTAIM REAL ESTATE COMPANY (L L C)</Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber>N/A</ApartmentNumber> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>بناية الفطيم</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>Alfuttaim Bldg.</DCBuildingNammeEnglish> 
+ <Province>Al Garhoud</Province> 
+ <Street>Al Garhoud Road</Street> 
+ <StreetAddress>Al Garhoud Road</StreetAddress> 
+ <AddressName>1295, 2792, 409</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G521904</DCActivityCode> 
+ <DCActivityDesArabic>تجارة عامة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>General Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659901</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الإستثمار في المشروعات التجارية وتأسيسها وإدارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Commercial Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659902</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الإستثمار في المشروعات الصناعية وتأسيسها وإدارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Industrial Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659903</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الاستثمار في المشروعات الزراعية وتأسيسها وادارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Agricultural Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K701001</DCActivityCode> 
+ <DCActivityDesArabic>شراء الأراضي والعقارات وبيعها</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Real Estate Agent</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K701014</DCActivityCode> 
+ <DCActivityDesArabic>خدمات تأجير وإدارة العقارات الخاصة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Self- owned Property Management Services</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K702001</DCActivityCode> 
+ <DCActivityDesArabic>الوساطة في بيع العقارات وشرائها</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Real Estate Buying and Selling Brokerage</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K749916</DCActivityCode> 
+ <DCActivityDesArabic>خدمات إدارة شركات ومؤسسات</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Management Services</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>10</CSN> 
+ <DCNameArabic>الفطيم تاورا اسكافولدنج</DCNameArabic> 
+ <DCNameEnglish>AL FUTTAIM TOWER SCAFFOLDING</DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>971-4-2858697</MainPhoneNumber> 
+ <Name>AL FUTTAIM TOWER SCAFFOLDING</Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber>N/A</ApartmentNumber> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>بناء ملك ماجد الفطيم</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>Majid Alfuttaim Bldg.</DCBuildingNammeEnglish> 
+ <Province>Umm Ramool</Province> 
+ <Street>Airport Road</Street> 
+ <StreetAddress>Airport Road</StreetAddress> 
+ <AddressName>1042, 2539, 10</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>F454008</DCActivityCode> 
+ <DCActivityDesArabic>إقامة السقالات</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Scaffolding Contracting</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K712201</DCActivityCode> 
+ <DCActivityDesArabic>تأجير معدات وآليات التشييد والبناء</DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Construction Equipment and Machinery Rental 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>6958</CSN> 
+ <DCNameArabic>شركة الفطيم تاور اسكافولدنج (ش.ذ.م.م)</DCNameArabic> 
+ <DCNameEnglish>AL FUTTAIM TOWER SCAFFOLDING CO. (L.L.C)</DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>971-4-2858861</MainPhoneNumber> 
+ <Name>AL FUTTAIM TOWER SCAFFOLDING CO. (L.L.C)</Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber>N/A</ApartmentNumber> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>بناء ملك ماجد الفطيم</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>Majid Alfuttaim Bldg.</DCBuildingNammeEnglish> 
+ <Province>Umm Ramool</Province> 
+ <Street>Airport Road</Street> 
+ <StreetAddress>Airport Road</StreetAddress> 
+ <AddressName>4470, 5967, 6958</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G514325</DCActivityCode> 
+ <DCActivityDesArabic>تجارة السقالات</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Scaffolds Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G515920</DCActivityCode> 
+ <DCActivityDesArabic>تجارة معدات وآلات الرفع والتحميل</DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Handling, Loading and lifting Equipment Trading 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>509</CSN> 
+ <DCNameArabic>شركة الفطيم التجارية (ذ م م)</DCNameArabic> 
+ <DCNameEnglish>AL FUTTAIM TRADING COMPANY (L L C)</DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>971-4-2177777</MainPhoneNumber> 
+ <Name>AL FUTTAIM TRADING COMPANY (L L C)</Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber>N/A</ApartmentNumber> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>بناية الفطيم</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>Alfuttaim Bldg.</DCBuildingNammeEnglish> 
+ <Province>Al Muraqqabat</Province> 
+ <Street>Al Rigga Street</Street> 
+ <StreetAddress>Al Rigga Street</StreetAddress> 
+ <AddressName>1356, 2853, 509</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G521904</DCActivityCode> 
+ <DCActivityDesArabic>تجارة عامة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>General Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659901</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الإستثمار في المشروعات التجارية وتأسيسها وإدارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Commercial Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659902</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الإستثمار في المشروعات الصناعية وتأسيسها وإدارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Industrial Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659903</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الاستثمار في المشروعات الزراعية وتأسيسها وادارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Agricultural Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K701001</DCActivityCode> 
+ <DCActivityDesArabic>شراء الأراضي والعقارات وبيعها</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Real Estate Agent</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K701014</DCActivityCode> 
+ <DCActivityDesArabic>خدمات تأجير وإدارة العقارات الخاصة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Self- owned Property Management Services</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K702001</DCActivityCode> 
+ <DCActivityDesArabic>الوساطة في بيع العقارات وشرائها</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Real Estate Buying and Selling Brokerage</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>5117</CSN> 
+ <DCNameArabic>الفطيم للساعات والمجوهرات</DCNameArabic> 
+ <DCNameEnglish>AL FUTTAIM WATCHES & JEWELLERY</DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>971-4-2224142</MainPhoneNumber> 
+ <Name>AL FUTTAIM WATCHES & JEWELLERY</Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber>N/A</ApartmentNumber> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>N/A</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>ALFUTTAIM BLDG.</DCBuildingNammeEnglish> 
+ <Province>Al Rigga</Province> 
+ <Street>Al Maktoum Street</Street> 
+ <StreetAddress>Al Maktoum Street</StreetAddress> 
+ <AddressName>3482, 4979, 5117</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G521904</DCActivityCode> 
+ <DCActivityDesArabic>تجارة عامة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>General Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>211428</CSN> 
+ <DCNameArabic> 
+ اسبريت الفطيم (فرع من شركة الفطيم التجارية (ذ م م) ) 
+ </DCNameArabic> 
+ <DCNameEnglish> 
+ ESPRIT AL FUTTAIM (BR OF AL FUTTAIM TRADING COMPANY (L L C)) 
+ </DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>--</MainPhoneNumber> 
+ <Name> 
+ ESPRIT AL FUTTAIM (BR OF AL FUTTAIM TRADING COMPANY (L L C)) 
+ </Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber/> 
+ <City/> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic/> 
+ <DCBuildingNammeEnglish>N/A</DCBuildingNammeEnglish> 
+ <Province/> 
+ <Street/> 
+ <StreetAddress/> 
+ <AddressName>18500006, 20128364, 211428</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G521904</DCActivityCode> 
+ <DCActivityDesArabic>تجارة عامة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>General Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>201302</CSN> 
+ <DCNameArabic> 
+ اف اند اف الفطيم للتجارة العامة (فرع من شركة الفطيم التجارية (ذ م م) ) 
+ </DCNameArabic> 
+ <DCNameEnglish> 
+ F AND F ALFUTTAIM GENERAL TRADING (BR OF AL FUTTAIM TRADING COMPANY (L L C)) 
+ </DCNameEnglish> 
+ <MainEmailAddress/> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber/> 
+ <Name> 
+ F AND F ALFUTTAIM GENERAL TRADING (BR OF AL FUTTAIM TRADING COMPANY (L L C)) 
+ </Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber/> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic> 
+ محل رقم (M-205) ملك مركز الواحة - بردبي / القوز 
+ </DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish/> 
+ <Province/> 
+ <Street>N/A</Street> 
+ <StreetAddress>N/A</StreetAddress> 
+ <AddressName>1-7JW4F</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G521904</DCActivityCode> 
+ <DCActivityDesArabic>تجارة عامة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>General Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>211323</CSN> 
+ <DCNameArabic> 
+ جس (فرع من شركة الفطيم التجارية (ذ م م) ) 
+ </DCNameArabic> 
+ <DCNameEnglish> 
+ GUESS (BR OF AL FUTTAIM TRADING COMPANY (L L C)) 
+ </DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>--</MainPhoneNumber> 
+ <Name> 
+ GUESS (BR OF AL FUTTAIM TRADING COMPANY (L L C)) 
+ </Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber/> 
+ <City/> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic/> 
+ <DCBuildingNammeEnglish>N/A</DCBuildingNammeEnglish> 
+ <Province/> 
+ <Street/> 
+ <StreetAddress/> 
+ <AddressName>18449006, 20075364, 211323</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513101</DCActivityCode> 
+ <DCActivityDesArabic>تجارة المنسوجات والأقمشة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Textile Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513102</DCActivityCode> 
+ <DCActivityDesArabic> 
+ تجارة البطانيات والمناشف والمفارش المنزلية 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Blankets, Towels and Linens Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513107</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الملابس الجاهزة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Ready-made Garments Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513117</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الأحذية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Shoe Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513901</DCActivityCode> 
+ <DCActivityDesArabic>تجارة حقائب اليد والمنتجات الجلدية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Handbags and Leather Products Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513927</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الساعات وقطع غيارها</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Watches and Spare Parts Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513930</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الحلي من غير المعادن الثمينة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Imitation Jewellery Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513931</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الهدايا</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Gifts Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513933</DCActivityCode> 
+ <DCActivityDesArabic>تجارة لعب الأطفال</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Toys and Games Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513945</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الحقائب ولوازم السفر</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Suitcases and Travel Requisites Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513958</DCActivityCode> 
+ <DCActivityDesArabic>تجارة العطور ومستحضرات التجميل</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Perfumes and Cosmetics Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513961</DCActivityCode> 
+ <DCActivityDesArabic>تجارة النظارات الشمسية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Sunglasses Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>37</CSN> 
+ <DCNameArabic>شركة حمد ومحمد الفطيم (ش.ذ.م.م)</DCNameArabic> 
+ <DCNameEnglish> 
+ HAMAD &amp; MOHAMED AL FUTTAIM COMPANY (L.L.C) 
+ </DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>971-4-2177777</MainPhoneNumber> 
+ <Name> 
+ HAMAD &amp; MOHAMED AL FUTTAIM COMPANY (L.L.C) 
+ </Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber>N/A</ApartmentNumber> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>بناية الفطيم</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>Alfuttaim Bldg.</DCBuildingNammeEnglish> 
+ <Province>Al Muraqqabat</Province> 
+ <Street>Umer Ibn Al Khattab Street</Street> 
+ <StreetAddress>Umer Ibn Al Khattab Street</StreetAddress> 
+ <AddressName>1058, 2555, 37</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G501002</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الحافلات والشاحنات والقاطرات</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Buses and Trucks Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G502001</DCActivityCode> 
+ <DCActivityDesArabic>الصيانة والإصلاح العام للمركبات</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Auto General Repair</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G503001</DCActivityCode> 
+ <DCActivityDesArabic> 
+ تجارة قطع غيار السيارات والمركبات ومكوناتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Auto Spare Parts and components Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G503003</DCActivityCode> 
+ <DCActivityDesArabic>تجارة إطارات السيارات</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Tyres and Rims Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G503006</DCActivityCode> 
+ <DCActivityDesArabic>تجارة البطاريات السائلة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Batteries Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G514101</DCActivityCode> 
+ <DCActivityDesArabic>تجارة النفط الخام</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Crude Oil Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G514102</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الشحوم وزيوت التزليق</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Lubricants and Grease Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G514103</DCActivityCode> 
+ <DCActivityDesArabic>تجارة مشتقات تكرير النفط</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Refined Oil Products Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G521904</DCActivityCode> 
+ <DCActivityDesArabic>تجارة عامة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>General Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659901</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الإستثمار في المشروعات التجارية وتأسيسها وإدارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Commercial Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659902</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الإستثمار في المشروعات الصناعية وتأسيسها وإدارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Industrial Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>J659903</DCActivityCode> 
+ <DCActivityDesArabic> 
+ الاستثمار في المشروعات الزراعية وتأسيسها وادارتها 
+ </DCActivityDesArabic> 
+ <DCActivityDescriptionEng> 
+ Investment in Agricultural Enterprises and Management 
+ </DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K701001</DCActivityCode> 
+ <DCActivityDesArabic>شراء الأراضي والعقارات وبيعها</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Real Estate Agent</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K701014</DCActivityCode> 
+ <DCActivityDesArabic>خدمات تأجير وإدارة العقارات الخاصة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Self- owned Property Management Services</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K702001</DCActivityCode> 
+ <DCActivityDesArabic>الوساطة في بيع العقارات وشرائها</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Real Estate Buying and Selling Brokerage</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K749916</DCActivityCode> 
+ <DCActivityDesArabic>خدمات إدارة شركات ومؤسسات</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Management Services</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>200579</CSN> 
+ <DCNameArabic> 
+ ¿¿¿¿ ¿¿¿¿¿¿ ¿¿¿¿¿¿¿¿ (¿¿¿ ¿¿ ¿¿¿¿ ¿¿¿¿¿ ¿¿¿¿¿¿ (¿ . ¿. ¿. ¿)) 
+ </DCNameArabic> 
+ <DCNameEnglish> 
+ HERTZ RENTAL CAR (BR OF AL FUTTAIM SONS CO.(L.L.C.)) 
+ </DCNameEnglish> 
+ <MainEmailAddress/> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber/> 
+ <Name> 
+ HERTZ RENTAL CAR (BR OF AL FUTTAIM SONS CO.(L.L.C.)) 
+ </Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber/> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic> 
+ ¿¿¿ ¿¿¿ (5) ¿¿¿ ¿¿¿¿¿ ¿¿¿ ¿¿¿¿¿ ¿¿¿¿¿¿ - ¿¿¿¿ ¿¿¿¿ 
+ </DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish/> 
+ <Province/> 
+ <Street>N/A</Street> 
+ <StreetAddress>N/A</StreetAddress> 
+ <AddressName>1-6CXB5</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K711105</DCActivityCode> 
+ <DCActivityDesArabic>تأجير السيارات</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Car Rental</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>200715</CSN> 
+ <DCNameArabic> 
+ ¿¿¿¿ ¿¿¿¿¿¿ ¿¿¿¿¿¿¿¿ (¿¿¿ ¿¿ ¿¿¿¿ ¿¿¿¿¿ ¿¿¿¿¿¿ (¿ . ¿. ¿. ¿)) 
+ </DCNameArabic> 
+ <DCNameEnglish> 
+ HERTZ RENTAL CAR (BR OF AL FUTTAIM SONS CO.(L.L.C.)) 
+ </DCNameEnglish> 
+ <MainEmailAddress/> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber/> 
+ <Name> 
+ HERTZ RENTAL CAR (BR OF AL FUTTAIM SONS CO.(L.L.C.)) 
+ </Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber/> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic> 
+ ¿¿¿ ¿¿¿ (5) ¿¿¿ ¿¿¿¿¿ ¿¿¿ ¿¿¿¿¿ ¿¿¿¿¿¿ - ¿¿¿¿ ¿¿¿¿ 
+ </DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish/> 
+ <Province/> 
+ <Street>N/A</Street> 
+ <StreetAddress>N/A</StreetAddress> 
+ <AddressName>1-77HSN</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K711105</DCActivityCode> 
+ <DCActivityDesArabic>تأجير السيارات</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Car Rental</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>201069</CSN> 
+ <DCNameArabic> 
+ هرتز لتأجير السيارات (فرع من شركة ابناء الفطيم (ش . ذ. م. م)) 
+ </DCNameArabic> 
+ <DCNameEnglish> 
+ HERTZ RENTAL CAR (BR OF AL FUTTAIM SONS CO.(L.L.C.)) 
+ </DCNameEnglish> 
+ <MainEmailAddress/> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber/> 
+ <Name> 
+ HERTZ RENTAL CAR (BR OF AL FUTTAIM SONS CO.(L.L.C.)) 
+ </Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber/> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic> 
+ محل رقم (5) ملك صندوق دبي للدعم المالي - مبنى الات 
+ </DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish/> 
+ <Province/> 
+ <Street>N/A</Street> 
+ <StreetAddress>N/A</StreetAddress> 
+ <AddressName>1-7HHOH</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K711105</DCActivityCode> 
+ <DCActivityDesArabic>تأجير السيارات</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Car Rental</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>201021</CSN> 
+ <DCNameArabic> 
+ هرتز لتأجير السيارات (فرع من شركة ابناء الفطيم (ش . ذ. م. م)) 
+ </DCNameArabic> 
+ <DCNameEnglish> 
+ HERTZ RENTAL CAR (BR OF AL FUTTAIM SONS CO.(L.L.C.)) 
+ </DCNameEnglish> 
+ <MainEmailAddress/> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber/> 
+ <Name> 
+ HERTZ RENTAL CAR (BR OF AL FUTTAIM SONS CO.(L.L.C.)) 
+ </Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber/> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic> 
+ محل رقم (5) ملك صندوق دبي للدعم المالي - مبنى الات 
+ </DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish/> 
+ <Province/> 
+ <Street>N/A</Street> 
+ <StreetAddress>N/A</StreetAddress> 
+ <AddressName>1-7GQDF</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>K711105</DCActivityCode> 
+ <DCActivityDesArabic>تأجير السيارات</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Car Rental</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>100261</CSN> 
+ <DCNameArabic>ماجد الفطيم فاشن (ش ذ م م)</DCNameArabic> 
+ <DCNameEnglish>MAJID AL FUTTAIM FASHION (L L C)</DCNameEnglish> 
+ <MainEmailAddress>bipin_dhami@infosys.com</MainEmailAddress> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber>971-4-2062700</MainPhoneNumber> 
+ <Name>MAJID AL FUTTAIM FASHION (L L C)</Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber>N/A</ApartmentNumber> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic>بناية الفتان العقارية</DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish>ALFATAN REAL ESTATE BLDG.</DCBuildingNammeEnglish> 
+ <Province>Al Qusais 1st</Province> 
+ <Street>N/A</Street> 
+ <StreetAddress>N/A</StreetAddress> 
+ <AddressName>83815, 85542, 100261</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513107</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الملابس الجاهزة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Ready-made Garments Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513109</DCActivityCode> 
+ <DCActivityDesArabic>تجارة ملابس الأطفال</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Baby Wear Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513111</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الملابس الجاهزة الرجالية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Men's Garment Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513112</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الملابس الجاهزة النسائية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Ladies Garment Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513113</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الملابس الرياضية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Sports Wear Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513117</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الأحذية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Shoe Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513901</DCActivityCode> 
+ <DCActivityDesArabic>تجارة حقائب اليد والمنتجات الجلدية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Handbags and Leather Products Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513930</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الحلي من غير المعادن الثمينة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Imitation Jewellery Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513958</DCActivityCode> 
+ <DCActivityDesArabic>تجارة العطور ومستحضرات التجميل</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Perfumes and Cosmetics Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513961</DCActivityCode> 
+ <DCActivityDesArabic>تجارة النظارات الشمسية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Sunglasses Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G521904</DCActivityCode> 
+ <DCActivityDesArabic>تجارة عامة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>General Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>200994</CSN> 
+ <DCNameArabic>مكس (فرع من ماجد الفطيم فاشن (ش ذ م م))</DCNameArabic> 
+ <DCNameEnglish> 
+ MEXX (BR OF MAJID AL FUTTAIM FASHION (L L C)) 
+ </DCNameEnglish> 
+ <MainEmailAddress/> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber/> 
+ <Name> 
+ MEXX (BR OF MAJID AL FUTTAIM FASHION (L L C)) 
+ </Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber/> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic> 
+ محل (F029) ملك مردف سيتي سنتر (فرع من ماجد الفطيم 
+ </DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish/> 
+ <Province/> 
+ <Street>N/A</Street> 
+ <StreetAddress>N/A</StreetAddress> 
+ <AddressName>1-7GFLN</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513109</DCActivityCode> 
+ <DCActivityDesArabic>تجارة ملابس الأطفال</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Baby Wear Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513111</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الملابس الجاهزة الرجالية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Men's Garment Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513107</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الملابس الجاهزة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Readymade Garments Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513112</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الملابس الجاهزة النسائية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Ladies Garment Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513113</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الملابس الرياضية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Sports Wear Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G521904</DCActivityCode> 
+ <DCActivityDesArabic>تجارة عامة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>General Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513901</DCActivityCode> 
+ <DCActivityDesArabic>تجارة حقائب اليد والمنتجات الجلدية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Handbags and Leather Products Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513930</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الحلي من غير المعادن الثمينة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Imitation Jewellery Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513958</DCActivityCode> 
+ <DCActivityDesArabic>تجارة العطور ومستحضرات التجميل</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Perfumes and Cosmetics Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513961</DCActivityCode> 
+ <DCActivityDesArabic>تجارة النظارات الشمسية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Sunglasses Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513117</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الأحذية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Shoe Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ <Account> 
+ <CSN>201653</CSN> 
+ <DCNameArabic>مكس (فرع من ماجد الفطيم فاشن (ش ذ م م))</DCNameArabic> 
+ <DCNameEnglish> 
+ MEXX (BR OF MAJID AL FUTTAIM FASHION (L L C)) 
+ </DCNameEnglish> 
+ <MainEmailAddress/> 
+ <MainFaxNumber/> 
+ <MainPhoneNumber/> 
+ <Name> 
+ MEXX (BR OF MAJID AL FUTTAIM FASHION (L L C)) 
+ </Name> 
+ <ListOfAccount_BusinessAddress> 
+ <Account_BusinessAddress  IsPrimaryMVG="Y"> 
+ <ApartmentNumber/> 
+ <City>DUBAI</City> 
+ <Country>United Arab Emirates</Country> 
+ <DCAreaPOBox/> 
+ <DCBuildingNameArabic> 
+ محل (F029) ملك مردف سيتي سنتر (فرع من ماجد الفطيم 
+ </DCBuildingNameArabic> 
+ <DCBuildingNammeEnglish/> 
+ <Province/> 
+ <Street>N/A</Street> 
+ <StreetAddress>N/A</StreetAddress> 
+ <AddressName>1-7LXGP</AddressName> 
+ </Account_BusinessAddress> 
+ </ListOfAccount_BusinessAddress> 
+ <ListOfAccount_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513109</DCActivityCode> 
+ <DCActivityDesArabic>تجارة ملابس الأطفال</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Baby Wear Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513111</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الملابس الجاهزة الرجالية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Men's Garment Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513107</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الملابس الجاهزة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Ready-made Garments Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513112</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الملابس الجاهزة النسائية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Ladies Garment Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513113</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الملابس الرياضية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Sports Wear Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G521904</DCActivityCode> 
+ <DCActivityDesArabic>تجارة عامة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>General Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513901</DCActivityCode> 
+ <DCActivityDesArabic>تجارة حقائب اليد والمنتجات الجلدية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Handbags & Leather Products Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513930</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الحلي من غير المعادن الثمينة</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Imitation Jewellery Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513958</DCActivityCode> 
+ <DCActivityDesArabic>تجارة العطور ومستحضرات التجميل</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Perfumes and Cosmetics Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513961</DCActivityCode> 
+ <DCActivityDesArabic>تجارة النظارات الشمسية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Sunglasses Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ <Account_DCAccountActivity  IsPrimaryMVG="N"> 
+ <DCActivityCode>G513117</DCActivityCode> 
+ <DCActivityDesArabic>تجارة الأحذية</DCActivityDesArabic> 
+ <DCActivityDescriptionEng>Shoe Trading</DCActivityDescriptionEng> 
+ </Account_DCAccountActivity> 
+ </ListOfAccount_DCAccountActivity> 
+ </Account> 
+ </ListOfDcQueryMemberInfo> 
+ </SiebelMessage> 
+ </rpc:QBECommDirResponse> 
+ </SOAP-ENV:Body> 
+  
+ 
+ 

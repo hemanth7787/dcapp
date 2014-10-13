@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="urn:Ws" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="urn:Ws" xmlns:intf="urn:Ws" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.2
+Built on May 03, 2005 (02:20:24 EDT)-->
+
+   <wsdl:message name="getSRSummaryRequest2">
+
+      <wsdl:part name="userName" type="soapenc:string"/>
+
+      <wsdl:part name="membernumber" type="soapenc:string"/>
+
+      <wsdl:part name="language" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCOOInDetailResponse">
+
+      <wsdl:part name="getCOOInDetailReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCOOInDetailRequest2">
+
+      <wsdl:part name="srNumber" type="soapenc:string"/>
+
+      <wsdl:part name="cooNumber" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCOOInDetailRequest1">
+
+      <wsdl:part name="srNumber" type="soapenc:string"/>
+
+      <wsdl:part name="cooNumber" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCurrencyAndUOMRequest">
+
+   </wsdl:message>
+
+   <wsdl:message name="getSRSummaryRequest">
+
+      <wsdl:part name="userName" type="soapenc:string"/>
+
+      <wsdl:part name="membernumber" type="soapenc:string"/>
+
+      <wsdl:part name="language" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSRSummaryRequest1">
+
+      <wsdl:part name="userName" type="soapenc:string"/>
+
+      <wsdl:part name="membernumber" type="soapenc:string"/>
+
+      <wsdl:part name="language" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCOOInDetailRequest">
+
+      <wsdl:part name="srNumber" type="soapenc:string"/>
+
+      <wsdl:part name="cooNumber" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="authWithProfileRequest">
+
+      <wsdl:part name="userName" type="soapenc:string"/>
+
+      <wsdl:part name="password" type="soapenc:string"/>
+
+      <wsdl:part name="deviceID" type="soapenc:string"/>
+
+      <wsdl:part name="pushnotetoken" type="soapenc:string"/>
+
+      <wsdl:part name="pushnotepermission" type="soapenc:string"/>
+
+      <wsdl:part name="language" type="soapenc:string"/>
+
+      <wsdl:part name="ostype" type="soapenc:string"/>
+
+      <wsdl:part name="updatedate" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSRSummaryResponse2">
+
+      <wsdl:part name="getSRSummaryReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="authWithProfileRequest2">
+
+      <wsdl:part name="userName" type="soapenc:string"/>
+
+      <wsdl:part name="password" type="soapenc:string"/>
+
+      <wsdl:part name="deviceID" type="soapenc:string"/>
+
+      <wsdl:part name="pushnotetoken" type="soapenc:string"/>
+
+      <wsdl:part name="pushnotepermission" type="soapenc:string"/>
+
+      <wsdl:part name="language" type="soapenc:string"/>
+
+      <wsdl:part name="ostype" type="soapenc:string"/>
+
+      <wsdl:part name="updatedate" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCurrencyAndUOMRequest1">
+
+   </wsdl:message>
+
+   <wsdl:message name="getCOOInDetailResponse2">
+
+      <wsdl:part name="getCOOInDetailReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="authWithProfileRequest1">
+
+      <wsdl:part name="userName" type="soapenc:string"/>
+
+      <wsdl:part name="password" type="soapenc:string"/>
+
+      <wsdl:part name="deviceID" type="soapenc:string"/>
+
+      <wsdl:part name="pushnotetoken" type="soapenc:string"/>
+
+      <wsdl:part name="pushnotepermission" type="soapenc:string"/>
+
+      <wsdl:part name="language" type="soapenc:string"/>
+
+      <wsdl:part name="ostype" type="soapenc:string"/>
+
+      <wsdl:part name="updatedate" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCurrencyAndUOMRequest2">
+
+   </wsdl:message>
+
+   <wsdl:message name="getCOOInDetailResponse1">
+
+      <wsdl:part name="getCOOInDetailReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="authWithProfileResponse">
+
+      <wsdl:part name="authWithProfileReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="authWithProfileResponse1">
+
+      <wsdl:part name="authWithProfileReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="authWithProfileResponse2">
+
+      <wsdl:part name="authWithProfileReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSRSummaryResponse1">
+
+      <wsdl:part name="getSRSummaryReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCurrencyAndUOMResponse1">
+
+      <wsdl:part name="getCurrencyAndUOMReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCurrencyAndUOMResponse">
+
+      <wsdl:part name="getCurrencyAndUOMReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCurrencyAndUOMResponse2">
+
+      <wsdl:part name="getCurrencyAndUOMReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSRSummaryResponse">
+
+      <wsdl:part name="getSRSummaryReturn" type="soapenc:string"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Dcmobws">
+
+      <wsdl:operation name="getSRSummary" parameterOrder="userName membernumber language">
+
+         <wsdl:input message="impl:getSRSummaryRequest" name="getSRSummaryRequest"/>
+
+         <wsdl:output message="impl:getSRSummaryResponse" name="getSRSummaryResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSRSummary" parameterOrder="userName membernumber language">
+
+         <wsdl:input message="impl:getSRSummaryRequest1" name="getSRSummaryRequest1"/>
+
+         <wsdl:output message="impl:getSRSummaryResponse1" name="getSRSummaryResponse1"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSRSummary" parameterOrder="userName membernumber language">
+
+         <wsdl:input message="impl:getSRSummaryRequest2" name="getSRSummaryRequest2"/>
+
+         <wsdl:output message="impl:getSRSummaryResponse2" name="getSRSummaryResponse2"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCOOInDetail" parameterOrder="srNumber cooNumber">
+
+         <wsdl:input message="impl:getCOOInDetailRequest" name="getCOOInDetailRequest"/>
+
+         <wsdl:output message="impl:getCOOInDetailResponse" name="getCOOInDetailResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCOOInDetail" parameterOrder="srNumber cooNumber">
+
+         <wsdl:input message="impl:getCOOInDetailRequest1" name="getCOOInDetailRequest1"/>
+
+         <wsdl:output message="impl:getCOOInDetailResponse1" name="getCOOInDetailResponse1"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCOOInDetail" parameterOrder="srNumber cooNumber">
+
+         <wsdl:input message="impl:getCOOInDetailRequest2" name="getCOOInDetailRequest2"/>
+
+         <wsdl:output message="impl:getCOOInDetailResponse2" name="getCOOInDetailResponse2"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCurrencyAndUOM">
+
+         <wsdl:input message="impl:getCurrencyAndUOMRequest" name="getCurrencyAndUOMRequest"/>
+
+         <wsdl:output message="impl:getCurrencyAndUOMResponse" name="getCurrencyAndUOMResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCurrencyAndUOM">
+
+         <wsdl:input message="impl:getCurrencyAndUOMRequest1" name="getCurrencyAndUOMRequest1"/>
+
+         <wsdl:output message="impl:getCurrencyAndUOMResponse1" name="getCurrencyAndUOMResponse1"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCurrencyAndUOM">
+
+         <wsdl:input message="impl:getCurrencyAndUOMRequest2" name="getCurrencyAndUOMRequest2"/>
+
+         <wsdl:output message="impl:getCurrencyAndUOMResponse2" name="getCurrencyAndUOMResponse2"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="authWithProfile" parameterOrder="userName password deviceID pushnotetoken pushnotepermission language ostype updatedate">
+
+         <wsdl:input message="impl:authWithProfileRequest" name="authWithProfileRequest"/>
+
+         <wsdl:output message="impl:authWithProfileResponse" name="authWithProfileResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="authWithProfile" parameterOrder="userName password deviceID pushnotetoken pushnotepermission language ostype updatedate">
+
+         <wsdl:input message="impl:authWithProfileRequest1" name="authWithProfileRequest1"/>
+
+         <wsdl:output message="impl:authWithProfileResponse1" name="authWithProfileResponse1"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="authWithProfile" parameterOrder="userName password deviceID pushnotetoken pushnotepermission language ostype updatedate">
+
+         <wsdl:input message="impl:authWithProfileRequest2" name="authWithProfileRequest2"/>
+
+         <wsdl:output message="impl:authWithProfileResponse2" name="authWithProfileResponse2"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="DcmobwsSoapBinding" type="impl:Dcmobws">
+
+      <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getSRSummary">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getSRSummaryRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:Ws" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getSRSummaryResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:Ws" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSRSummary">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getSRSummaryRequest1">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:Ws" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getSRSummaryResponse1">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:Ws" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSRSummary">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getSRSummaryRequest2">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:Ws" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getSRSummaryResponse2">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:Ws" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCOOInDetail">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getCOOInDetailRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:Ws" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getCOOInDetailResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:Ws" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCOOInDetail">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getCOOInDetailRequest1">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:Ws" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getCOOInDetailResponse1">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:Ws" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCOOInDetail">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getCOOInDetailRequest2">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:Ws" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getCOOInDetailResponse2">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:Ws" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCurrencyAndUOM">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getCurrencyAndUOMRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:Ws" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getCurrencyAndUOMResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:Ws" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCurrencyAndUOM">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getCurrencyAndUOMRequest1">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:Ws" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getCurrencyAndUOMResponse1">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:Ws" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getCurrencyAndUOM">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getCurrencyAndUOMRequest2">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:Ws" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getCurrencyAndUOMResponse2">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:Ws" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="authWithProfile">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="authWithProfileRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:Ws" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="authWithProfileResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:Ws" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="authWithProfile">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="authWithProfileRequest1">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:Ws" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="authWithProfileResponse1">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:Ws" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="authWithProfile">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="authWithProfileRequest2">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:Ws" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="authWithProfileResponse2">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:Ws" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="DcmobwsService">
+
+      <wsdl:port binding="impl:DcmobwsSoapBinding" name="Dcmobws">
+
+         <wsdlsoap:address location="http://dcwebapps.dubaichamber.com:8080/dcciws/services/Dcmobws"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
