@@ -12,8 +12,9 @@ class CompanyProfileController extends \BaseController {
 	{
 		$user = Auth::user();
 		//$profile = User::find(1)->company_profile;
-		$profile = $user->profile?: new CompanyProfile;
-		$profile->user_id = $user->id;
+		//$profile = $user->profile?: new CompanyProfile;
+		$profile =CompanyProfile::firstOrCreate(array('user_id' => $user->id));
+		//$profile->user_id = $user->id;
 		$profile->save();
 		//$profile = $user->company_profile ?: new CompanyProfile;
 		//$profile = CompanyProfile::find(1)->user; //->company_profile;
@@ -53,7 +54,7 @@ class CompanyProfileController extends \BaseController {
 
 			// changed this to get first or create
 			// $profile = new CompanyProfile();
-			$profile = CompanyProfile::firstOrCreate(array('id' => Input::get('user_id')));
+			$profile = CompanyProfile::firstOrCreate(array('user_id' => Input::get('user_id')));
 
 			$profile->user_id	= Input::get('user_id');
 			$profile->company_name = Input::get('company_name');
