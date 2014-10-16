@@ -4,6 +4,7 @@ class CompanyProfile extends Eloquent{
 	// can specify table name like this unless you got it right.
 	// without below line laravel will look into table company_profiles
 	protected $table = 'company_profile';
+	protected $fillable = array('user_id');
 
 
 	public function user(){
