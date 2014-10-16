@@ -58,5 +58,11 @@ def publish():
     code_dir = "/srv/www/dcapp_api/dc-app"
     with cd(code_dir):
         run("umask 002 && git pull")
-    print(green("""Code published :)
-        """, bold=True))
+        print(green("""Code published :)""", bold=True))
+
+@task()
+def migrate():
+    code_dir = "/srv/www/dcapp_api/dc-app"
+    with cd(code_dir):
+        run("umask 002 && php artisan migrate")
+        print(green("""Database migrated :)""", bold=True))

@@ -23,7 +23,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'dc_app_db',
+			'database'  => 'dcapp_api_db',
 			'username'  => 'root',
 			'password'  => 'silversurf123',
 			'charset'   => 'utf8',
