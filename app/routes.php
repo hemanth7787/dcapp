@@ -40,4 +40,14 @@ Route::post('api/account/signup', 'AccountController@signUp');
 //Route::post('login', array('uses' => 'AccountController@doLogin'));
 //Route::get('logout', array('uses' => 'AccountController@doLogout'));
 
+Route::get('api/profile', array('before' => 'auth.token',
+ 			'uses' => 'CompanyProfileController@index'));
+Route::post('api/profile', array('before' => 'auth.token',
+ 			'uses' => 'CompanyProfileController@create'));
 
+
+Event::listen('auth.token.valid', function($user)
+{
+  //Token is valid, set the user on auth system.
+  Auth::setUser($user);
+});
