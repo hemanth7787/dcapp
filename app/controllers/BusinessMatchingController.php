@@ -14,6 +14,31 @@ class BusinessMatchingController extends \BaseController {
 		return Response::json($categories);
 	}
 
+	public function deleteCategories()
+	{
+		$rules = array(
+		    'parent_category'  => 'required|alpha_dash|max:50',
+		    'child_category'   => 'required|alpha_dash|max:50',
+
+		);
+		$validator = Validator::make(Input::all(), $rules);
+			if ($validator->fails()) {
+			return Response::json(array('errors' => $validator->messages(),'status'=>'failed'));
+		}
+		else{
+
+		$user = Auth::user();
+		// $categories = BmCategory::find(array('user_id' => $user->id,
+		// 		'parent_category' => Input::get('parent_category'),
+		// 		'child_category'  => Input::get('child_category')));
+		$categories = BmCategory::where('user_id', $user->id)
+		->where('parent_category', Input::get('parent_category'))
+		->where('child_category' , Input::get('child_category'))->delete();
+		return Response::json(array('status'=>'success'));
+		}
+		
+	}
+
 	public function setCategories()
 	{
 		// $comments = array(
@@ -80,10 +105,7 @@ class BusinessMatchingController extends \BaseController {
 
 			return Response::json(array('status'=>'success'));
 		}
-	// 
+
 	}
-
-
-
 
 }

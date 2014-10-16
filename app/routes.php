@@ -54,6 +54,8 @@ Route::get('api/business-categories', array('before' => 'auth.token',
  			'uses' => 'BusinessMatchingController@getCategories'));
 Route::post('api/business-categories', array('before' => 'auth.token',
  			'uses' => 'BusinessMatchingController@setCategories'));
+Route::post('api/business-categories/delete', array('before' => 'auth.token',
+ 			'uses' => 'BusinessMatchingController@deleteCategories'));
 
 Event::listen('auth.token.valid', function($user)
 {
