@@ -31,7 +31,7 @@ class CompanyProfileController extends \BaseController {
 	public function create()
 	{
 			$rules = array(
-		    'user_id'       => 'required|integer|exists:users,id',
+		    //'user_id'       => 'required|integer|exists:users,id',
 		    'company_name'  => 'required|alphaNum',
 		    'designation'   => 'required|alphaNum',
 			'company_email' => 'required|email', 
@@ -45,18 +45,19 @@ class CompanyProfileController extends \BaseController {
 		}
 		else{
 
-			// also validate user profile belons to current user
-			if(Auth::user()->id != Input::get('user_id'))
-			{
-				return Response::json(array('errors' => 'Insufficient privilege edit this profile',
-					'status'=>'failed'));
-			}
+			// also validate user profile belons to current user (no need)
+			// if(Auth::user()->id != Input::get('user_id'))
+			// {
+			// 	return Response::json(array('errors' => 'Insufficient privilege edit this profile',
+			// 		'status'=>'failed'));
+			// }
 
 			// changed this to get first or create
 			// $profile = new CompanyProfile();
-			$profile = CompanyProfile::firstOrCreate(array('user_id' => Input::get('user_id')));
+			$user = Auth::user();
+			$profile = CompanyProfile::firstOrCreate(array('user_id' => $user->id));
 
-			$profile->user_id	= Input::get('user_id');
+			//$profile->user_id	= Input::get('user_id');
 			$profile->company_name = Input::get('company_name');
 			$profile->designation  = Input::get('designation');
 			$profile->company_email = Input::get('company_email');
