@@ -12,10 +12,13 @@ class CompanyProfileController extends \BaseController {
 	{
 		$user = Auth::user();
 		//$profile = User::find(1)->company_profile;
-		//$profile = $user->company_profile;
+		$profile = $user->profile?: new CompanyProfile;
+		$profile->user_id = $user->id;
+		$profile->save();
 		//$profile = $user->company_profile ?: new CompanyProfile;
-		$profile = CompanyProfile::find(1)->user; //->company_profile;
-		return var_dump($profile);
+		//$profile = CompanyProfile::find(1)->user; //->company_profile;
+		//return var_dump($profile);
+		return Response::json($profile);
 
 	}
 
