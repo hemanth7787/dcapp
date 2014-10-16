@@ -28,4 +28,14 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->hasOne('CompanyProfile');
 	}
 
+	public function business()
+	{
+		return $this->hasOne('BusinessMatching');
+	}
+	
+	public function categories()
+	{
+		return $this->hasMany('BmCategory');
+	}
+
 }

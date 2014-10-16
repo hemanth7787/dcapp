@@ -45,6 +45,15 @@ Route::get('api/profile', array('before' => 'auth.token',
 Route::post('api/profile', array('before' => 'auth.token',
  			'uses' => 'CompanyProfileController@create'));
 
+Route::get('api/business-matching', array('before' => 'auth.token',
+ 			'uses' => 'BusinessMatchingController@getBm'));
+Route::post('api/business-matching', array('before' => 'auth.token',
+ 			'uses' => 'BusinessMatchingController@setBm'));
+
+Route::get('api/business-categories', array('before' => 'auth.token',
+ 			'uses' => 'BusinessMatchingController@getCategories'));
+Route::post('api/business-categories', array('before' => 'auth.token',
+ 			'uses' => 'BusinessMatchingController@setCategories'));
 
 Event::listen('auth.token.valid', function($user)
 {
