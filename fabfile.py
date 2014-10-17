@@ -52,12 +52,13 @@ def dev():
 
 @task()
 def publish():
-    command = "umask 002 && git push"
+    command = "git push"
     local('bash -l -c "%s"' % command)
     # Remote code directory
     code_dir = "/srv/www/dcapp_api/dc-app"
     with cd(code_dir):
-        run("umask 002 && git pull")
+        #run("umask 002 && git pull")
+        run("git pull")
         print(green("""Code published :)""", bold=True))
 
 @task()

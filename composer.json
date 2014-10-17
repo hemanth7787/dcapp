@@ -5,7 +5,8 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.2.*",
-		"tappleby/laravel-auth-token": "~0.3"
+		"tappleby/laravel-auth-token": "~0.3",
+		"intervention/image": "~2.0"
 	},
 	"autoload": {
 		"classmap": [

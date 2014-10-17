@@ -1,5 +1,5 @@
 <?php
-
+use Intervention\Image\ImageServiceProvider;
 class CompanyProfileController extends \BaseController {
 
 	/**
@@ -15,10 +15,12 @@ class CompanyProfileController extends \BaseController {
 		//$profile = $user->profile?: new CompanyProfile;
 		$profile =CompanyProfile::firstOrCreate(array('user_id' => $user->id));
 		//$profile->user_id = $user->id;
-		$profile->save();
+		//$profile->save();
 		//$profile = $user->company_profile ?: new CompanyProfile;
 		//$profile = CompanyProfile::find(1)->user; //->company_profile;
 		//return var_dump($profile);
+		$host_path = Config::get('app.host_path');
+		$profile->image = $host_path.$profile->image;
 		return Response::json($profile);
 
 	}
@@ -30,6 +32,9 @@ class CompanyProfileController extends \BaseController {
 	 */
 	public function create()
 	{
+
+
+
 			$rules = array(
 		    //'user_id'       => 'required|integer|exists:users,id',
 		    'company_name'  => 'required|alphaNum',
@@ -37,6 +42,7 @@ class CompanyProfileController extends \BaseController {
 			'company_email' => 'required|email', 
 			'membership_number'      => 'required|alphaNum',
 			'trade_license_number'   => 'required|alphaNum',
+			'image'		    => 'image',
 
 		);
 	$validator = Validator::make(Input::all(), $rules);
@@ -44,16 +50,6 @@ class CompanyProfileController extends \BaseController {
 			return Response::json(array('errors' => $validator->messages(),'status'=>'failed'));
 		}
 		else{
-
-			// also validate user profile belons to current user (no need)
-			// if(Auth::user()->id != Input::get('user_id'))
-			// {
-			// 	return Response::json(array('errors' => 'Insufficient privilege edit this profile',
-			// 		'status'=>'failed'));
-			// }
-
-			// changed this to get first or create
-			// $profile = new CompanyProfile();
 			$user = Auth::user();
 			$profile = CompanyProfile::firstOrCreate(array('user_id' => $user->id));
 
@@ -63,11 +59,30 @@ class CompanyProfileController extends \BaseController {
 			$profile->company_email = Input::get('company_email');
 			$profile->membership_number = Input::get('membership_number');
 			$profile->trade_license_number = Input::get('trade_license_number');
+			$profile->image = Input::file('image');
+
+			// $pathToFile = public_path().'/images/dd.jpg';
+			// $img=Image::make(Input::file('image')->getRealPath())->save($pathToFile);
+			// return $img->response(); //$img->response('jpg');
+			// $profile->image = $pathToFile;
+
+if(Input::file('image')!= null){
+$image = Input::file('image');
+$filename      = bin2hex(mcrypt_create_iv(22, MCRYPT_DEV_URANDOM)).'-'.time(). '.' . $image->getClientOriginalExtension();
+$relative_path = 'images/profile/' . $filename;
+$path = public_path($relative_path);
+Image::make($image->getRealPath())->save($path);
+$profile->image = $relative_path;
+}
+
+//     ->resize(870, null, true, false)
+
+			}
 
 			$profile->save();
 			return Response::json(array('status'=>'success'));
 		}
-	}
+
 
 
 	/**

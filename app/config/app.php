@@ -123,6 +123,7 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		//3rd party
 		'Tappleby\AuthToken\AuthTokenServiceProvider',
+		'Intervention\Image\ImageServiceProvider',
 
 	),
 
@@ -193,6 +194,7 @@ return array(
 		// 3rd party
 		'AuthToken' => 'Tappleby\Support\Facades\AuthToken',
 		'AuthTokenNotAuthorizedException' => 'Tappleby\AuthToken\Exceptions\NotAuthorizedException',
+		'Image' => 'Intervention\Image\Facades\Image',
 
 	),
 
