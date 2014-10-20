@@ -23,6 +23,8 @@
 //Route::post('api-token-auth', 'AccountController@getToken');
 
 //(authendicate test)
+//Route::get('', 'BusinessMatchingController@test');
+
 Route::get('api/account/auth', 'Tappleby\AuthToken\AuthTokenController@index');
 
 // (sign in) post username password to get access token
@@ -56,6 +58,11 @@ Route::post('api/business-categories', array('before' => 'auth.token',
  			'uses' => 'BusinessMatchingController@setCategories'));
 Route::post('api/business-categories/delete', array('before' => 'auth.token',
  			'uses' => 'BusinessMatchingController@deleteCategories'));
+
+
+
+Route::post('api/account/social/token-auth', 'SocialAccountController@login');
+Route::post('api/account/social/signup', 'SocialAccountController@signUp');
 
 Event::listen('auth.token.valid', function($user)
 {
