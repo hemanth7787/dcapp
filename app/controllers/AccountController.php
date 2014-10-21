@@ -16,10 +16,10 @@ class AccountController extends \BaseController {
 public function signUp()
 {
 	$rules = array(
-		    'name'     => 'required|alphaNum',
+		    'name'     => 'required',
 		    'username' => 'required|alphaNum|unique:users',
 			'email'    => 'required|email|unique:users', // make sure the email is an actual email
-			'password' => 'required|alphaNum|min:3|', // password can only be alphanumeric and has to be greater than 3 characters
+			'password' => 'required|min:3', // password can only be alphanumeric and has to be greater than 3 characters
 			'mobile'   => 'required|integer',
 		);
 	$validator = Validator::make(Input::all(), $rules);

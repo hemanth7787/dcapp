@@ -5,7 +5,7 @@ class SocialAccountController extends \BaseController {
 	public function signUp()
 	{
 	$rules = array(
-		    'name'     => 'required|alphaNum',
+		    'name'     => 'required',
 		    //'username' => 'required|alphaNum|unique:users',
 			'email'    => 'required|email|unique:users', // make sure the email is an actual email
 			//'password' => 'required|alphaNum|min:3', // password can only be alphanumeric and has to be greater than 3 characters
@@ -14,7 +14,7 @@ class SocialAccountController extends \BaseController {
 			'social_id' => 'required|alphaNum|unique:social_accounts',
 			'token'   	=> 'required|alphaNum',
 			'provider' 	=> 'required|alphaNum',
-			'extra_data'=> 'alphaNum',
+			//'extra_data'=> 'alphaNum',
 
 		);
 	$validator = Validator::make(Input::all(), $rules);
@@ -30,6 +30,7 @@ class SocialAccountController extends \BaseController {
 
 			$user = new User();
 			$user->name     = Input::get('name' );
+			// this may be long
 			$user->username = Input::get('social_id');
 			$user->email    = Input::get('email');
 			//random password
