@@ -12,7 +12,7 @@ class SocialAccountController extends \BaseController {
 			'mobile'   => 'required|integer',
 
 			'social_id' => 'required|alphaNum|unique:social_accounts',
-			'token'   	=> 'required|alphaNum',
+			'token'   	=> 'required',
 			'provider' 	=> 'required|alphaNum',
 			//'extra_data'=> 'alphaNum',
 
@@ -57,7 +57,7 @@ class SocialAccountController extends \BaseController {
 	{
 			$rules = array(
 			'social_id' => 'required|alphaNum',
-			'token'   	=> 'required|alphaNum',
+			'token'   	=> 'required',
 			'provider' 	=> 'required|alphaNum',
 		);
 	$validator = Validator::make(Input::all(), $rules);

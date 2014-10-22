@@ -67,3 +67,10 @@ def migrate():
     with cd(code_dir):
         run("umask 002 && php artisan migrate")
         print(green("""Database migrated :)""", bold=True))
+
+@task()
+def stash():
+    code_dir = "/srv/www/dcapp_api/dc-app"
+    with cd(code_dir):
+        run("git  stash")
+        print(green("""Remote changes destroyed ;)""", bold=True))
