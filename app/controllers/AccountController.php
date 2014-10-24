@@ -2,17 +2,6 @@
 
 class AccountController extends \BaseController {
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-		public function showLogin()
-	{
-		// show the form
-		return View::make('login');
-	}
-
 public function signUp()
 {
 	$rules = array(
@@ -27,14 +16,6 @@ public function signUp()
 			return Response::json(array('errors' => $validator->messages(),'status'=>'failed'));
 		}
 		else{
-			// $userdata = array(
-			// 'name'     => Input::get('name' ),
-		 	// 'username' => Input::get('username'),
-			// 'email'    => Input::get('email'),
-			// 'password' => Input::get('password'),
-			// 'mobile'   => Input::get('mobile'),
-			// );
-			//User::create($userdata);
 			$user = new User();
 
 			$user->name     = Input::get('name' );
@@ -49,129 +30,89 @@ public function signUp()
 
 }
 
-
-
-	public function doLogin()
-	{
-		// validate the info, create rules for the inputs
-		$rules = array(
-			'email'    => 'required|email', // make sure the email is an actual email
-			'password' => 'required|alphaNum|min:3' // password can only be alphanumeric and has to be greater than 3 characters
+public function login()
+{
+	$rules = array(
+			'username'  => 'required|alphaNum',
+			'password'  => 'required|min:3',
 		);
-
-		// run the validation rules on the inputs from the form
-		$validator = Validator::make(Input::all(), $rules);
-
-		// if the validator fails, redirect back to the form
-		if ($validator->fails()) {
-			return Redirect::to('login')
-				->withErrors($validator) // send back all errors to the login form
-				->withInput(Input::except('password')); // send back the input (not the password) so that we can repopulate the form
-		} else {
-
-			// create our user data for the authentication
-			$userdata = array(
-				'email' 	=> Input::get('email'),
-				'password' 	=> Input::get('password')
-			);
-
-			// attempt to do the login
-			if (Auth::attempt($userdata)) {
-				// validation successful!
-				// redirect them to the secure section or whatever
-				// return Redirect::to('secure');
-				// for now we'll just echo success (even though echoing in a controller is bad)
-				echo 'SUCCESS!';
-
-			} else {	 	
-
-				// validation not successful, send back to form	
-				return Redirect::to('login');
-
-			}
-
+	$validator = Validator::make(Input::all(), $rules);
+	if ($validator->fails()) 
+		{
+			return Response::json(array('errors' => $validator->messages(),'status'=>'failed'));
 		}
+	else
+		{
+		$username = Input::get('username');
+		$password = Input::get('password');
+
+		if (Auth::attempt(array('username' => $username, 'password' => $password)))
+			{
+    			$user   = Auth::user();
+			}
+		else
+			{
+				$client = new SoapClient("http://dcwebapps.dubaichamber.com:8080/dcciws/services/Dcmobws?wsdl");
+    			$params = array (
+    			"userName" => $username,
+    			"password" => $password,
+    			);
+				$response = $client->__soapCall('authWithProfile', $params);
+				$parser = simplexml_load_string($response);
+
+				if($parser->ROW->MEMBER_NO)
+				{
+					// will have a problem if uname is already registered in app db 
+					//and valid user from chamber try to login
+
+					$user   = new User();
+
+					$user->name     = $parser->ROW->MEMBER_NAME_EN;
+					$user->username = $username;
+					$user->email    = $parser->ROW->EMAIL_ADDR;
+					$user->password = Hash::make($password);
+					$user->mobile   = $parser->ROW->PHONE;
+					$user->save();
+
+					$dccom_profile = new DccomProfile();
+					$dccom_profile->user_id   = $user->id;
+					$dccom_profile->MEMBER_NO = (int)($parser->ROW->MEMBER_NO);
+					$dccom_profile->MEMBER_NAME_EN = $parser->ROW->MEMBER_NAME_EN;
+					$dccom_profile->MEMBER_NAME_AR = $parser->ROW->MEMBER_NAME_AR;
+					$dccom_profile->MEMBER_TYPE    = $parser->ROW->MEMBER_TYPE;
+					$dccom_profile->MEMBER_STATUS  = $parser->ROW->MEMBER_STATUS;
+					$dccom_profile->ADDRESS1 = $parser->ROW->ADDRESS1;
+					$dccom_profile->PO_BOX   = $parser->ROW->PO_BOX;
+					$dccom_profile->CITY     = $parser->ROW->CITY;
+					$dccom_profile->AREA   = $parser->ROW->AREA;
+					$dccom_profile->STREET = $parser->ROW->STREET;
+					$dccom_profile->PHONE  = $parser->ROW->PHONE;
+					$dccom_profile->CONTACT_NAME = $parser->ROW->CONTACT_NAME;
+					$dccom_profile->LOGIN      = $parser->ROW->LOGIN;
+					$dccom_profile->EMAIL_ADDR = $parser->ROW->EMAIL_ADDR;
+					$dccom_profile->X_MEMBER_EXPIRY_DT = $parser->ROW->X_MEMBER_EXPIRY_DT;
+
+					$dccom_profile->save();
+
+					Auth::attempt(array('username' => $username, 'password' => $password));
+					$user   = Auth::user();
+
+					}
+				else
+				{
+					return Response::json(array('error' => 'Not Authorized', 'status'=>'failed'));
+					}
+			}
+			$authToken = AuthToken::create($user);
+			$publicToken = AuthToken::publicToken($authToken);
+			return Response::json(array('status'=>'success','user'=>$user, 'token'=>$publicToken ));
+			}
 	}
 
 	public function doLogout()
 	{
 		Auth::logout(); // log the user out of our application
 		return Redirect::to('login'); // redirect the user to the login screen
-	}
-
-	public function index()
-	{
-		//
-	}
-
-
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
-	}
-
-
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
-	}
-
-
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		//
-	}
-
-
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
-
-
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
-
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
 	}
 
 

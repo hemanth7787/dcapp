@@ -105,7 +105,5 @@ class BusinessMatchingController extends \BaseController {
 
 			return Response::json(array('status'=>'success'));
 		}
-
 	}
-
 }

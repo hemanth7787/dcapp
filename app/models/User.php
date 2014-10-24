@@ -43,4 +43,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->hasOne('SocialAccount');
 	}
 
+	public function dccomprofile()
+	{
+		return $this->hasOne('SocialAccount');
+	}
+
 }

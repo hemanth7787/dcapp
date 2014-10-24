@@ -23,12 +23,11 @@
 //Route::post('api-token-auth', 'AccountController@getToken');
 
 //(authendicate test)
-//Route::get('', 'BusinessMatchingController@test');
 
 Route::get('api/account/auth', 'Tappleby\AuthToken\AuthTokenController@index');
 
 // (sign in) post username password to get access token
-Route::post('api/account/token-auth', 'Tappleby\AuthToken\AuthTokenController@store');
+Route::post('api/account/token-auth', 'AccountController@login');
 
 //(sign out) destory token, request header should contain "X-Auth-Token" parameter 
 // and accesstoken as its value.
