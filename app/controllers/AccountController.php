@@ -72,6 +72,7 @@ public function login()
 					$user->email    = $parser->ROW->EMAIL_ADDR;
 					$user->password = Hash::make($password);
 					$user->mobile   = $parser->ROW->PHONE;
+					$user->chamber_profile = true;
 					$user->save();
 
 					$dccom_profile = new DccomProfile();
