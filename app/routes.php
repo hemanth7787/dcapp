@@ -16,30 +16,15 @@
 //     return "Protected resource";
 //   });
 // });  
-//Route::get('/', 'TodoListController@index');
-//Route::resource('todos', 'TodoListController');
-
-//Route::resource('/', 'TodoListController');
-//Route::post('api-token-auth', 'AccountController@getToken');
-
-//(authendicate test)
 
 Route::get('api/account/auth', 'Tappleby\AuthToken\AuthTokenController@index');
-
 // (sign in) post username password to get access token
 Route::post('api/account/token-auth', 'AccountController@login');
-
 //(sign out) destory token, request header should contain "X-Auth-Token" parameter 
 // and accesstoken as its value.
 Route::delete('api/account/logout', 'Tappleby\AuthToken\AuthTokenController@destroy');
-
-
 Route::post('api/account/signup', 'AccountController@signUp');
-// route to show the login form
-//Route::get('login', array('uses' => 'AccountController@showLogin'));
-// route to process the form
-//Route::post('login', array('uses' => 'AccountController@doLogin'));
-//Route::get('logout', array('uses' => 'AccountController@doLogout'));
+
 
 Route::get('api/profile', array('before' => 'auth.token',
  			'uses' => 'CompanyProfileController@index'));
@@ -58,10 +43,14 @@ Route::post('api/business-categories', array('before' => 'auth.token',
 Route::post('api/business-categories/delete', array('before' => 'auth.token',
  			'uses' => 'BusinessMatchingController@deleteCategories'));
 
-
-
 Route::post('api/account/social/token-auth', 'SocialAccountController@login');
 Route::post('api/account/social/signup', 'SocialAccountController@signUp');
+
+Route::get('api/business-list', array('before' => 'auth.token',
+ 			'uses' =>  'BusinessListingController@dummyGetlist'));
+Route::get('api/member-list/{trade_license_number?}', array('before' => 'auth.token',
+ 			'uses' => 'BusinessListingController@dummyFilteredMemberlist'));
+// ->where('id', '[0-9]+');
 
 Event::listen('auth.token.valid', function($user)
 {
