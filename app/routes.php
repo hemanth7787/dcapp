@@ -52,6 +52,17 @@ Route::get('api/member-list/{trade_license_number?}', array('before' => 'auth.to
  			'uses' => 'BusinessListingController@dummyFilteredMemberlist'));
 // ->where('id', '[0-9]+');
 
+Route::get('api/connection/my-connections', array('before' => 'auth.token',
+ 			'uses' =>  'ConnectionController@my_connections'));
+Route::get('api/connection/invitations', array('before' => 'auth.token',
+ 			'uses' =>  'ConnectionController@open_invites'));
+Route::post('api/connection/invite', array('before' => 'auth.token',
+ 			'uses' =>  'ConnectionController@invite'));
+Route::post('api/connection/accept', array('before' => 'auth.token',
+ 			'uses' =>  'ConnectionController@accept'));
+Route::post('api/connection/delete', array('before' => 'auth.token',
+ 			'uses' =>  'ConnectionController@delete'));
+
 Event::listen('auth.token.valid', function($user)
 {
   //Token is valid, set the user on auth system.
