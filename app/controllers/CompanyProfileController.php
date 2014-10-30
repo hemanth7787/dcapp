@@ -20,6 +20,7 @@ class CompanyProfileController extends \BaseController {
 		//$profile = CompanyProfile::find(1)->user; //->company_profile;
 		//return var_dump($profile);
 		$host_path = Config::get('app.host_path');
+		if($profile->image != null )
 		$profile->image = $host_path.$profile->image;
 		return Response::json($profile);
 
