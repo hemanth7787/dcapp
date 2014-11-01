@@ -55,6 +55,12 @@ public function login()
 		if (Auth::attempt(array('username' => $username, 'password' => $password)))
 			{
     			$user   = Auth::user();
+    			if($user->deviceToken!=Input::get('device_token') && strlen(Input::get('device_token'))>5)
+					{
+						$user->deviceToken   = Input::get('device_token');
+						$user->save();
+					}
+
 			}
 		else
 			{
