@@ -64,19 +64,18 @@ class SocialAccountController extends \BaseController {
 			'social_id' => 'required|alphaNum',
 			'token'   	=> 'required',
 			'provider' 	=> 'required|alphaNum',
+			'device_token'   => 'alphaNum',
 		);
 	$validator = Validator::make(Input::all(), $rules);
 			if ($validator->fails()) {
 			return Response::json(array('errors' => $validator->messages(),'status'=>'failed'));
 		}
-		else{
-			/*
-			***************************************
-    GET USER WITH SOCIAL ID
-    ***************************************
-    */
-	//$user = User::find(1);
-	//$count = User::where('votes', '>', 100)
+	else{
+		if($user->deviceToken!=Input::get('device_token') && strlen(Input::get('device_token'))>5)
+		{
+			$user->deviceToken   = Input::get('device_token');
+			$user->save();
+		}
 	$social = SocialAccount::where('provider','=',Input::get('provider'))->where('social_id', '=', Input::get('social_id' ))->first();
 	
 	$user   = $social->user;
