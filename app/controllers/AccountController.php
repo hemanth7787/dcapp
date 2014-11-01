@@ -10,6 +10,7 @@ public function signUp()
 			'email'    => 'required|email|unique:users', // make sure the email is an actual email
 			'password' => 'required|min:3', // password can only be alphanumeric and has to be greater than 3 characters
 			'mobile'   => 'required|integer',
+			'device_token'   => 'alphaNum',
 		);
 	$validator = Validator::make(Input::all(), $rules);
 			if ($validator->fails()) {
@@ -23,6 +24,10 @@ public function signUp()
 			$user->email    = Input::get('email');
 			$user->password = Hash::make(Input::get('password'));
 			$user->mobile   = Input::get('mobile');
+			if(strlen(Input::get('device_token'))>5)
+			{
+				$user->deviceToken   = Input::get('device_token');
+			}
 
 			$user->save();
 			return Response::json(array('status'=>'success'));
@@ -35,6 +40,7 @@ public function login()
 	$rules = array(
 			'username'  => 'required|alphaNum',
 			'password'  => 'required|min:3',
+			'device_token'   => 'alphaNum',
 		);
 	$validator = Validator::make(Input::all(), $rules);
 	if ($validator->fails()) 
@@ -73,6 +79,10 @@ public function login()
 					$user->password = Hash::make($password);
 					$user->mobile   = $parser->ROW->PHONE;
 					$user->chamber_profile = true;
+					if(strlen(Input::get('device_token'))>5)
+					{
+						$user->deviceToken   = Input::get('device_token');
+					}
 					$user->save();
 
 					$dccom_profile = new DccomProfile();

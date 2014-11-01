@@ -14,6 +14,7 @@ class SocialAccountController extends \BaseController {
 			'social_id' => 'required|alphaNum|unique:social_accounts',
 			'token'   	=> 'required',
 			'provider' 	=> 'required|alphaNum',
+			'device_token'   => 'alphaNum',
 			//'extra_data'=> 'alphaNum',
 
 		);
@@ -36,6 +37,10 @@ class SocialAccountController extends \BaseController {
 			//random password
 			$user->password = Hash::make(bin2hex(mcrypt_create_iv(22, MCRYPT_DEV_URANDOM)));
 			$user->mobile   = Input::get('mobile');
+			if(strlen(Input::get('device_token'))>5)
+			{
+				$user->deviceToken   = Input::get('device_token');
+			}
 			$user->save();
 
 			$social = new SocialAccount();

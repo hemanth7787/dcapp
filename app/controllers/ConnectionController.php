@@ -89,45 +89,50 @@ class ConnectionController extends \BaseController {
 			}
 			else
 			{
+				$recipient = User::find(Input::get('recipient_id'));
 				$con->save();
 				$status_array = array('status'=>'success');
-
-				// Put your device token here (without spaces):
-				////////////////////////////////////////////////////////////////////////////////
-				$deviceToken = 'eede478c2732880cf9d9bf22b207dd0d4abefc41c8654ca546291cd11403e377';
-				////////////////////////////////////////////////////////////////////////////////
-				$private_key = Config::get('app.apple_private_key');
-				$passphrase = Config::get('app.apple_private_key_passphrase');
-				$message = $user->name.' has send you a connection request';
-				// Create the payload body
-				$body['aps'] = array(
-					'alert' => $message,
-					'sound' => 'default',
-					'badge' => 1 // put count here
-					);
-
-				$ctx = stream_context_create();
-				stream_context_set_option($ctx, 'ssl', 'local_cert', $private_key);
-				stream_context_set_option($ctx, 'ssl', 'passphrase', $passphrase);
-				// Open a connection to the APNS server
-				$fp = stream_socket_client(
-					'ssl://gateway.sandbox.push.apple.com:2195', $err,
-					$errstr, 60, STREAM_CLIENT_CONNECT|STREAM_CLIENT_PERSISTENT, $ctx);
-				if (!$fp)
-					exit("Failed to connect: $err $errstr" . PHP_EOL);
-				// echo 'Connected to APNS' . PHP_EOL;
-				// Encode the payload as JSON
-				$payload = json_encode($body);
-				// Build the binary notification
-				$msg = chr(0) . pack('n', 32) . pack('H*', $deviceToken) . pack('n', strlen($payload)) . $payload;
-				// Send it to the server
-				$result = fwrite($fp, $msg, strlen($msg));
-				if (!$result)
+				if($recipient->deviceToken==null)
+				{
 					$status_array['message'] = 'Message not delivered';
+					$status_array['reason'] = 'Recipient device token missing';
+				}
 				else
-					$status_array['message'] = 'Message successfully delivered';
-				// Close the connection to the server
-				fclose($fp);
+				{
+					$deviceToken = $user->deviceToken;
+					$private_key = Config::get('app.apple_private_key');
+					$passphrase = Config::get('app.apple_private_key_passphrase');
+					$message = $user->name.' has send you a connection request';
+					// Create the payload body
+					$body['aps'] = array(
+						'alert' => $message,
+						'sound' => 'default',
+						'badge' => 1 // put count here
+						);
+
+					$ctx = stream_context_create();
+					stream_context_set_option($ctx, 'ssl', 'local_cert', $private_key);
+					stream_context_set_option($ctx, 'ssl', 'passphrase', $passphrase);
+					// Open a connection to the APNS server
+					$fp = stream_socket_client(
+						'ssl://gateway.sandbox.push.apple.com:2195', $err,
+						$errstr, 60, STREAM_CLIENT_CONNECT|STREAM_CLIENT_PERSISTENT, $ctx);
+					if (!$fp)
+						exit("Failed to connect: $err $errstr" . PHP_EOL);
+					// echo 'Connected to APNS' . PHP_EOL;
+					// Encode the payload as JSON
+					$payload = json_encode($body);
+					// Build the binary notification
+					$msg = chr(0) . pack('n', 32) . pack('H*', $deviceToken) . pack('n', strlen($payload)) . $payload;
+					// Send it to the server
+					$result = fwrite($fp, $msg, strlen($msg));
+					if (!$result)
+						$status_array['message'] = 'Message not delivered';
+					else
+						$status_array['message'] = 'Message successfully delivered';
+					// Close the connection to the server
+					fclose($fp);
+				}
 
 				return Response::json($status_array);
 			}
