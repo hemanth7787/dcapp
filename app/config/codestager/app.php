@@ -14,6 +14,8 @@ return array(
 	*/
 
 	'debug' => true,
-	'host_path' => 'http://54.164.83.129:8555/'
+	'host_path' => 'http://54.164.83.129:8555/',
+	'apple_private_key' => base_path().'/misc/certificates/ck.pem',
+	'apple_private_key_passphrase' => 'dcsmart',
 
 );
