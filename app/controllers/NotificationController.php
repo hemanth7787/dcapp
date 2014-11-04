@@ -13,16 +13,15 @@ class NotificationController extends \BaseController {
 		}
 		else
 		{
-			//
+			$page = Input::get('page_no' );
+			if($page > 0 )
+				$offset =  $page * 10;
+			else
+				$offset=0;
+			$notifications = Notification::where('user_id','=',$user->id)->idDescending()->get()->slice($offset, 10);
+			return Response::json($notifications);
 		}
-		$page = Input::get('page_no' );
-		if($page > 0 )
-			$offset =  $page * 10;
-		else
-			$offset=0;
-		
-		$notifications = Notification::where('user_id','=',$user->id)->idDescending()->get()->slice($offset, 10);
-		return Response::json($notifications);
+
 
 	}
 
