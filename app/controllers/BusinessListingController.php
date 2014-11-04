@@ -21,20 +21,30 @@ class BusinessListingController extends \BaseController {
 	public function dummyFilteredMemberlist($trade_license_number)
 	{
 		$companyProfiles = CompanyProfile::where('trade_license_number','=',$trade_license_number)->get();
-
-
 		$p_list = array();
+		$user = Auth::user();
+		$my_connections = Connection::where('to','=',$user->id)
+			->orWhere('from','=',$user->id)
+			->where('accept','=',true)->get();
 
-		$count = 0;
+		$con_member_id_list = array();
+		foreach ($my_connections as $con)
+		{
+			if($con->from == $user->id)
+				$con_member_id_list[] = $con->to;
+			else
+				$con_member_id_list[] = $con->from;
+
+		}
+
 		foreach ($companyProfiles as $profile)
 	    {
-	    	// TODO #################################
-	    	// Check if users has connection ??
-//dummy
-if($count % 2 == 0){
-	$connection = 1;
+	    	// show detailed profile only for connections
+			if(in_array($profile->user->id, $con_member_id_list))
+			{
+			$connection = 1;
 
-		    	$user_details = array('id'=>$profile->user->id,
+		    $user_details = array('id'=>$profile->user->id,
 	    		'name'=>$profile->user->name,
 	    		'email'=>$profile->user->email,
 	    		'mobile'=>$profile->user->mobile,
@@ -50,11 +60,11 @@ if($count % 2 == 0){
 	    		'trade_license_number'=>$profile->trade_license_number,
 	    		'verified'=>$profile->verified,
 	    		'image'=>$profile->image);
-}
-else{
-$connection = 0;
-
-	    	$user_details = array('id'=>$profile->user->id,
+			}
+			else
+			{
+				$connection = 0;
+	    		$user_details = array('id'=>$profile->user->id,
 	    		'name'=>$profile->user->name,
 	    		//'email'=>$profile->user->email,
 	    		//'mobile'=>$profile->user->mobile,
@@ -70,10 +80,7 @@ $connection = 0;
 	    		'trade_license_number'=>$profile->trade_license_number,
 	    		'verified'=>$profile->verified,
 	    		'image'=>$profile->image);
-}
-$count++;
-
-
+			}
 
 	    	array_push($p_list, array('company_profile'=>$profile_details,'user'=>$user_details));
 	        //$p_list[] = array(...);
