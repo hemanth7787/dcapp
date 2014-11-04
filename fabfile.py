@@ -52,7 +52,7 @@ def dev():
 
 @task()
 def publish():
-    command = "git push"
+    command = "git push && git push github master"
     local('bash -l -c "%s"' % command)
     # Remote code directory
     code_dir = "/srv/www/dcapp_api/dc-app"
