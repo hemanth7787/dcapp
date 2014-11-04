@@ -37,6 +37,7 @@ class BusinessListingController extends \BaseController {
 
 		}
 
+		$host_path = Config::get('app.host_path');
 		foreach ($companyProfiles as $profile)
 	    {
 	    	// show detailed profile only for connections
@@ -60,6 +61,9 @@ class BusinessListingController extends \BaseController {
 	    		'trade_license_number'=>$profile->trade_license_number,
 	    		'verified'=>$profile->verified,
 	    		'image'=>$profile->image);
+
+	    	if($profile->image != null )
+	    	$profile_details['image'] = $host_path.$profile->image;
 			}
 			else
 			{
@@ -80,6 +84,8 @@ class BusinessListingController extends \BaseController {
 	    		'trade_license_number'=>$profile->trade_license_number,
 	    		'verified'=>$profile->verified,
 	    		'image'=>$profile->image);
+	    	if($profile->image != null )
+	    	$profile_details['image'] = $host_path.$profile->image;
 			}
 
 	    	array_push($p_list, array('company_profile'=>$profile_details,'user'=>$user_details));
