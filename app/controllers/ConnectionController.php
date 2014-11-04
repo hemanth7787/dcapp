@@ -177,7 +177,7 @@ class ConnectionController extends \BaseController {
 			$noti->message = $message;
 			$noti->item_id = $con->id;
 			$noti->user_id = $con->from;
-			$noti->item_type = "notification";
+			$noti->item_type = "noti";
 			$noti->save();
 
  			return Response::json(array('status'=>'success'));

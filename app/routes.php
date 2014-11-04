@@ -73,6 +73,12 @@ Route::post('api/notifications/list', array('before' => 'auth.token',
 Route::post('api/notifications/mark', array('before' => 'auth.token',
  			'uses' =>  'NotificationController@markRead'));
 
+Route::get('api/news', array(//'before' => 'auth.token',
+                       'uses' =>  'RssDataController@news'));
+Route::get('api/events', array(//'before' => 'auth.token',
+                       'uses' =>  'RssDataController@events'));
+
+
 Event::listen('auth.token.valid', function($user)
 {
   //Token is valid, set the user on auth system.
