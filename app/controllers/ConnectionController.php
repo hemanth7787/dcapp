@@ -92,6 +92,16 @@ class ConnectionController extends \BaseController {
 				$recipient = User::find(Input::get('recipient_id'));
 				$con->save();
 				$status_array = array('status'=>'success');
+				$message = $user->name.' has send you a connection request';
+
+				$noti = new Notification();
+				$noti->message = $message;
+				$noti->item_id = $con->id;
+				$noti->user_id = Input::get('recipient_id');
+				$noti->item_type = "invite";
+				$noti->save();
+
+
 				if($recipient->deviceToken==null)
 				{
 					$status_array['message'] = 'Message not delivered';
@@ -102,7 +112,7 @@ class ConnectionController extends \BaseController {
 					$deviceToken = $user->deviceToken;
 					$private_key = Config::get('app.apple_private_key');
 					$passphrase = Config::get('app.apple_private_key_passphrase');
-					$message = $user->name.' has send you a connection request';
+					// $message
 					// Create the payload body
 					$body['aps'] = array(
 						'alert' => $message,
@@ -160,6 +170,16 @@ class ConnectionController extends \BaseController {
  			}
  			$con->accept = true;
  			$con->save();
+
+ 			$message = $user->name." Has acceped your connection request";
+
+			$noti = new Notification();
+			$noti->message = $message;
+			$noti->item_id = $con->id;
+			$noti->user_id = $con->from;
+			$noti->item_type = "notification";
+			$noti->save();
+
  			return Response::json(array('status'=>'success'));
 		}
 	}

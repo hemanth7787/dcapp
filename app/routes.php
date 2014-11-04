@@ -68,6 +68,11 @@ Route::get('alpha', 'ConnectionController@alpha');
 Route::get('beta', 'ConnectionController@beta');
 
 
+Route::post('api/notifications/list', array('before' => 'auth.token',
+ 			'uses' =>  'NotificationController@notificationList'));
+Route::post('api/notifications/mark', array('before' => 'auth.token',
+ 			'uses' =>  'NotificationController@markRead'));
+
 Event::listen('auth.token.valid', function($user)
 {
   //Token is valid, set the user on auth system.
