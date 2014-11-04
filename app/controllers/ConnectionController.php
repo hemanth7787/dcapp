@@ -47,6 +47,7 @@ class ConnectionController extends \BaseController {
 
 	public function open_invites()
 	{
+		$host_path = Config::get('app.host_path');
 		$user = Auth::user();
 
 		$my_connections = Connection::where('to','=',$user->id)->where('accept','=',false)->get();
@@ -55,10 +56,16 @@ class ConnectionController extends \BaseController {
 		$p_list = array();
 		foreach ($my_connections as $con)
 	    {
-	    	array_push($p_list, array('invitaion_id'=>$con->id,
+	    	$invitation = array('invitaion_id'=>$con->id,
 	    		'from_user_id'=>$con->initiator->id,
 	    		'from_user_name'=>$con->initiator->name,
-	    		'created_at'=>$con->created_at->toDateTimeString()));
+	    		'created_at'=>$con->created_at->toDateTimeString());
+	    	
+	    	   	if($con->initiator->profile->image != null )
+					$invitation['image'] = $host_path.$con->initiator->profile->image;
+				else
+					$invitation['image'] = null;
+			array_push($p_list,$invitation);
 	        //$p_list[] = array(...);
 	    }
 	    return Response::json($p_list);
