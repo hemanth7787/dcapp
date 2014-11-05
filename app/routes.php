@@ -78,6 +78,11 @@ Route::get('api/news', array(//'before' => 'auth.token',
 Route::get('api/events', array(//'before' => 'auth.token',
                        'uses' =>  'RssDataController@events'));
 
+Route::post('api/bookmarks/add', array('before' => 'auth.token','uses' =>  'BoomarkController@add'));
+Route::post('api/bookmarks/list', array('before' => 'auth.token','uses' =>  'BoomarkController@bookmarkList'));
+Route::post('api/bookmarks/delete', array('before' => 'auth.token','uses' =>  'BoomarkController@delete'));
+Route::get('api/bookmarks/show/{id}', array('before' => 'auth.token',
+	'uses' =>  'BoomarkController@show'))->where('id', '[0-9]+');
 
 Event::listen('auth.token.valid', function($user)
 {
