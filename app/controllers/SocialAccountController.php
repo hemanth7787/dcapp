@@ -72,7 +72,10 @@ class SocialAccountController extends \BaseController {
 		}
 	else
 	{
+
 		$social = SocialAccount::where('provider','=',Input::get('provider'))->where('social_id', '=', Input::get('social_id' ))->first();
+		if($social == null)
+			return Response::json(array('errors' => "specifed account does not exist!",'status'=>'failed'));
 		$user   = $social->user;
 		if($user->deviceToken!=Input::get('device_token') && strlen(Input::get('device_token'))>5)
 		{
