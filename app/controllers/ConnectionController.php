@@ -26,6 +26,8 @@ class ConnectionController extends \BaseController {
 	        {
 	        	$item['user_name'] =  $con->receiver->name;
    				$item['user_id']   =  $con->receiver->id;
+   				$item['company_name']   =  $con->receiver->profile->company_name;
+   				$item['designation']   =  $con->receiver->profile->designation;
    				if($con->receiver->profile->image != null )
 					$item['image'] = $host_path.$con->receiver->profile->image;
 				else
@@ -35,6 +37,8 @@ class ConnectionController extends \BaseController {
 	        {
    				$item['user_name'] = $con->initiator->name;
    				$item['user_id']   = $con->initiator->id;
+   				$item['company_name']   =  $con->initiator->profile->company_name;
+   				$item['designation']   =  $con->initiator->profile->designation;
    				if($con->initiator->profile->image != null )
 					$item['image'] = $host_path.$con->initiator->profile->image;
 				else
