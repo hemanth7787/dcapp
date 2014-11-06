@@ -70,31 +70,28 @@ class SocialAccountController extends \BaseController {
 			if ($validator->fails()) {
 			return Response::json(array('errors' => $validator->messages(),'status'=>'failed'));
 		}
-	else{
+	else
+	{
+		$social = SocialAccount::where('provider','=',Input::get('provider'))->where('social_id', '=', Input::get('social_id' ))->first();
+		$user   = $social->user;
 		if($user->deviceToken!=Input::get('device_token') && strlen(Input::get('device_token'))>5)
 		{
 			$user->deviceToken   = Input::get('device_token');
 			$user->save();
 		}
-	$social = SocialAccount::where('provider','=',Input::get('provider'))->where('social_id', '=', Input::get('social_id' ))->first();
-	
-	$user   = $social->user;
-	//return var_dump($user) ;
-	Auth::login($user);
-	//$ur = Auth::user();
-	//return var_dump($ur);
-	if(Auth::check()) {
+		Auth::login($user);
+		if(Auth::check()) {
 
-/* 	***************************************
-	VALIDATE SOCIAL TOKEN CORRECTNESS AGAINST SOCIAL_ID
-	***************************************
-*/
+	/* 	***************************************
+		TODO VALIDATE SOCIAL TOKEN CORRECTNESS AGAINST SOCIAL_ID
+		***************************************
+	*/
 
- 	$authToken = AuthToken::create(Auth::user());
-	$publicToken = AuthToken::publicToken($authToken);
-	//return var_dump($publicToken);
-	return Response::json(array('status'=>'success','user'=>$user,
-		'token'=>$publicToken ));
+	 	$authToken = AuthToken::create(Auth::user());
+		$publicToken = AuthToken::publicToken($authToken);
+		//return var_dump($publicToken);
+		return Response::json(array('status'=>'success','user'=>$user,
+			'token'=>$publicToken ));
 		}
 	}
 
