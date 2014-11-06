@@ -18,18 +18,17 @@
 // });  
 
 Route::get('api/account/auth', 'Tappleby\AuthToken\AuthTokenController@index');
-// (sign in) post username password to get access token
 Route::post('api/account/token-auth', 'AccountController@login');
-//(sign out) destory token, request header should contain "X-Auth-Token" parameter 
-// and accesstoken as its value.
 Route::delete('api/account/logout', 'Tappleby\AuthToken\AuthTokenController@destroy');
 Route::post('api/account/signup', 'AccountController@signUp');
-
+Route::get('api/profile/show/{id}', array('before' => 'auth.token',
+ 			'uses' => 'AccountController@publicView'));
 
 Route::get('api/profile', array('before' => 'auth.token',
  			'uses' => 'CompanyProfileController@index'));
 Route::post('api/profile', array('before' => 'auth.token',
  			'uses' => 'CompanyProfileController@create'));
+
 
 Route::get('api/business-matching', array('before' => 'auth.token',
  			'uses' => 'BusinessMatchingController@getBm'));
