@@ -196,7 +196,19 @@ public function login()
 			}
 			$authToken = AuthToken::create($user);
 			$publicToken = AuthToken::publicToken($authToken);
-			return Response::json(array('status'=>'success','user'=>$user, 'token'=>$publicToken ));
+			if($user->profile!=null)
+			{
+				$company_profile = $user->profile;
+				$profile_complete = 1;
+			}
+				
+			else
+			{
+				$company_profile = array();
+				$profile_complete = 0;
+			}
+			return Response::json(array('status'=>'success','user'=>$user, 'token'=>$publicToken,
+			'profile_complete'=> $profile_complete ));
 			}
 	}
 
