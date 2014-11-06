@@ -18,7 +18,7 @@ class BusinessListingController extends \BaseController {
 
 	}
 
-	public function dummyFilteredMemberlist($trade_license_number)
+	public function dummyFilteredMemberlist($trade_license_number=null)
 	{
 		$companyProfiles = CompanyProfile::where('trade_license_number','=',$trade_license_number)->get();
 		$p_list = array();
