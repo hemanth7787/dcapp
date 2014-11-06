@@ -83,6 +83,13 @@ Route::post('api/bookmarks/delete', array('before' => 'auth.token','uses' =>  'B
 Route::get('api/bookmarks/show/{id}', array('before' => 'auth.token',
 	'uses' =>  'BoomarkController@show'))->where('id', '[0-9]+');
 
+
+Route::post('api/calender/add', array('before' => 'auth.token','uses' =>  'CalenderController@add'));
+Route::post('api/calender/list', array('before' => 'auth.token','uses' =>  'CalenderController@calenderList'));
+Route::post('api/calender/delete', array('before' => 'auth.token','uses' =>  'CalenderController@delete'));
+Route::get('api/calender/show/{id}', array('before' => 'auth.token',
+	'uses' =>  'CalenderController@show'))->where('id', '[0-9]+');
+
 Event::listen('auth.token.valid', function($user)
 {
   //Token is valid, set the user on auth system.
