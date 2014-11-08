@@ -5,7 +5,11 @@ class Endorsement extends Eloquent{
 
 	public function user()
 	{
-		return $this->belongsTo('User','to');
+		return $this->belongsTo('User','to_user');
+	}
+	public function fromUser()
+	{
+		return $this->belongsTo('User','from_user');
 	}
 	public function scopeIdDescending($query)
     {

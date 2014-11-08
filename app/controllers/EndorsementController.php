@@ -21,13 +21,31 @@ class EndorsementController extends \BaseController {
 		}
 		else
 		{
+			$host_path = Config::get('app.host_path');
 			$user = Auth::user();
-			$page = Input::get('page_no' );
+			$page = Input::get('page_no');
 			if($page > 0 )
 				$offset =  $page * 10;
 			else
 				$offset=0;
-			$list = Endorsement::where('to_user','=',$user->id)->idDescending()->get()->slice($offset, 10);
+			$endorsements = Endorsement::where('to_user','=',$user->id)->idDescending()->get()->slice($offset, 10);
+			$list = array();
+			foreach ($endorsements as $endorsement)
+			{
+				$item = array('id'=>$endorsement->id,
+				"from_user"=>$endorsement->from_user,
+				"from_user_name"=>$endorsement->fromUser->name,
+				"to_user"  =>$endorsement->to_user,
+				"optional_msg"=>$endorsement->optional_msg);
+
+				if($endorsement->fromUser->profile->image != null )
+					$item['image'] = $host_path.$endorsement->fromUser->profile->image;
+				else
+					$item['image'] = null;
+
+				$list[] = $item;
+			}
+			
 			return Response::json(array('endorsement' => $list,'status'=>'success'));
 		}
 	}
