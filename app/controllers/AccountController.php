@@ -22,8 +22,8 @@ public function publicView($id)
 		else
 			$con_member_id_list[] = $con->from;
 	}
-	if(in_array($userview->id, $con_member_id_list) || $id = $user->id)
-	{
+	//if(in_array($userview->id, $con_member_id_list) || $id = $user->id)
+	//{
 		$user_details = array('id'=>$userview->id,
 		'name'=>$userview->name,
 		'email'=>$userview->email,
@@ -34,7 +34,6 @@ public function publicView($id)
 			$company_details = array('profile_id'=>$userview->profile->id,
 	    	    'company_name'=>$userview->profile->company_name,
 	    	    'profile_id'=>$userview->profile->id,
-	    	    'company_name'=>$userview->profile->company_name,
 	    	    'designation'=>$userview->profile->designation,
 	    	    'company_email'=>$userview->profile->company_email,
 	    		'membership_number'=>$userview->profile->membership_number,
@@ -50,29 +49,34 @@ public function publicView($id)
 		}
 		
 	    $response = array('connected'=>1, 'user'=>$user_details, 'company_profile'=>$company_details);
-	}
-	else
-	{
-		$user_details = array('id'=>$userview->id, 'name'=>$userview->name,'chamber_profile'=>$userview->chamber_profile);
-		if($userview->profile != null)
-		{
-			$company_details = array('profile_id'=>$userview->profile->id,
-		    	    'company_name'=>$userview->profile->company_name,
-		    	    'profile_id'=>$userview->profile->id,
-		    	    'company_name'=>$userview->profile->company_name,
-		    	    'designation'=>$userview->profile->designation,
-		    		'trade_license_number'=>$userview->profile->trade_license_number,
-		    		'verified'=>$userview->profile->verified,
-		    		'image'=>$userview->profile->image);
-		    if($userview->profile->image != null )
-		    	$company_details['image'] = $host_path.$userview->profile->image;
-	    }
-		else
-		{
-			$company_details = array();
-		}
-	    $response = array('connected'=>1, 'user'=>$user_details, 'company_profile'=>$company_details);
-	}
+	//}
+	// else
+	// {
+	// 	$user_details = array('id'=>$userview->id,
+	// 	 'name'=>$userview->name,
+	// 	 'chamber_profile'=>$userview->chamber_profile,
+	// 	 'email'=>$userview->email,
+	//      'mobile'=>$userview->mobile,
+	// 	 );
+	// 	if($userview->profile != null)
+	// 	{
+	// 		$company_details = array('profile_id'=>$userview->profile->id,
+	// 			//add endorsed no: also
+	// 	    	    'profile_id'=>$userview->profile->id,
+	// 	    	    'company_name'=>$userview->profile->company_name,
+	// 	    	    'designation'=>$userview->profile->designation,
+	// 	    		'trade_license_number'=>$userview->profile->trade_license_number,
+	// 	    		'verified'=>$userview->profile->verified,
+	// 	    		'image'=>$userview->profile->image);
+	// 	    if($userview->profile->image != null )
+	// 	    	$company_details['image'] = $host_path.$userview->profile->image;
+	//     }
+	// 	else
+	// 	{
+	// 		$company_details = array();
+	// 	}
+	//     $response = array('connected'=>1, 'user'=>$user_details, 'company_profile'=>$company_details);
+	// }
 	return Response::json($response);
 }
 

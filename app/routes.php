@@ -51,6 +51,8 @@ Route::get('api/member-list/{trade_license_number?}', array('before' => 'auth.to
  			'uses' => 'BusinessListingController@dummyFilteredMemberlist'));
 // ->where('id', '[0-9]+');
 
+Route::get('api/connection/list/{id}', array('before' => 'auth.token',
+ 			'uses' =>  'ConnectionController@public_connections'))->where('id', '[0-9]+');
 Route::get('api/connection/my-connections', array('before' => 'auth.token',
  			'uses' =>  'ConnectionController@my_connections'));
 Route::get('api/connection/invitations', array('before' => 'auth.token',

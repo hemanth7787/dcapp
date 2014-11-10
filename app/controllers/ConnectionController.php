@@ -2,6 +2,51 @@
 
 class ConnectionController extends \BaseController {
 
+	public function public_connections($id)
+	{
+		$user = User::find($id);
+		$my_connections = Connection::where('to','=',$user->id)
+		->orWhere('from','=',$user->id)
+		->where('accept','=',true)->get();
+		//var_dump($my_connections);
+		$host_path = Config::get('app.host_path');
+
+		
+		$p_list = array();
+		foreach ($my_connections as $con)
+	    {
+	    	$item = array('connection_id'=>$con->id,
+	    				'created_at'=>$con->created_at->toDateTimeString(),
+	    				'updated_at'=>$con->updated_at->toDateTimeString(),
+	    				'user_name'=>0,
+	    				'user_id'=>0
+	    				);
+	        if($con->initiator->id == $user->id)
+	        {
+	        	$item['user_name'] =  $con->receiver->name;
+   				$item['user_id']   =  $con->receiver->id;
+   				$item['company_name']   =  $con->receiver->profile->company_name;
+   				$item['designation']   =  $con->receiver->profile->designation;
+   				if($con->receiver->profile->image != null )
+					$item['image'] = $host_path.$con->receiver->profile->image;
+				else
+					$item['image'] = null;
+	        }
+	        else
+	        {
+   				$item['user_name'] = $con->initiator->name;
+   				$item['user_id']   = $con->initiator->id;
+   				$item['company_name']   =  $con->initiator->profile->company_name;
+   				$item['designation']   =  $con->initiator->profile->designation;
+   				if($con->initiator->profile->image != null )
+					$item['image'] = $host_path.$con->initiator->profile->image;
+				else
+					$item['image'] = null;
+			}
+			array_push($p_list, $item);
+	    }
+	    return Response::json($p_list);
+	}
 	public function my_connections()
 	{
 		$user = Auth::user();
