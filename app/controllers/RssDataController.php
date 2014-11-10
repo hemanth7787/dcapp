@@ -14,7 +14,7 @@ class RssDataController extends \BaseController {
 	public function news()
 	{
 		$this->updateNewsXML();
-		$items = NewsData::all();
+		$items = NewsData::all()->slice(0, 50);
 		return Response::json($items);
 	}
 	public function events()
@@ -30,14 +30,27 @@ class RssDataController extends \BaseController {
 		$simplexml = $this->readCURL($newsURL);
 		
 		foreach($simplexml as $element){
-			$news = new NewsData();
-			$news->newsTitle = $element[0]->newsTitle;
-			$news->imageURL = $element[0]->imageURL;
-			$news->newsURL = $element[0]->newsURL;
-			$news->newsDesc = $element[0]->newsDesc;
-			$news->newsDetail = $element[0]->newsDetails;
-			$news->newsDate = $element[0]->newsDate;
-			$news->save();
+			$news_url_hash = hash('ripemd160', $element[0]->newsURL+$element[0]->newsTitle+$element[0]->newsDate);
+			$news = NewsData::firstOrNew(array("url_hash"=>$news_url_hash));
+			// check if news is already saved to database
+			if(!$news->exists)
+			{
+				$news->newsTitle = $element[0]->newsTitle;
+				$news->imageURL = $element[0]->imageURL;
+				$news->newsURL = $element[0]->newsURL;
+				$news->newsDesc = $element[0]->newsDesc;
+				$news->newsDetail = $element[0]->newsDetails;
+				$news->newsDate = $element[0]->newsDate;
+				$news->url_hash = $news_url_hash;
+				$news->save();
+			}
+			else
+			{
+				// if the latest news item is already saved in Database
+				// we can skip all others.
+				//break;
+				//error_log($news->newsURL);
+			}
 		}
 	}
 	private function updateEventsXML(){
