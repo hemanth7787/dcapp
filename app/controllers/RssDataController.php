@@ -4,14 +4,27 @@ class RssDataController extends \BaseController {
 
 	public function news()
 	{
-		$this->updateNewsXML();
+		try
+		{
+			$this->updateNewsXML();
+		} 
+		catch (Exception $e) 
+		{
+		//echo $e->getMessage();
+		}
 		$items = NewsData::all()->slice(0, 50);
 		return Response::json($items);
 	}
 	public function events()
 	{
-		
-		$this->updateEventsXML();
+		try
+		{
+			$this->updateEventsXML();
+		} 
+		catch (Exception $e) 
+		{
+		//echo $e->getMessage();
+		}
 		$items = EventsData::all()->slice(0, 50);
 		return Response::json($items);
 		
