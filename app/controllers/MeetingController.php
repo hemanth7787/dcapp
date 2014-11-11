@@ -3,7 +3,75 @@
 class MeetingController extends \BaseController {
 
 	
+public function forward()
+	{
+		$user = Auth::user();
+		
+		$rules = array(
+			'meeting_id'  => 'required|integer|exists:meetings,id',
+			'timing'  => 'required|date_format:d-m-Y H:i',
+			'timing_two'  => 'date_format:d-m-Y H:i',
+			'timing_three'  => 'date_format:d-m-Y H:i',
+			);
+	$validator = Validator::make(Input::all(), $rules);
+	if ($validator->fails()) 
+	{
+		return Response::json(array('errors' => $validator->messages(),'status'=>'failed'));
+	}
+	else
+	{
+		$meeting = Meeting::find(Input::get('meeting_id'));
+		if($user->id != $meeting->msg_target_usr_id)
+		{
+			return Response::json(array('errors' => "You cannot accept , because its not forwarded to you",'status'=>'failed'));
+		}
+		
+		if($meeting->confirmed == true)
+		{
+			return Response::json(array('errors' => "Meeting was finalized before",'status'=>'failed'));
+		}
 
+		$timing = date_parse_from_format("d-m-Y H:i", Input::get('timing'));
+		$meeting->timing =  \Carbon\Carbon::create(
+			$timing["year"],
+			$timing["month"],
+			$timing["day"],
+			$timing["hour"],
+			$timing["minute"], 0);
+
+		 
+		if (Input::get('timing_two'))
+		{
+			$timing_two = date_parse_from_format("d-m-Y H:i", Input::get('timing_two'));
+		    $meeting->timing_two = \Carbon\Carbon::create(
+									$timing_two["year"],
+									$timing_two["month"],
+									$timing_two["day"],
+									$timing_two["hour"],
+									$timing_two["minute"], 0);
+		}
+		if(Input::get('timing_three'))
+		{
+			$timing_three = date_parse_from_format("d-m-Y H:i", Input::get('timing_three'));
+		    $meeting->timing_three =  \Carbon\Carbon::create(
+									$timing_three["year"],
+									$timing_three["month"],
+									$timing_three["day"],
+									$timing_three["hour"],
+									$timing_three["minute"], 0);
+		}
+		 
+		if($user->id == $meeting->from)
+			$meeting->msg_target_usr_id = $meeting->to;
+		else
+			$meeting->msg_target_usr_id = $meeting->from;
+		$meeting->save();
+
+	}
+
+	return Response::json(array('meeting' => $meeting,'status'=>'success'));
+
+	}
 
 	public function accept()
 	{

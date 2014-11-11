@@ -107,7 +107,8 @@ Route::post('api/meeting/confirmed',
  	array('before' => 'auth.token','uses' =>  'MeetingController@meetingList'));
 Route::post('api/meeting/accept',array('before' => 'auth.token',
 	'uses' =>  'MeetingController@accept'))->where('id', '[0-9]+');
-// Route::post('api/endorsement/delete', array('before' => 'auth.token','uses' =>  'EndorsementController@delete'));
+Route::post('api/meeting/return', array('before' => 'auth.token',
+	'uses' =>  'MeetingController@forward'));
 // Route::get('api/endorsement/show/{id}', array('before' => 'auth.token',
 // 	'uses' =>  'EndorsementController@show'))->where('id', '[0-9]+');
 
