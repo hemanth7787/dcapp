@@ -71,23 +71,43 @@ class ConnectionController extends \BaseController {
 	        {
 	        	$item['user_name'] =  $con->receiver->name;
    				$item['user_id']   =  $con->receiver->id;
+   				if($con->receiver->profile!=null)
+   				{
    				$item['company_name']   =  $con->receiver->profile->company_name;
    				$item['designation']   =  $con->receiver->profile->designation;
    				if($con->receiver->profile->image != null )
 					$item['image'] = $host_path.$con->receiver->profile->image;
 				else
 					$item['image'] = null;
+   				}
+   				else
+   				{
+   					$item['company_name']   = null;
+   					$item['designation']   = null;
+   					$item['image'] = null;
+
+   				}
 	        }
 	        else
 	        {
    				$item['user_name'] = $con->initiator->name;
    				$item['user_id']   = $con->initiator->id;
-   				$item['company_name']   =  $con->initiator->profile->company_name;
-   				$item['designation']   =  $con->initiator->profile->designation;
-   				if($con->initiator->profile->image != null )
-					$item['image'] = $host_path.$con->initiator->profile->image;
-				else
-					$item['image'] = null;
+   				if($con->initiator->profile != null )
+   				{
+	   				$item['company_name']   =  $con->initiator->profile->company_name;
+	   				$item['designation']   =  $con->initiator->profile->designation;
+	   				if($con->initiator->profile->image != null )
+						$item['image'] = $host_path.$con->initiator->profile->image;
+					else
+						$item['image'] = null;
+   				}
+   				else
+   				{
+   					$item['company_name']   = null;
+   					$item['designation']   = null;
+   					$item['image'] = null;
+
+   				}
 			}
 			array_push($p_list, $item);
 	    }
