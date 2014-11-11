@@ -101,9 +101,12 @@ Route::get('api/endorsement/show/{id}', array('before' => 'auth.token',
 	'uses' =>  'EndorsementController@show'))->where('id', '[0-9]+');
 
 Route::post('api/meeting/add', array('before' => 'auth.token','uses' =>  'MeetingController@add'));
-// Route::post('api/endorsement/my_endorsements', 
-// 	array('before' => 'auth.token','uses' =>  'EndorsementController@endorsementList'));
-// Route::post('api/endorsement/show_endorsements/{id}',array('before' => 'auth.token','uses' =>  'EndorsementController@publicEndorsementList'))->where('id', '[0-9]+');
+Route::post('api/meeting/requests', 
+ 	array('before' => 'auth.token','uses' =>  'MeetingController@requestList'));
+Route::post('api/meeting/confirmed', 
+ 	array('before' => 'auth.token','uses' =>  'MeetingController@meetingList'));
+Route::post('api/meeting/accept',array('before' => 'auth.token',
+	'uses' =>  'MeetingController@accept'))->where('id', '[0-9]+');
 // Route::post('api/endorsement/delete', array('before' => 'auth.token','uses' =>  'EndorsementController@delete'));
 // Route::get('api/endorsement/show/{id}', array('before' => 'auth.token',
 // 	'uses' =>  'EndorsementController@show'))->where('id', '[0-9]+');

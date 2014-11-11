@@ -2,53 +2,168 @@
 
 class MeetingController extends \BaseController {
 
-	// public function show($id)
-	// {
-	// 	$user = Auth::user();
-	// 	$endorsement = Endorsement::find($id);
-	// 	return Response::json(array('endorsement' => $endorsement,'status'=>'success'));
-
-	// }
+	
 
 
-	// public function meetingList()
-	// {
-	// 	$rules = array('page_no'  => 'integer',);
-	// 	$validator = Validator::make(Input::all(), $rules);
-	// 	if ($validator->fails())
-	// 	{
-	// 		return Response::json(array('errors' => $validator->messages(),'status'=>'failed'));
-	// 	}
-	// 	else
-	// 	{
-	// 		$host_path = Config::get('app.host_path');
-	// 		$user = Auth::user();
-	// 		$page = Input::get('page_no');
-	// 		if($page > 0 )
-	// 			$offset =  $page * 10;
-	// 		else
-	// 			$offset=0;
-	// 		$endorsements = Endorsement::where('to_user','=',$user->id)->idDescending()->get()->slice($offset, 10);
-	// 		$list = array();
-	// 		foreach ($endorsements as $endorsement)
-	// 		{
-	// 			$item = array('id'=>$endorsement->id,
-	// 			"from_user"=>$endorsement->from_user,
-	// 			"from_user_name"=>$endorsement->fromUser->name,
-	// 			"to_user"  =>$endorsement->to_user,
-	// 			"optional_msg"=>$endorsement->optional_msg);
+	public function accept()
+	{
+		$user = Auth::user();
+		
+		$rules = array(
+			'meeting_id'  => 'required|integer|exists:meetings,id',
+			'accepted_timing_no'  => 'required|integer|between:1,3',
+			);
+	$validator = Validator::make(Input::all(), $rules);
+	if ($validator->fails()) 
+	{
+		return Response::json(array('errors' => $validator->messages(),'status'=>'failed'));
+	}
+	else
+	{
+		$meeting = Meeting::find(Input::get('meeting_id'));
+		if($user->id != $meeting->msg_target_usr_id)
+		{
+			return Response::json(array('errors' => "You cannot accept , because its not forwarded to you",'status'=>'failed'));
+		}
+		
+		if($meeting->confirmed == true)
+		{
+			return Response::json(array('errors' => "Meeting was finalized before",'status'=>'failed'));
+		}
 
-	// 			if($endorsement->fromUser->profile->image != null )
-	// 				$item['image'] = $host_path.$endorsement->fromUser->profile->image;
-	// 			else
-	// 				$item['image'] = null;
+		if (Input::get('accepted_timing_no')==1) 
+		{
+		    $meeting->confirmed_timing =  $meeting->timing;
+		    //error_log("\n1\n");
+		} 
+		elseif (Input::get('accepted_timing_no')==2) 
+		{
+		    $meeting->confirmed_timing =  $meeting->timing_two;
+		     //error_log("\n2\n");
+		}
+		else 
+		{
+			//error_log("\n3\n");
+		    $meeting->confirmed_timing =  $meeting->timing_three;
+		}
+		 
+		$meeting->confirmed = true;
+		$meeting->save();
 
-	// 			$list[] = $item;
-	// 		}
+		//add calender
+
+
+	}
+
+	return Response::json(array('meeting' => $meeting,'status'=>'success'));
+
+	}
+
+
+	public function requestList()
+	{
+		$rules = array('page_no'  => 'integer',);
+		$validator = Validator::make(Input::all(), $rules);
+		if ($validator->fails())
+		{
+			return Response::json(array('errors' => $validator->messages(),'status'=>'failed'));
+		}
+		else
+		{
+			$host_path = Config::get('app.host_path');
+			$user = Auth::user();
+			$page = Input::get('page_no');
+			if($page > 0 )
+				$offset =  $page * 10;
+			else
+				$offset=0;
+			$meetings = Meeting::where('msg_target_usr_id','=',$user->id)->idDescending()->get()->slice($offset, 10);
+			$list = array();
+			foreach ($meetings as $meeting)
+			{
+				$item = array();
+				$item['id'] = $meeting->id;
+				$item["optional_msg"] = $meeting->optional_msg;
+				$item['timing'] = $meeting->timing;
+				$item['timing_two'] = $meeting->timing_two;
+				$item['timing_three'] = $meeting->timing_three;
+
+				if($user->id == $meeting->from)
+					$oth_user = $meeting->requestTo;
+				else
+					$oth_user = $meeting->requestFrom;
+
+				$item["from_user_id"] = $oth_user->id;
+				$item["from_user_name"] = $oth_user->name;
+
+				if($oth_user->profile)
+				{
+					if($oth_user->profile->image != null )
+						$item['image'] = $host_path.$oth_user->profile->image;
+					else
+						$item['image'] = null;
+				}
+				
+
+				$list[] = $item;
+			}
 			
-	// 		return Response::json(array('endorsement' => $list,'status'=>'success'));
-	// 	}
-	// }
+			return Response::json(array('meetings' => $list,'status'=>'success'));
+		}
+	}
+
+
+	public function meetingList()
+	{
+		$rules = array('page_no'  => 'integer',);
+		$validator = Validator::make(Input::all(), $rules);
+		if ($validator->fails())
+		{
+			return Response::json(array('errors' => $validator->messages(),'status'=>'failed'));
+		}
+		else
+		{
+			$host_path = Config::get('app.host_path');
+			$user = Auth::user();
+			$page = Input::get('page_no');
+			if($page > 0 )
+				$offset =  $page * 10;
+			else
+				$offset=0;
+			$meetings = Meeting::where('to','=',$user->id)
+			->orWhere('from','=',$user->id)
+			->where('confirmed','=',true)->get()->slice($offset, 10);
+			$list = array();
+			foreach ($meetings as $meeting)
+			{
+				$item = array();
+				$item['id'] = $meeting->id;
+				$item["optional_msg"] = $meeting->optional_msg;
+				$item['confirmed_timing'] = $meeting->confirmed_timing;
+
+				if($user->id == $meeting->from)
+					$oth_user = $meeting->requestTo;
+				else
+					$oth_user = $meeting->requestFrom;
+
+				$item["from_user_id"] = $oth_user->id;
+				$item["from_user_name"] = $oth_user->name;
+
+				if($oth_user->profile)
+				{
+					if($oth_user->profile->image != null )
+						$item['image'] = $host_path.$oth_user->profile->image;
+					else
+						$item['image'] = null;
+				}
+				
+
+				$list[] = $item;
+			}
+			
+			return Response::json(array('meetings' => $list,'status'=>'success'));
+		}
+	}
 
 	public function add()
 	{
@@ -101,30 +216,30 @@ class MeetingController extends \BaseController {
 		}
 	}
 
-	public function delete()
-	{
-		$user = Auth::user();
-		$rules = array(
-		    'endorsement_ids'  => 'required|array',
-		);
-		$validator = Validator::make(Input::all(), $rules);
-		if ($validator->fails()) 
-		{
-			return Response::json(array('errors' => $validator->messages(),'status'=>'failed'));
-		}
-		else
-		{
+	// public function delete()
+	// {
+	// 	$user = Auth::user();
+	// 	$rules = array(
+	// 	    'endorsement_ids'  => 'required|array',
+	// 	);
+	// 	$validator = Validator::make(Input::all(), $rules);
+	// 	if ($validator->fails()) 
+	// 	{
+	// 		return Response::json(array('errors' => $validator->messages(),'status'=>'failed'));
+	// 	}
+	// 	else
+	// 	{
 
-			$endorsements = Endorsement::where('to_user','=',$user->id)->find(Input::get('endorsement_ids' ));
-			$count=0;
-			foreach ($endorsements as $endorsement)
-			{
-				$endorsement->delete();
-				$count++;
-			}
-			return Response::json(array('status'=>'success','deleted_items'=>$count));
-		}
-	}
+	// 		$endorsements = Endorsement::where('to_user','=',$user->id)->find(Input::get('endorsement_ids' ));
+	// 		$count=0;
+	// 		foreach ($endorsements as $endorsement)
+	// 		{
+	// 			$endorsement->delete();
+	// 			$count++;
+	// 		}
+	// 		return Response::json(array('status'=>'success','deleted_items'=>$count));
+	// 	}
+	// }
 
 
 }
