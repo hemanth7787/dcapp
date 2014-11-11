@@ -39,7 +39,7 @@ class RssDataController extends \BaseController {
 				$news->imageURL = $element[0]->imageURL;
 				$news->newsURL = $element[0]->newsURL;
 				$news->newsDesc = $element[0]->newsDesc;
-				$news->newsDetail = $element[0]->newsDetails;
+				$news->newsDetail = strip_tags($element[0]->newsDetails);
 				$news->newsDate = $element[0]->newsDate;
 				$news->url_hash = $news_url_hash;
 				$news->save();
