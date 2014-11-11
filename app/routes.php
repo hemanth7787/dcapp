@@ -100,6 +100,15 @@ Route::post('api/endorsement/delete', array('before' => 'auth.token','uses' =>  
 Route::get('api/endorsement/show/{id}', array('before' => 'auth.token',
 	'uses' =>  'EndorsementController@show'))->where('id', '[0-9]+');
 
+Route::post('api/meeting/add', array('before' => 'auth.token','uses' =>  'MeetingController@add'));
+// Route::post('api/endorsement/my_endorsements', 
+// 	array('before' => 'auth.token','uses' =>  'EndorsementController@endorsementList'));
+// Route::post('api/endorsement/show_endorsements/{id}',array('before' => 'auth.token','uses' =>  'EndorsementController@publicEndorsementList'))->where('id', '[0-9]+');
+// Route::post('api/endorsement/delete', array('before' => 'auth.token','uses' =>  'EndorsementController@delete'));
+// Route::get('api/endorsement/show/{id}', array('before' => 'auth.token',
+// 	'uses' =>  'EndorsementController@show'))->where('id', '[0-9]+');
+
+
 Event::listen('auth.token.valid', function($user)
 {
   //Token is valid, set the user on auth system.
