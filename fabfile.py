@@ -74,3 +74,10 @@ def stash():
     with cd(code_dir):
         run("git  stash")
         print(green("""Remote changes destroyed ;)""", bold=True))
+
+@task()
+def seed():
+    code_dir = "/srv/www/dcapp_api/dc-app"
+    with cd(code_dir):
+        run("php artisan db:seed")
+        print(green("""Database seeded :)""", bold=True))
