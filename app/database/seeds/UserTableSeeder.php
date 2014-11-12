@@ -4,9 +4,31 @@ class UserTableSeeder extends Seeder
 {
 	public function run()
 	{
-		//DB::table('users')->delete();
-		//DB::table('company_profile')->delete();
+		DB::table('users')->delete();
+		DB::table('company_profile')->delete();
+		$this->profileseed();
 
+		DB::table('endorsements')->delete();
+		$this->endorse();
+		$this->endorse();
+		$this->endorse();
+
+		DB::table('meetings')->delete();
+		$this->meet();
+		$this->meet();
+
+		DB::table('my_connections')->delete();
+		$this->connectionInvite();
+		$this->connectionInvite();
+		
+		$this->connectionAccept();
+	}
+
+	private function profileseed()
+	{
+		
+		$this->cp(array('name'=>'Apple user','username' =>'apple','cname'=>'Apple',
+			'clic'=>'122'));
 		$this->cp(array('name'=>'Farhad Qazi','username' =>'Farhad','cname'=>'Dubai Chamber',
 			'clic'=>'123'));
 		$this->cp(array('name'=>'Abha Malpani','username' =>'Abha','cname'=>'Dubai Chamber',
@@ -120,4 +142,89 @@ class UserTableSeeder extends Seeder
 			)
 		);
 	}
+
+	private function endorse()
+	{
+		$users = User::all();
+		$r_user= $users[rand(0, count($users) - 1)];
+		foreach ($users as $user) 
+		{
+			if($r_user->id!=$user->id)
+				Endorsement::create(array('from_user'=> $r_user->id, 'to_user'  => $user->id,
+			));
+		}
+		error_log("\n Endorse: ".$r_user->name);
+		
+	}
+
+	private function meet()
+	{
+		$users = User::all();
+		$timing = date_parse_from_format("d-m-Y H:i", "15-11-2014 10:30");
+		$m_timing =  \Carbon\Carbon::create(
+			$timing["year"],
+			$timing["month"],
+			$timing["day"],
+			$timing["hour"],
+			$timing["minute"], 0);
+		$r_user= $users[rand(0, count($users) - 1)];
+		foreach ($users as $user) 
+		{
+			if($r_user->id!=$user->id)
+				Meeting::create(array('from'=> $r_user->id, 'to'  => $user->id,
+					'msg_target_usr_id'=>$user->id, 'optional_msg'=>"Let's meet",
+					"timing"=>$m_timing,
+			));
+		}
+		error_log("\n Meet: ".$r_user->name);
+		
+	}
+
+
+	private function connectionInvite()
+	{
+		$users = User::all();
+		$r_user= $users[rand(0, count($users) - 1)];
+		foreach ($users as $user) 
+		{
+			if($r_user->id!=$user->id)
+				$con=Connection::create(array('from'=> $r_user->id, 'to'  => $user->id,
+			));
+
+			$message = $r_user->name.' has send you a connection request';
+
+			Notification::create(array('message'=> $message,'item_id'=>$con->id,
+				'user_id' => $user->id, 'item_type'=>"invite",
+					));
+		}
+		error_log("\n Invite: ".$r_user->name);
+		
+	}
+
+	private function connectionAccept()
+	{
+		$cons = Connection::all();
+		foreach ($cons as $con)
+		{
+			if(rand(0, 1)==1)
+			{
+				$con->accept=true;
+				$con->save();
+
+				$message = $con->receiver->name." Has acceped your connection request";
+
+				Notification::create(array('message'=> $message,'item_id'=>$con->id,
+				'user_id' => $con->from, 'item_type'=>"noti",
+					));
+				error_log("\n Accept: ".$con->receiver->name);
+			}
+
+		}
+			
+	}
+		
+		
+
+
+	
 }
