@@ -118,6 +118,7 @@ public function forward()
 		$meeting->confirmed = true;
 		$meeting->save();
 
+		// Add notification
 		if($user->id==$meeting->from)
 			$oth_user=$meeting->requestTo;
 		else
@@ -125,7 +126,7 @@ public function forward()
 
 		$message = "Meeting with ".$user->name." confirmed";
 		if($meeting->confirmed_timing!=null)
-			$message = $message." at ".$meeting->confirmed_timing->toDateTimeString();
+			$message = $message." at ".$meeting->confirmed_timing; //->toDateTimeString();
 		Notification::create(array(
 			'message'=> $message,
 			'item_id'=>$meeting->id,
@@ -134,6 +135,22 @@ public function forward()
 					));
 
 		//add calender
+		if($meeting->confirmed_timing!=null)
+		{
+			Calender::create(array(
+			'date'=> $meeting->confirmed_timing,
+			'item_id'=>$meeting->id,
+			'user_id' => $oth_user->id,
+			'item_id_type'=>"meeting",
+					));
+
+			Calender::create(array(
+			'date'=> $meeting->confirmed_timing,
+			'item_id'=>$meeting->id,
+			'user_id' => $user->id,
+			'item_id_type'=>"meeting",
+					));
+		}
 
 
 	}
