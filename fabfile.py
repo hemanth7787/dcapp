@@ -80,4 +80,5 @@ def seed():
     code_dir = "/srv/www/dcapp_api/dc-app"
     with cd(code_dir):
         run("php artisan db:seed")
+        run("php artisan migrate --package=tappleby/laravel-auth-token")
         print(green("""Database seeded :)""", bold=True))
