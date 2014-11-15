@@ -311,6 +311,15 @@ public function forward()
 			$meeting->msg_target_usr_id = Input::get('to_user_id');
 			$meeting->save();
 
+			// Add notification
+			$message = $user->name." has send you a meeting request.";
+				Notification::create(array(
+				'message'=> $message,
+				'item_id'=>$meeting->id,
+				'user_id' => $meeting->msg_target_usr_id,
+				'item_type'=>"meeting",
+						));
+
 
 			return Response::json(array('status'=>'success','meeting'=>$meeting));
 		}
