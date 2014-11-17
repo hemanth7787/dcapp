@@ -41,24 +41,10 @@ class BusinessMatchingController extends \BaseController {
 
 	public function setCategories()
 	{
-		// $comments = array(
-  		// new Comment(array('message' => 'A new comment.')),
-  		// new Comment(array('message' => 'Another comment.')),
-		// 	new Comment(array('message' => 'The latest comment.'))
-		// );
-
-		// $post = Post::find(1);
-
-		// $post->comments()->saveMany($comments);
-
-		// $comment = new Comment(array('message' => 'A new comment.'));
-		// $post = Post::find(1);
-		// $comment = $post->comments()->save($comment);
-
 		$rules = array(
 		    //'user_id'       => 'required|integer|exists:users,id',
-		    'parent_category'  => 'required|alpha_dash|max:50',
-		    'child_category'   => 'required|alpha_dash|max:50',
+		    // 'parent_categories'  => 'required|alpha_dash|max:50|array',
+		    // 'child_categories'   => 'required|alpha_dash|max:50|array',
 
 		);
 		$validator = Validator::make(Input::all(), $rules);
@@ -68,9 +54,16 @@ class BusinessMatchingController extends \BaseController {
 		else{
 
 			$user = Auth::user();
-			$profile = BmCategory::firstOrCreate(array('user_id' => $user->id,
-				'parent_category' => Input::get('parent_category'),
-				'child_category'  => Input::get('child_category')));
+			$parent_categories = Input::get('parent_categories');
+			$child_categories  = Input::get('child_categories');
+
+			foreach ($parent_categories as $index => $pcat) {
+				$profile = BmCategory::firstOrCreate(array('user_id' => $user->id,
+				'parent_category' => $pcat,
+				'child_category'  => $child_categories[$index]));
+			}
+
+			
 			return Response::json(array('status'=>'success'));
 		}
 	}
