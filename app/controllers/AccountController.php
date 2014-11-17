@@ -6,29 +6,37 @@ public function publicView($id)
 {
 	$user = Auth::user();
 	$host_path = Config::get('app.host_path');
-	$my_connections = Connection::where('to','=',$user->id)
-		->orWhere('from','=',$user->id)
-		->where('accept','=',true)->get();
+	// $my_connections = Connection::where('to','=',$user->id)
+	// 	->orWhere('from','=',$user->id)
+	// 	->where('accept','=',true)->get();
 	$userview = User::find($id);
 	if($userview == null)
 	{
 		return Response::json(array('status'=>'failed','message'=>'user does not exist!','err_code'=>1));
 	}
-	$con_member_id_list = array();
-	foreach ($my_connections as $con)
-	{
-		if($con->from == $user->id)
-			$con_member_id_list[] = $con->to;
-		else
-			$con_member_id_list[] = $con->from;
-	}
+	// $con_member_id_list = array();
+	// foreach ($my_connections as $con)
+	// {
+	// 	if($con->from == $user->id)
+	// 		$con_member_id_list[] = $con->to;
+	// 	else
+	// 		$con_member_id_list[] = $con->from;
+	// }
+	$connection_count = Connection::where('to','=',$userview->id)
+	 	->orWhere('from','=',$userview->id)
+	 	->where('accept','=',true)
+	 	->count();
+	$endorsement_Count = Endorsement::where('to_user','=',$userview->id)
+	 	->count();
 	//if(in_array($userview->id, $con_member_id_list) || $id = $user->id)
 	//{
 		$user_details = array('id'=>$userview->id,
 		'name'=>$userview->name,
 		'email'=>$userview->email,
 	    'mobile'=>$userview->mobile,
-		'chamber_profile'=>$userview->chamber_profile);
+		'chamber_profile'=>$userview->chamber_profile,
+		'connection_count'=>$connection_count,
+		'endorsement_count'=>$endorsement_Count);
 		if($userview->profile != null)
 		{
 			$company_details = array('profile_id'=>$userview->profile->id,
