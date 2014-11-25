@@ -50,6 +50,9 @@ Route::get('api/business-list', array('before' => 'auth.token',
 Route::get('api/member-list/{trade_license_number?}', array('before' => 'auth.token',
  			'uses' => 'BusinessListingController@dummyFilteredMemberlist'));
 // ->where('id', '[0-9]+');
+// #################################################
+Route::get('api/bldummy', array( //'before' => 'auth.token',
+ 			'uses' => 'BusinessListingController@dummy'));
 
 Route::get('api/connection/list/{id}', array('before' => 'auth.token',
  			'uses' =>  'ConnectionController@public_connections'))->where('id', '[0-9]+');
@@ -112,6 +115,10 @@ Route::post('api/meeting/return', array('before' => 'auth.token',
 // Route::get('api/endorsement/show/{id}', array('before' => 'auth.token',
 // 	'uses' =>  'EndorsementController@show'))->where('id', '[0-9]+');
 
+Route::post('api/refer/add',array('before' => 'auth.token',
+	'uses' =>  'ReferController@add'));
+Route::post('api/refer/list', array('before' => 'auth.token',
+	'uses' =>  'ReferController@index'));
 
 Event::listen('auth.token.valid', function($user)
 {
