@@ -177,7 +177,9 @@ public function forward()
 				$offset =  $page * 10;
 			else
 				$offset=0;
-			$meetings = Meeting::where('msg_target_usr_id','=',$user->id)->idDescending()->get()->slice($offset, 10);
+			$meetings = Meeting::where('msg_target_usr_id','=',$user->id)
+			->where('confirmed','=',false)
+			->idDescending()->get()->slice($offset, 10);
 			$list = array();
 			foreach ($meetings as $meeting)
 			{
