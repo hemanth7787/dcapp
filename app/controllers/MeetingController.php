@@ -294,17 +294,29 @@ public function forward()
 
 			}
 
+			$zerohrs = new DateTime('00:00');
+
 			if(Input::get('timing_two'))
 			{
 				$dt = date_parse_from_format("d-m-Y H:i", Input::get('timing_two'));
-				$meeting->timing_two = \Carbon\Carbon::create($dt["year"], $dt["month"], $dt["day"], $dt["hour"], $dt["minute"], 0);
-
+				// Iphone empty time send fix
+				$twodt = new DateTime(Input::get('timing_two'));
+				if($twodt->format('H:i') != $zerohrs->format('H:i'))
+				{
+					$meeting->timing_two = \Carbon\Carbon::create($dt["year"], $dt["month"], $dt["day"], $dt["hour"], $dt["minute"], 0);
+				}
 			}
 
 			if(Input::get('timing_three'))
 			{
 				$dt = date_parse_from_format("d-m-Y H:i", Input::get('timing_three'));
-				$meeting->timing_three = \Carbon\Carbon::create($dt["year"], $dt["month"], $dt["day"], $dt["hour"], $dt["minute"], 0);
+				// Iphone empty time send fix
+				$threedt = new DateTime(Input::get('timing_two'));
+				if($threedt->format('H:i') != $zerohrs->format('H:i'))
+				{
+					$meeting->timing_three = \Carbon\Carbon::create($dt["year"], $dt["month"], $dt["day"], $dt["hour"], $dt["minute"], 0);
+				}
+				
 
 			}
 			
