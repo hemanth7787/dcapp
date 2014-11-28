@@ -2,11 +2,22 @@
 
 class BusinessMatchingController extends \BaseController {
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
+	public function getCategoryList()
+	{
+		//$user = Auth::user();
+		$categories = DynamicCategory::where('parent_slug','root')->get();
+		$items=array();
+		foreach ($categories as $category) {
+			$items[] = array(
+				'name'=>$category->name,
+				'slug' =>$category->slug,
+				'parent_id'=>$category->parent_id,
+				'parent_slug' => $category->parent_slug
+				);
+		}
+		return Response::json(array('root'=>$items));
+	}
+
 	public function getCategories()
 	{
 		$user = Auth::user();

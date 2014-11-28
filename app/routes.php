@@ -41,6 +41,8 @@ Route::post('api/business-categories', array('before' => 'auth.token',
  			'uses' => 'BusinessMatchingController@setCategories'));
 Route::post('api/business-categories/delete', array('before' => 'auth.token',
  			'uses' => 'BusinessMatchingController@deleteCategories'));
+Route::get('api/business-categories/list', array('before' => 'auth.token',
+ 			'uses' => 'BusinessMatchingController@getCategoryList'));
 
 Route::post('api/account/social/token-auth', 'SocialAccountController@login');
 Route::post('api/account/social/signup', 'SocialAccountController@signUp');
@@ -51,8 +53,8 @@ Route::get('api/member-list/{trade_license_number?}', array('before' => 'auth.to
  			'uses' => 'BusinessListingController@dummyFilteredMemberlist'));
 // ->where('id', '[0-9]+');
 // #################################################
-Route::get('api/bldummy', array( //'before' => 'auth.token',
- 			'uses' => 'BusinessListingController@dummy'));
+// Route::get('api/bldummy', array( //'before' => 'auth.token',
+//  			'uses' => 'BusinessListingController@dummy'));
 
 Route::get('api/connection/list/{id}', array('before' => 'auth.token',
  			'uses' =>  'ConnectionController@public_connections'))->where('id', '[0-9]+');
@@ -119,6 +121,10 @@ Route::post('api/refer/add',array('before' => 'auth.token',
 	'uses' =>  'ReferController@add'));
 Route::post('api/refer/list', array('before' => 'auth.token',
 	'uses' =>  'ReferController@index'));
+
+
+// Route::get('admin', 'AdminController@index');
+
 
 Event::listen('auth.token.valid', function($user)
 {
