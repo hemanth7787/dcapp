@@ -30,6 +30,11 @@ public function forward()
 		{
 			return Response::json(array('errors' => "Meeting was finalized before",'status'=>'failed'));
 		}
+		
+		if($meeting->rejected == true)
+		{
+			return Response::json(array('errors' => "Meeting was alredy rejected",'status'=>'failed'));
+		}		
 
 		$timing = date_parse_from_format("d-m-Y H:i", Input::get('timing'));
 		$meeting->timing =  \Carbon\Carbon::create(
@@ -97,6 +102,11 @@ public function forward()
 		if($meeting->confirmed == true)
 		{
 			return Response::json(array('errors' => "Meeting was finalized before",'status'=>'failed'));
+		}
+
+		if($meeting->rejected == true)
+		{
+			return Response::json(array('errors' => "Meeting was alredy rejected",'status'=>'failed'));
 		}
 
 		if (Input::get('accepted_timing_no')==1) 
@@ -179,6 +189,7 @@ public function forward()
 				$offset=0;
 			$meetings = Meeting::where('msg_target_usr_id','=',$user->id)
 			->where('confirmed','=',false)
+			->where('rejected','=',false)
 			->idDescending()->get()->slice($offset, 10);
 			$list = array();
 			foreach ($meetings as $meeting)
@@ -339,30 +350,57 @@ public function forward()
 		}
 	}
 
-	// public function delete()
-	// {
-	// 	$user = Auth::user();
-	// 	$rules = array(
-	// 	    'endorsement_ids'  => 'required|array',
-	// 	);
-	// 	$validator = Validator::make(Input::all(), $rules);
-	// 	if ($validator->fails()) 
-	// 	{
-	// 		return Response::json(array('errors' => $validator->messages(),'status'=>'failed'));
-	// 	}
-	// 	else
-	// 	{
+public function reject()
+	{
+	$user = Auth::user();
+	
+	$rules = array(
+			'meeting_id'  => 'required|integer|exists:meetings,id',
+			);
+	$validator = Validator::make(Input::all(), $rules);
+	if ($validator->fails()) 
+	{
+		return Response::json(array('errors' => $validator->messages(),'status'=>'failed'));
+	}
+	else
+	{
+		$meeting = Meeting::find(Input::get('meeting_id'));
+		if($user->id != $meeting->msg_target_usr_id)
+		{
+			return Response::json(array('errors' => "You cannot accept , because its not forwarded to you",'status'=>'failed'));
+		}
+		
+		if($meeting->confirmed == true)
+		{
+			return Response::json(array('errors' => "Meeting was finalized before",'status'=>'failed'));
+		}
 
-	// 		$endorsements = Endorsement::where('to_user','=',$user->id)->find(Input::get('endorsement_ids' ));
-	// 		$count=0;
-	// 		foreach ($endorsements as $endorsement)
-	// 		{
-	// 			$endorsement->delete();
-	// 			$count++;
-	// 		}
-	// 		return Response::json(array('status'=>'success','deleted_items'=>$count));
-	// 	}
-	// }
+		if($meeting->rejected == true)
+		{
+			return Response::json(array('errors' => "Meeting was alredy rejected",'status'=>'failed'));
+		}
 
+		 
+		$meeting->rejected = true;
+		$meeting->save();
+
+		// Add notification
+		if($user->id==$meeting->from)
+			$oth_user=$meeting->requestTo;
+		else
+			$oth_user=$meeting->requestFrom;
+
+		$message = $user->name." has rejected your meeting request";
+		Notification::create(array(
+			'message'=> $message,
+			'item_id'=>$meeting->id,
+			'user_id' => $oth_user->id,
+			'item_type'=>"meeting",
+					));
+	}
+
+	return Response::json(array('meeting' => $meeting,'status'=>'success'));
+
+	}
 
 }

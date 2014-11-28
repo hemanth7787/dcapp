@@ -114,6 +114,8 @@ Route::post('api/meeting/accept',array('before' => 'auth.token',
 	'uses' =>  'MeetingController@accept'))->where('id', '[0-9]+');
 Route::post('api/meeting/return', array('before' => 'auth.token',
 	'uses' =>  'MeetingController@forward'));
+Route::post('api/meeting/reject', array('before' => 'auth.token',
+	'uses' =>  'MeetingController@reject'));
 // Route::get('api/endorsement/show/{id}', array('before' => 'auth.token',
 // 	'uses' =>  'EndorsementController@show'))->where('id', '[0-9]+');
 
