@@ -69,7 +69,7 @@ class BusinessMatchingController extends \BaseController {
 	private function userCategories($user)
 	{
 			$usr_selected_categories = $user->categories;
-			$user_cat_array = array();
+			$usrcat_id_array = array();
 
 			foreach ($usr_selected_categories as $usr_cat) 
 			{
