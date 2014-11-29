@@ -2,61 +2,44 @@
 
 class BusinessMatchingController extends \BaseController {
 
+	// Seperate table
 	public function getCategoryList()
 	{
-		//$user = Auth::user();
-		$categories = DynamicCategory::where('parent_slug','root')->get();
-		$items=array();
-		foreach ($categories as $category) {
-			$items[] = array(
-				'name'=>$category->name,
-				'slug' =>$category->slug,
-				'parent_id'=>$category->parent_id,
-				'parent_slug' => $category->parent_slug
-				);
-		}
-		return Response::json(array('root'=>$items));
-	}
-
-	public function getCategories()
-	{
 		$user = Auth::user();
-		$categories = $user->categories;
-		return Response::json($categories);
+		$items = $this->userCategories($user);
+		return Response::json(array('root'=>$items));
 	}
 
 	public function deleteCategories()
 	{
 		$rules = array(
-		    'parent_category'  => 'required|alpha_dash|max:50',
-		    'child_category'   => 'required|alpha_dash|max:50',
-
+		    'category_ids'  => 'required|array',
 		);
 		$validator = Validator::make(Input::all(), $rules);
 			if ($validator->fails()) {
 			return Response::json(array('errors' => $validator->messages(),'status'=>'failed'));
 		}
-		else{
+		else
+		{
 
 		$user = Auth::user();
-		// $categories = BmCategory::find(array('user_id' => $user->id,
-		// 		'parent_category' => Input::get('parent_category'),
-		// 		'child_category'  => Input::get('child_category')));
-		$categories = BmCategory::where('user_id', $user->id)
-		->where('parent_category', Input::get('parent_category'))
-		->where('child_category' , Input::get('child_category'))->delete();
-		return Response::json(array('status'=>'success'));
+		$categories = BmCategory::where('user_id','=',$user->id)
+		->whereIn('category_id', Input::get('category_ids'))->get();
+		$count=0;
+		foreach ($categories as $category)
+		{
+			$category->delete();
+			$count++;
 		}
-		
+		$items = $this->userCategories($user);
+		return Response::json(array('status'=>'success','deleted_items'=>$count,'root'=>$items));
+		}
 	}
 
 	public function setCategories()
 	{
 		$rules = array(
-		    //'user_id'       => 'required|integer|exists:users,id',
-		    // 'parent_categories'  => 'required|alpha_dash|max:50|array',
-		    // 'child_categories'   => 'required|alpha_dash|max:50|array',
-
+		    'category_ids'  => 'required|array',
 		);
 		$validator = Validator::make(Input::all(), $rules);
 			if ($validator->fails()) {
@@ -65,21 +48,54 @@ class BusinessMatchingController extends \BaseController {
 		else{
 
 			$user = Auth::user();
-			$parent_categories = Input::get('parent_categories');
-			$child_categories  = Input::get('child_categories');
+			$categories = DynamicCategory::find(Input::get('category_ids'));
 
-			foreach ($parent_categories as $index => $pcat) {
-				$profile = BmCategory::firstOrCreate(array('user_id' => $user->id,
-				'parent_category' => $pcat,
-				'child_category'  => $child_categories[$index]));
+			$count=0;
+			foreach ($categories as $category) {
+				$profile = BmCategory::firstOrCreate(array(
+				'user_id' => $user->id,
+				'category_id' => $category->id,
+				'category_name'  => $category->name,
+				'category_slug'  => $category->slug
+				));
+				$count++;
 			}
-
-			
-			return Response::json(array('status'=>'success'));
+			$items = $this->userCategories($user);
+			return Response::json(array('status'=>'success','added_items'=>$count,'root'=>$items));
 		}
 	}
 
-		public function getBm()
+    // PRIVATE
+	private function userCategories($user)
+	{
+			$usr_selected_categories = $user->categories;
+			$user_cat_array = array();
+
+			foreach ($usr_selected_categories as $usr_cat) 
+			{
+				$usrcat_id_array[] = $usr_cat->category_id;
+			}
+
+			$categories = DynamicCategory::where('parent_slug','root')->get();
+			$items=array();
+			foreach ($categories as $category) 
+			{
+				$items[] = array(
+					'id' => $category->id,
+					'name' => $category->name,
+					'slug' => $category->slug,
+					'selected' => in_array($category->id, $usrcat_id_array), // true if user selected
+					'parent_id'   => $category->parent_id,
+					'parent_slug' => $category->parent_slug
+					);
+			}
+			return $items;
+	}
+
+
+
+
+	public function getBm()
 	{
 		$user = Auth::user();
 		$bm = BusinessMatching::firstOrCreate(array('user_id' => $user->id));

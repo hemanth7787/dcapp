@@ -35,9 +35,9 @@ Route::get('api/business-matching', array('before' => 'auth.token',
 Route::post('api/business-matching', array('before' => 'auth.token',
  			'uses' => 'BusinessMatchingController@setBm'));
 
-Route::get('api/business-categories', array('before' => 'auth.token',
- 			'uses' => 'BusinessMatchingController@getCategories'));
-Route::post('api/business-categories', array('before' => 'auth.token',
+// Route::get('api/business-categories', array('before' => 'auth.token',
+//  			'uses' => 'BusinessMatchingController@getCategories'));
+Route::post('api/business-categories/set', array('before' => 'auth.token',
  			'uses' => 'BusinessMatchingController@setCategories'));
 Route::post('api/business-categories/delete', array('before' => 'auth.token',
  			'uses' => 'BusinessMatchingController@deleteCategories'));
