@@ -125,11 +125,23 @@ Route::post('api/refer/list', array('before' => 'auth.token',
 	'uses' =>  'ReferController@index'));
 
 
-// Route::get('admin', 'AdminController@index');
+Route::get('admin', array('before' => 'loginrequired',
+ 'uses' =>  'AdminController@index'));
+Route::get('admin/login', 'AdminController@loginIndex');
+Route::post('admin/login', 'AdminController@loginPost');
+Route::get('admin/logout', 'AdminController@logout');
 
 
 Event::listen('auth.token.valid', function($user)
 {
   //Token is valid, set the user on auth system.
   Auth::setUser($user);
+});
+
+
+
+
+Route::filter('loginrequired', function()
+{
+     if (Auth::guest()) return Redirect::guest('admin/login');
 });
