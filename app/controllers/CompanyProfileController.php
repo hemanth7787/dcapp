@@ -86,14 +86,49 @@ $profile->image = $relative_path;
 
 
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
+	public function setRegion()
 	{
-		//
+		$rules = array(
+		    'region_id'  => 'required|integer',
+		);
+		$validator = Validator::make(Input::all(), $rules);
+		if ($validator->fails()) {
+			return Response::json(array('errors' => $validator->messages(),'status'=>'failed'));
+		}
+		else
+		{
+			$region_mappings = array(
+				1 =>'Middle East',
+				2 =>'Africa',
+				3 =>'CIS',
+				4 =>'Indian Subcontinent',
+				5 =>'Asia',
+				6 =>'Australia',
+				7 =>'North America',
+				8 =>'South America'
+				);
+
+			if(array_key_exists(Input::get('region_id'), $region_mappings))
+			{
+				$user = Auth::user();
+				$profile = CompanyProfile::firstOrCreate(array('user_id' => $user->id));
+				$profile->region_id = Input::get('region_id');
+				$profile->region    = $region_mappings[Input::get('region_id')];
+				$profile->save();
+				return Response::json(array('status'=>'success','profile'=>$profile));
+			}
+			else
+			{
+				$pretty_print_array = "";
+				foreach ($region_mappings as $key => $value) {
+					$pretty_print_array = $pretty_print_array.$key."(".$value."), ";
+				}
+				return Response::json(array('errors' => "region_id cannot be '".Input::get(
+					'region_id')."' available IDs are: ".$pretty_print_array,'status'=>'failed'));
+			}
+
+		}
+
 	}
 
 

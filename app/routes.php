@@ -28,6 +28,8 @@ Route::get('api/profile', array('before' => 'auth.token',
  			'uses' => 'CompanyProfileController@index'));
 Route::post('api/profile', array('before' => 'auth.token',
  			'uses' => 'CompanyProfileController@create'));
+Route::post('api/profile/set-region', array('before' => 'auth.token',
+ 			'uses' => 'CompanyProfileController@setRegion'));
 
 
 Route::get('api/business-matching', array('before' => 'auth.token',
