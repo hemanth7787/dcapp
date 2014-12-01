@@ -50,6 +50,14 @@ def dev():
     # Deploy to Codestager ,  "cl2" is from my ssh config
     env.hosts = ['cl2']
 
+
+@task()
+def updatedeps():
+    code_dir = "/srv/www/dcapp_api/dc-app"
+    with cd(code_dir):
+        run("umask 002 && php composer.phar install")
+        print(green("""Packages updated.""", bold=True))
+
 @task()
 def publish():
     command = "git push && git push github master"

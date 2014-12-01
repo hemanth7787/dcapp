@@ -69,6 +69,12 @@ class RssDataController extends \BaseController {
 			if(!$events->exists)
 			{
 				$events->eventTitle = $element[0]->eventTitle;
+
+				// $breaks = array("<br />","<br>","<br/>","<br />","&lt;br /&gt;","&lt;br/&gt;","&lt;br&gt;"); 
+    			//$breaks = array("<br />","<br>","<br/>");  
+    			//$eventDesc = str_ireplace($breaks, "\r\n", $element[0]->eventDesc);  
+				// $events->eventDesc = strip_tags($eventDesc);
+
 				$events->eventURL = $element[0]->eventURL;
 				$events->eventDesc = strip_tags($element[0]->eventDesc);
 				$events->eventDate = $element[0]->eventDate;
