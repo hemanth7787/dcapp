@@ -98,14 +98,14 @@ $profile->image = $relative_path;
 		else
 		{
 			$region_mappings = array(
-				1 =>'Middle East',
-				2 =>'Africa',
-				3 =>'CIS',
-				4 =>'Indian Subcontinent',
-				5 =>'Asia',
-				6 =>'Australia',
-				7 =>'North America',
-				8 =>'South America'
+				0 =>'Middle East',
+				1 =>'Africa',
+				2 =>'CIS',
+				3 =>'Indian Subcontinent',
+				4 =>'Asia',
+				5 =>'Australia',
+				6 =>'North America',
+				7 =>'South America'
 				);
 
 			if(array_key_exists(Input::get('region_id'), $region_mappings))
