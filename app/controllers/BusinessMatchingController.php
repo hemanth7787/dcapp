@@ -49,10 +49,10 @@ class BusinessMatchingController extends \BaseController {
 
 			$user = Auth::user();
 			$categories = DynamicCategory::find(Input::get('category_ids'));
-
+			$existing_categories = BmCategory::where('user_id',$user->id)->delete();
 			$count=0;
 			foreach ($categories as $category) {
-				$profile = BmCategory::firstOrCreate(array(
+				$profile = BmCategory::create(array(
 				'user_id' => $user->id,
 				'category_id' => $category->id,
 				'category_name'  => $category->name,
