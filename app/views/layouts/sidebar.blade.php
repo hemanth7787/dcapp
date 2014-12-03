@@ -17,7 +17,12 @@
     I don't have any records!
 @endif --}}
 
-    <a @if ( $page === 'dashboard')class="active-menu"@endif  href="#"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
+    <a @if ( $page === 'dashboard')class="active-menu"@endif  
+    href="{{ URL::to('admin') }}"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
+   </li>
+    <li>
+     <a  @if ( $page === 'user_mgmt')class="active-menu"@endif 
+     href="{{ URL::to('admin/users') }}"><i class="fa fa-user fa-3x"></i> User Management</a>
    </li>
    <!-- <li>
      <a  href="ui.html"><i class="fa fa-desktop fa-3x"></i> UI Elements</a>

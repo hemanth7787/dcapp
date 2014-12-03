@@ -77,6 +77,10 @@ class SocialAccountController extends \BaseController {
 		if($social == null)
 			return Response::json(array('errors' => "specifed account does not exist!",'status'=>'failed'));
 		$user   = $social->user;
+		if($user->active == 0)
+    			{
+    				return Response::json(array('errors' => 'This account is deactivated','status'=>'failed'));
+    			}
 		if($user->deviceToken!=Input::get('device_token') && strlen(Input::get('device_token'))>5)
 		{
 			$user->deviceToken   = Input::get('device_token');

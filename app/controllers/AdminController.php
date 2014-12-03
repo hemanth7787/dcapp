@@ -2,11 +2,51 @@
 
 class AdminController extends \BaseController {
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
+	public function userManagementIndex()
+	{
+		$data = User::all();
+		return View::make('admin.usermgmt')->withData($data);
+	}
+
+	public function userManagementShow($id)
+	{
+		$userdata = User::find($id);
+		$companydata = $userdata->profile;
+		return View::make('admin.users.userShow')->with('userdata',$userdata)
+		->with('companydata',$companydata); //->withData($data);
+	}
+
+
+	public function userManagementEdit($id)
+	{
+		$rules = array(
+		    'active'     => 'required|boolean',
+		    'verified'  => 'required|boolean',
+		    'superuser'  => 'required|boolean',
+		);
+		$validator = Validator::make(Input::all(), $rules);
+		if ($validator->fails()) {
+				return Response::json(array('errors' => $validator->messages(),'status'=>'failed'));
+		}
+		else
+		{
+			$user = User::find($id);
+			// $profile = $userdata->profile;
+			$user->active = Input::get('active');
+			$user->superuser = Input::get('superuser');
+			$user->save();
+
+			$profile = $user->profile;
+			$profile->verified = Input::get('verified');
+			$profile->save();
+			return Response::json(array('status'=>'success'));
+		}
+
+
+		
+		
+		
+	}
 
 	public function logout()
 	{
