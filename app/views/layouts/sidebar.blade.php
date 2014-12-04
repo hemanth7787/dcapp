@@ -24,6 +24,10 @@
      <a  @if ( $page === 'user_mgmt')class="active-menu"@endif 
      href="{{ URL::to('admin/users') }}"><i class="fa fa-user fa-3x"></i> User Management</a>
    </li>
+   <li>
+     <a  @if ( $page === 'category')class="active-menu"@endif 
+     href="{{ URL::to('admin/category') }}"><i class="fa fa-list-ol fa-3x"></i> Dynamic Categoies</a>
+   </li>
    <!-- <li>
      <a  href="ui.html"><i class="fa fa-desktop fa-3x"></i> UI Elements</a>
    </li>

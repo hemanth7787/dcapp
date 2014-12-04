@@ -74,7 +74,7 @@
               <p>already logged in as  {{Auth::user()->username }}. 
               <a href="/admin/logout">logout ?</a></p>
           @else
-          {{ Form::submit('Login Now',['class'=>'btn btn-primary']) }} 
+          {{ Form::submit('Login Now',array('class'=>'btn btn-primary')) }} 
           @endif
            
 <!--            <a href="index.html" class="btn btn-primary ">Login Now</a> -->
