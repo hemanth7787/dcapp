@@ -66,7 +66,7 @@
 									    <tr >
                                         <td > {{ $key+1 }}</td>
                                            <td > {{ $user->name }}</td>
-                                            <td>{{ $user->profile->company_name }}</td>
+                                            <td> @if ($user->profile){{ $user->profile->company_name }} @endif </td>
                                             <td>{{ $user->email }}</td>
                                             <td>{{ $user->mobile }}</td>
                                             <td class="center">{{ $user->active }}</td>
