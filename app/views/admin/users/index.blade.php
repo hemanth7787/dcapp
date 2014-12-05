@@ -21,6 +21,7 @@
                         <div class="panel-heading">
                              Users
                              <div style="float:right">
+
 {{ Form::open( 
     array('route' => array('admin.users.index'),'method' => 'get')) }}
 <label>Company</label>
@@ -33,7 +34,15 @@
 {{ Form::select('active', array('2'=>'All','1'=>'Active','0'=>'Disabled'), $default_user_status_filter) }}
 &nbsp;
 {{ Form::submit('Go',array('class'=>'btn btn-default btn-xs')) }} 
+&nbsp;&nbsp;
+ <a  href="{{ URL::to('admin/users/create')}}" class="btn btn-default btn-xs">Add New 
+ &nbsp;<i class="fa fa-plus-circle"></i></a>
 {{ Form::close() }}
+
+
+
+
+
 </div>
                         </div>
                         <div class="panel-body">

@@ -27,7 +27,15 @@ font-size: 16px;"> {{Auth::user()->username }} &nbsp; <a style="border-radius:5p
  @yield('sidebar')
  
 <div id="page-wrapper" >
+@if (Session::has('message'))
+<div class="alert alert-{{Session::get('message_type')}} alert-dismissable">
+<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+{{Session::get('message')}}
+</div>
+@endif
 <div id="page-inner">
+
+
 
     @yield('content')
       

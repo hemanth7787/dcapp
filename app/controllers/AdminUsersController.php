@@ -73,7 +73,7 @@ class AdminUsersController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		return View::make('admin.users.create');
 	}
 
 
@@ -84,7 +84,67 @@ class AdminUsersController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		$rules = array(
+		    'name'     => 'required',
+		    'username' => 'required|alphaNum|unique:users',
+			'email'    => 'required|email|unique:users', // make sure the email is an actual email
+			'password' => 'required|min:3', // password can only be alphanumeric and has to be greater than 3 characters
+			'password_again'   => 'required|same:password',
+			'mobile'   => 'required|integer',
+			// 'device_token'   => 'alphaNum',
+			'company_name'  => 'required|alphaNum',
+		    'designation'   => 'required|alphaNum',
+			'company_email' => 'required|email', 
+			// 'membership_number'      => 'required|alphaNum',
+			'trade_license_number'   => 'required|alphaNum',
+			'profile_image'		     => 'image',
+		);
+		$validator = Validator::make(Input::all(), $rules);
+			if ($validator->fails()) {
+				Session::flash('message', 'Please correct the errors below!'); 
+				Session::flash('message_type', 'danger');
+				return View::make('admin.users.create')
+                ->with('errors', $validator->messages());
+		}
+		else
+		{
+			$user = new User();
+
+			$user->name     = Input::get('name' );
+			$user->username = Input::get('username');
+			$user->email    = Input::get('email');
+			$user->password = Hash::make(Input::get('password'));
+			$user->mobile   = Input::get('mobile');
+			// if(strlen(Input::get('device_token'))>5)
+			// {
+			// 	$user->deviceToken   = Input::get('device_token');
+			// }
+			$user->save();
+
+			$profile = CompanyProfile::firstOrCreate(array('user_id' => $user->id));
+			//$profile->user_id	= Input::get('user_id');
+			$profile->company_name = Input::get('company_name');
+			$profile->designation  = Input::get('designation');
+			$profile->company_email = Input::get('company_email');
+			// $profile->membership_number = Input::get('membership_number');
+			$profile->trade_license_number = Input::get('trade_license_number');
+			// $profile->image = Input::file('image');
+
+			if(Input::file('image')!= null)
+			{
+				$image = Input::file('image');
+				$filename      = bin2hex(mcrypt_create_iv(22, MCRYPT_DEV_URANDOM)).'-'.time(). '.' . $image->getClientOriginalExtension();
+				$relative_path = 'images/profile/' . $filename;
+				$path = public_path($relative_path);
+				Image::make($image->getRealPath())->save($path);
+				$profile->image = $relative_path;
+			}
+			$profile->save();
+
+			return Redirect::to('admin/users')
+			->with('message', 'User created successfully')
+			->with('message_type', 'success');
+		}
 	}
 
 
