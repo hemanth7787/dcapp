@@ -21,24 +21,7 @@
                         <div class="panel-heading">
                    {{ $userdata->name }} 
 <div style="float:right">
-<a href="#" class="btn btn-default btn-xs">Edit</a>
-@if($companydata->verified == 0)
-    <a onclick="user_operations({{ $userdata->active}},{{ $userdata->superuser}},1)" class="btn btn-success btn-xs">Verify</a>
-@else
-    <a onclick="user_operations({{ $userdata->active}},{{ $userdata->superuser}},0)" class="btn btn-danger btn-xs">Cancel verification</a>
-@endif
-
-@if($userdata->active == 0)
-<a onclick="user_operations(1,{{ $userdata->superuser}},{{ $companydata->verified}})" class="btn btn-success btn-xs">Activate</a>
-@else
-<a onclick="user_operations(0,{{ $userdata->superuser}},{{ $companydata->verified}})" class="btn btn-danger btn-xs">Deactivate</a>
-@endif
-
-@if($userdata->superuser == 0)
-<a onclick="user_operations({{ $userdata->active}},1,{{ $companydata->verified}})" class="btn btn-success btn-xs">Make Superuser</a>
-@else
-<a onclick="user_operations({{ $userdata->active}},0,{{ $companydata->verified}})" class="btn btn-danger btn-xs">Remove Superuser</a>
-@endif
+<a href="{{ URL::to('admin/users/'.$userdata->id.'/edit')}}" class="btn btn-default btn-xs">Edit</a>
 </div>
                    
                         </div>
@@ -114,36 +97,7 @@
 @stop
 
 @section('script')
-<script type="text/javascript">
-function user_operations(active,superuser,verified)
-{
-  /* -- Ajax request--*/
- $.ajax({
-     type:"POST",
-     url:"{{ URL::to('admin/users/edit',$userdata->id) }}",
-     data: {
-            'active'         : active, 
-            'superuser'      : superuser,
-            'verified'       : verified
-     },
-     success: function(json_obj){
-        if (json_obj['status'] == "success")
-        { 
-            // $("#row"+item_id).html("<td class='alert'></td><td class='alert'></td><td class='alert'><td class='alert'><td class='alert'></td><td class='alert'>Deleted</td>");
-            location.reload();
-            return;
-        }
-        else
-        {
-           // $("#btn"+item_id).html("<a class='errorlist'>Error</a>");
-           //  return;
-            alert("unexpected error");
-            return;
-        }
-    }
-});
-}
-</script>
+
 @stop
 
 @section('sidebar')

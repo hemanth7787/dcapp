@@ -42,6 +42,7 @@ class AdminCategoryController extends \BaseController {
 		);
 		$validator = Validator::make(Input::all(), $rules);
 			if ($validator->fails()) {
+				Input::flash();
 				return View::make('admin.category.create')
 				->with('categories',$category_list)
                 ->with('errors', $validator->messages());
@@ -57,7 +58,7 @@ class AdminCategoryController extends \BaseController {
 			$cat->parent_id   = $parent_cat->id;
 			$cat->parent_slug = $parent_cat->slug;
 			$cat->save();
-			return View::make('admin.category.index')->with('categories',DynamicCategory::all());
+			return Redirect::to('account');
 		}
 	}
 

@@ -138,8 +138,8 @@ Route::get('admin/logout', 'AdminController@logout');
 //  'uses' =>  'AdminController@userManagementIndex'));
 // Route::get('admin/users/{id}', array('before' => 'loginrequired',
 //  'uses' =>  'AdminController@userManagementShow'))->where('id', '[0-9]+');
-// Route::post('admin/users/edit/{id}', array(//'before' => 'loginrequired',
-//  'uses' =>  'AdminController@userManagementEdit'))->where('id', '[0-9]+');
+Route::post('admin/users/operations/{id}', array(//'before' => 'loginrequired',
+ 'uses' =>  'AdminUsersController@AjaxEditOperations'))->where('id', '[0-9]+');
 
 
 

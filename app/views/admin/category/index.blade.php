@@ -32,21 +32,23 @@
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>id</th>
-                                            <th>name</th>
-                                            <th>slug</th>
-                                            <th>parent id</th>
-                                            <th>parent slug</th>
-                                            <th>operations</th>
+                                            <th>#</th>
+                                            <th>Name</th>
+                                            <th>Catrgory Id</th>
+                                            <th>Slug</th>
+                                            <th>Parent id</th>
+                                            <th>Parent slug</th>
+                                            <th>Operations</th>
                                         </tr>
                                     </thead>
                                     <tbody>
 
 
-                                    @foreach ($categories as $category)
+                                    @foreach ($categories as $key => $category)
                                         <tr >
-                                           <td > <a href="{{--  URL::to('admin/users',$user->id) --}}">{{ $category->id }}</a></td>
+                                           <td >{{ $key+1 }}</td>
                                             <td>{{ $category->name }}</td>
+                                            <td>{{ $category->id }}</td>
                                             <td>{{ $category->slug }}</td>
                                             <td class="center">{{ $category->parent_id }}</td>
                                             <td class="center">{{ $category->parent_slug }}</td>
