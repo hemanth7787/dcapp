@@ -31,12 +31,12 @@ class AdminUsersController extends \BaseController {
 				})->values()->lists('user_id');
 
 
-				$data = $data->find($filtered_profile_ids);
+				$data = $data->whereIn('id',$filtered_profile_ids);
 			}
-		else 
-			{
-				$data = $data->get();
-			}
+		// else 
+		// 	{
+		// 		$data = $data->paginate(15);
+		// 	}
 
 
 		// QUERY  again  .. bad :(
@@ -58,7 +58,7 @@ class AdminUsersController extends \BaseController {
 		// })->values()->lists('company_name','id');
 
 		return View::make('admin.users.index')
-		->withData($data)
+		->withData($data->paginate(15))
 		->with('company_list',$company_list)
 		->with('default_company_filter',Input::get('company'))
 		->with('default_user_type_filter',Input::get('superuser'))

@@ -9,6 +9,7 @@
 <div class="col-md-12">
 <h2>Manage Users</h2>   
 <h5>Users are listed below. </h5>
+ 
 </div>
 </div> 
 <hr />
@@ -74,12 +75,12 @@
                                             <td class="center"><a class="btn btn-default btn-xs" href="{{ URL::to('admin/users',$user->id) }}">View</a>&nbsp;
                                             <a href="{{ URL::to('admin/users/'.$user->id.'/edit')}}" class="btn btn-default btn-xs">Edit</a></td>
                                         </tr>
-									@endforeach
+           					@endforeach
 
                                     </tbody>
                                 </table>
                             </div>
-                            
+                      {{$data->links()}}      
                         </div>
                     </div>
                     <!--End Advanced Tables -->
