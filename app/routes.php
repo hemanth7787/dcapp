@@ -134,18 +134,25 @@ Route::post('admin/login', 'AdminController@loginPost');
 Route::get('admin/logout', 'AdminController@logout');
 
 
-// Route::get('admin/users', array('before' => 'loginrequired',
-//  'uses' =>  'AdminController@userManagementIndex'));
-// Route::get('admin/users/{id}', array('before' => 'loginrequired',
-//  'uses' =>  'AdminController@userManagementShow'))->where('id', '[0-9]+');
+
 Route::post('admin/users/operations/{id}', array(//'before' => 'loginrequired',
  'uses' =>  'AdminUsersController@AjaxEditOperations'))->where('id', '[0-9]+');
 
 
+//API Funcions that use token authentication.
+Route::group(array('before'=>'auth.token'), function()
+	{
+		Route::post('api/job-post/list','JobPostController@index');
+		Route::post('api/job-post/my-list','JobPostController@myJobPostings');
+		Route::post('api/job-post/add','JobPostController@store');
+		Route::post('api/job-post/show','JobPostController@show');
+		Route::post('api/job-post/update','JobPostController@update');
+		Route::post('api/job-post/delete','JobPostController@destroy');
+	}
+);
 
 
-
-
+//Web interface functions that use login form authentication.
 Route::group(array('before'=>'loginrequired'), function()
 	{  
 	    // Resourceful routing
