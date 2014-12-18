@@ -142,12 +142,20 @@ Route::post('admin/users/operations/{id}', array(//'before' => 'loginrequired',
 //API Funcions that use token authentication.
 Route::group(array('before'=>'auth.token'), function()
 	{
+		//Job Post API
 		Route::post('api/job-post/list','JobPostController@index');
 		Route::post('api/job-post/my-list','JobPostController@myJobPostings');
 		Route::post('api/job-post/add','JobPostController@store');
 		Route::post('api/job-post/show','JobPostController@show');
 		Route::post('api/job-post/update','JobPostController@update');
 		Route::post('api/job-post/delete','JobPostController@destroy');
+
+		//Job application API
+		Route::post('api/job-application/inbound-list','JobApplicationController@inboundList');
+		Route::post('api/job-application/outbound-list','JobApplicationController@outboundList');
+		Route::post('api/job-application/add','JobApplicationController@store');
+		Route::post('api/job-application/delete','JobApplicationController@destroy');
+
 	}
 );
 
