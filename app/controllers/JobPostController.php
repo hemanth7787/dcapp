@@ -121,8 +121,11 @@ class JobPostController extends \BaseController {
 		}
 		else
 		{
-			$post = JobPost::find(Input::get('job_post_id'));
 			$user = Auth::user();
+			$post = JobPost::find(Input::get('job_post_id'));
+			if($post->user_id != $user->id)
+				return Response::json(array('status'=>'failed','reson'=>'Insufficient permission'));
+			
 			$post->description   = Input::get('description');
 			//$refer->active  = true;
 			$post->save();
@@ -151,6 +154,10 @@ class JobPostController extends \BaseController {
 			$user = Auth::user();
 
 			$post = JobPost::find(Input::get('job_post_id'));
+
+			if($post->user_id != $user->id)
+				return Response::json(array('status'=>'failed','reson'=>'Insufficient permission'));
+			
 			$post->active   = false;
 			$post->save();
 			return Response::json(array('status'=>'success','job_post'=>$post));
