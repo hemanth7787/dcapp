@@ -60,7 +60,11 @@ class JobPostController extends \BaseController {
 	 */
 	public function store()
 	{	
-		$rules = array('description'  => 'required|max:500',);
+		$rules = array(
+			'title'        => 'required|max:100',
+			'description'  => 'required|max:500',
+			'due_date'     => 'date_format:d-m-Y H:i',
+			);
 		$validator = Validator::make(Input::all(), $rules);
 		if ($validator->fails()) 
 		{
@@ -72,7 +76,14 @@ class JobPostController extends \BaseController {
 			$user = Auth::user();
 			$post = new JobPost();
 			$post->user_id = $user->id;
+			$post->title   = Input::get('title');
 			$post->description   = Input::get('description');
+			if(Input::get('due_date'))
+			{
+				$dt = date_parse_from_format("d-m-Y H:i", Input::get('due_date'));
+				$post->due_date = \Carbon\Carbon::create($dt["year"], $dt["month"], $dt["day"], $dt["hour"], $dt["minute"], 0);
+
+			}
 			$post->active  = true;
 			$post->save();
 			return Response::json(array('status'=>'success','job_post'=>$post));
@@ -112,7 +123,9 @@ class JobPostController extends \BaseController {
 	{
 		$rules = array(
 			'job_post_id'  => 'required|integer|exists:job_posts,id',
+			'title'        => 'required|max:100',
 			'description'  => 'required|max:500',
+			'due_date'     => 'date_format:d-m-Y H:i',
 			);
 		$validator = Validator::make(Input::all(), $rules);
 		if ($validator->fails()) 
@@ -126,7 +139,14 @@ class JobPostController extends \BaseController {
 			if($post->user_id != $user->id)
 				return Response::json(array('status'=>'failed','reson'=>'Insufficient permission'));
 			
+			$post->title   = Input::get('title');
 			$post->description   = Input::get('description');
+			if(Input::get('due_date'))
+			{
+				$dt = date_parse_from_format("d-m-Y H:i", Input::get('due_date'));
+				$post->due_date = \Carbon\Carbon::create($dt["year"], $dt["month"], $dt["day"], $dt["hour"], $dt["minute"], 0);
+
+			}
 			//$refer->active  = true;
 			$post->save();
 			return Response::json(array('status'=>'success','job_post'=>$post));
