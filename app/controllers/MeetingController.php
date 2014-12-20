@@ -140,6 +140,7 @@ public function forward()
 		Notification::create(array(
 			'message'=> $message,
 			'item_id'=>$meeting->id,
+			'from_user'=> $user->id,
 			'user_id' => $oth_user->id,
 			'item_type'=>"meeting",
 					));
@@ -341,6 +342,7 @@ public function forward()
 				Notification::create(array(
 				'message'=> $message,
 				'item_id'=>$meeting->id,
+				'from_user'=> $user->id,
 				'user_id' => $meeting->msg_target_usr_id,
 				'item_type'=>"meeting",
 						));
@@ -394,6 +396,7 @@ public function reject()
 		Notification::create(array(
 			'message'=> $message,
 			'item_id'=>$meeting->id,
+			'from_user'=> $user->id,
 			'user_id' => $oth_user->id,
 			'item_type'=>"meeting",
 					));

@@ -173,6 +173,7 @@ class ConnectionController extends \BaseController {
 				$noti = new Notification();
 				$noti->message = $message;
 				$noti->item_id = $con->id;
+				$noti->from_user = $user->id;
 				$noti->user_id = Input::get('recipient_id');
 				$noti->item_type = "invite";
 				$noti->save();
@@ -253,6 +254,7 @@ class ConnectionController extends \BaseController {
 			$noti->message = $message;
 			$noti->item_id = $con->id;
 			$noti->user_id = $con->from;
+			$noti->from_user = $user->id;
 			$noti->item_type = "noti";
 			$noti->save();
 

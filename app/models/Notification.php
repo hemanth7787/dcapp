@@ -14,5 +14,9 @@ class Notification extends Eloquent{
 	public function scopeIdDescending($query)
     {
         return $query->orderBy('id', 'DESC');
-    }   
+    }
+    public function fromUser()
+    {
+		return $this->belongsTo('User','from_user');
+	} 
 }

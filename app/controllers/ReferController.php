@@ -86,8 +86,9 @@ class ReferController extends \BaseController {
 			$message = $user->name." has shared an item with you.";
 				Notification::create(array(
 				'message'=> $message,
-				'item_id'=>$refer->id,
-				'user_id' => $refer->to_uid,
+				'item_id'=> $refer->id,
+				'user_id'  => $refer->to_uid,
+				'from_user'=> $user->id,
 				'item_type'=>"refer",
 						));
 

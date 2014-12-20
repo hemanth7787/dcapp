@@ -19,7 +19,9 @@ class NotificationController extends \BaseController {
 				$offset =  $page * 10;
 			else
 				$offset=0;
-			$notifications = Notification::where('user_id','=',$user->id)->idDescending()->get()->slice($offset, 10);
+			$notifications = Notification::with('fromUser')
+				->where('user_id','=',$user->id)->idDescending()
+				->get()->slice($offset, 10);
 			
 			$response_Array = array();
 
@@ -33,11 +35,9 @@ class NotificationController extends \BaseController {
 		    		'created_at'=>$noti->created_at->toDateTimeString()
 		    		);
 		    	
-		    	   	if($noti->item_type=="invite")
+		    	   	if($noti->fromUser && $noti->fromUser->profile && $noti->fromUser->profile->image != null)
 		    	   	{	
-		    	   		$con = Connection::find($noti->item_id);
-		    	   		if($con->initiator->profile->image != null) 
-							$notification['image'] = $host_path.$con->initiator->profile->image;
+							$notification['image'] = $host_path.$noti->fromUser->profile->image;
 		    	   	}
 					else
 						$notification['image'] = null;
