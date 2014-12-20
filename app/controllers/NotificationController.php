@@ -36,8 +36,8 @@ class NotificationController extends \BaseController {
 		    	   	if($noti->item_type=="invite")
 		    	   	{	
 		    	   		$con = Connection::find($noti->item_id);
-		    	   		if($con->receiver->profile->image != null) 
-							$notification['image'] = $host_path.$con->receiver->profile->image;
+		    	   		if($con->initiator->profile->image != null) 
+							$notification['image'] = $host_path.$con->initiator->profile->image;
 		    	   	}
 					else
 						$notification['image'] = null;
