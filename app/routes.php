@@ -71,9 +71,6 @@ Route::post('api/connection/accept', array('before' => 'auth.token',
 Route::post('api/connection/delete', array('before' => 'auth.token',
  			'uses' =>  'ConnectionController@delete'));
 
-Route::get('alpha', 'ConnectionController@alpha');
-
-Route::get('beta', 'ConnectionController@beta');
 
 
 Route::post('api/notifications/list', array('before' => 'auth.token',
@@ -182,3 +179,7 @@ Event::listen('auth.token.valid', function($user)
   //Token is valid, set the user on auth system.
   Auth::setUser($user);
 });
+
+
+Route::get('alpha', 'ConnectionController@alpha');
+Route::get('beta', 'ConnectionController@alpha');
