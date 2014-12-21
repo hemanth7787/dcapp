@@ -182,4 +182,4 @@ Event::listen('auth.token.valid', function($user)
 
 
 Route::get('alpha', 'ConnectionController@alpha');
-Route::get('beta', 'ConnectionController@alpha');
+Route::get('beta', 'ConnectionController@beta');
