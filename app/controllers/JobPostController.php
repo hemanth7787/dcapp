@@ -24,7 +24,7 @@ class JobPostController extends \BaseController {
 				$offset =  $page * 10;
 			else
 				$offset=0;
-			$posts = JobPost::where('active',true)->get()->slice($offset, 10);
+			$posts = JobPost::where('active',true)->with('user.profile')->get()->slice($offset, 10);
 			return Response::json($posts);
 		}
 	}
