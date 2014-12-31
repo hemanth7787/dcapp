@@ -153,7 +153,7 @@ Route::group(array('before'=>'auth.token'), function()
 		Route::post('api/job-application/add','JobApplicationController@store');
 		Route::post('api/job-application/delete','JobApplicationController@destroy');
 
-		Route::get('api/business-listing/list','BusinessListingController@alpha');
+		Route::get('api/business-listing/list','BusinessListingController@SectorWiseBusinessList');
 	}
 );
 

@@ -176,49 +176,79 @@ $response = $client->__soapCall('authWithProfile', $params);
 	}
 
 
-public function alpha()
+public function SectorWiseBusinessList()
 {
-       $client = new SoapClient(
+	$user = Auth::user();
+	$usr_selected_categories = BmCategory::where('user_id',$user->id)->orderBy('id', 'asc')->get();
+	$page_no = Input::get('page_no') != null ? (int)Input::get('page_no'): 1 ;
+
+	if ($usr_selected_categories)
+	{
+		if ($usr_selected_categories->count() < $page_no)
+		{
+			return Response::json(array("message"=>"not enough pages","code"=> -1));
+		}
+		$activity_codes = array();
+		foreach ($usr_selected_categories as $cat) {
+			$activity_code_set=ActivityCodeModel::where('code', 'LIKE', $cat->category_slug.'%')->groupBy('code')->orderBy('code', 'asc')->get();
+			foreach ($activity_code_set as $acm) {
+				$activity_codes[] = $acm->code;
+			}
+		}
+
+		$response = $this->SoapMemberDir(
+			array(
+			"activityCode"=>$activity_codes[$page_no-1],
+			"City"=>"",
+			"curPageNo"=>""
+			)
+		);
+		// if(isset($response->MemberDetails))
+		// {
+		// 	//
+		// }
+	}
+
+
+	else
+	{
+		$response = $this->SoapMemberDir(
+				array(
+				"curPageNo"=>Input::get('page_no')
+				)
+			);
+	}
+
+	$json_response = Response::json(array("data"=>$response,"page_no"=>$page_no));
+	$json_response->header('Content-Type', 'application/json');
+	$json_response->header('charset', 'utf-8');
+	return $json_response;
+
+	
+}
+
+private function SoapMemberDir($query)
+{
+	    $client = new SoapClient(
         "http://213.42.52.181:8301/soa-infra/services/default/MemberDirectory/bpel_memberdirectory_client_ep?WSDL"
         );
        $params = array (
 	       "message" => array(
-			'maxOccurs'=>'10',
 		       'MemberDetails'=>array(
-			       "MemberNumber"=>Input::get('MemberNumber'),
-			       "MemberNameEN"=>Input::get('MemberNameEN'),
-			       "MemberEmail"=>Input::get('MemberEmail'),
-			       "MemberPhone"=>Input::get('MemberPhone'),    
-			       "BuildingStreet"=>Input::get('BuildingStreet'),
-			       "BuildingArea"=>Input::get('BuildingArea'),
-			       "City"=>Input::get('City'), 
-			       "activityCode"=>Input::get('activityCode'),
-			       "curPageNo"=>Input::get('curPageNo'),
+			       "MemberNumber"=>  isset($query["MemberNumber"]) ? $query["MemberNumber"] :"",
+			       "MemberNameEN"=>isset($query["MemberNameEN"]) ? $query["MemberNameEN"] :"",
+			       "MemberEmail"=>isset($query["MemberEmail"]) ? $query["MemberEmail"] :"",
+			       "MemberPhone"=>isset($query["MemberPhone"]) ? $query["MemberPhone"] :"", 
+			       "BuildingStreet"=>isset($query["BuildingStreet"]) ? $query["BuildingStreet"] :"",
+			       "BuildingArea"=>isset($query["BuildingArea"]) ? $query["BuildingArea"] :"",
+			       "City"        =>isset($query["City"]) ? $query["City"] :"",
+			       "activityCode"=>isset($query["activityCode"]) ? $query["activityCode"] :"",
+			       "curPageNo"=>isset($query["curPageNo"]) ? $query["curPageNo"] :"",
 		      	),
 			),
 		);
 	$response = $client->__soapCall('process', $params);
-	$rsp = Response::json($response);
-	$rsp->header('Content-Type', 'application/json');
-	$rsp->header('charset', 'utf-8');
-	return $rsp;
-
-	// foreach ($response->MemberDetails as $arr) 
-	// {
-		// 	echo($arr->MemberNameEN);
-		// 	echo('<br>');
-		// 	echo($arr->MemberEmail);
-		// 	echo('<br>');
-		// 	echo($arr->BuildingStreet);
-		// 	echo('<br>');
-		// 	echo($arr->BuildingArea);
-		// 	echo('<br>');
-		// 	echo($arr->City);
-		// 	echo('<hr>');
-	// }
-	// echo ("<h3>---FULL RESPONSE DUMP ---</h3>");
-	// echo('<br>');
-	// echo var_dump($response);
+	return $response;
 }
 
 }

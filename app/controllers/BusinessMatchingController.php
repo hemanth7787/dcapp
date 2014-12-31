@@ -76,7 +76,7 @@ class BusinessMatchingController extends \BaseController {
 				$usrcat_id_array[] = $usr_cat->category_id;
 			}
 
-			$categories = DynamicCategory::where('parent_slug','root')->get();
+			$categories = DynamicCategory::all();
 			$items=array();
 			foreach ($categories as $category) 
 			{
