@@ -153,6 +153,7 @@ Route::group(array('before'=>'auth.token'), function()
 		Route::post('api/job-application/add','JobApplicationController@store');
 		Route::post('api/job-application/delete','JobApplicationController@destroy');
 
+		Route::get('api/business-listing/list','BusinessListingController@alpha');
 	}
 );
 
@@ -179,7 +180,3 @@ Event::listen('auth.token.valid', function($user)
   //Token is valid, set the user on auth system.
   Auth::setUser($user);
 });
-
-
-Route::get('alpha', 'ConnectionController@alpha');
-Route::get('beta', 'ConnectionController@beta');

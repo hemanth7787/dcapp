@@ -175,4 +175,49 @@ $response = $client->__soapCall('authWithProfile', $params);
 
 	}
 
+
+public function alpha()
+{
+       $client = new SoapClient(
+        "http://213.42.52.181:8301/soa-infra/services/default/MemberDirectory/bpel_memberdirectory_client_ep?WSDL"
+        );
+       $params = array (
+	       "message" => array(
+			'maxOccurs'=>'10',
+		       'MemberDetails'=>array(
+			       "MemberNumber"=>Input::get('MemberNumber'),
+			       "MemberNameEN"=>Input::get('MemberNameEN'),
+			       "MemberEmail"=>Input::get('MemberEmail'),
+			       "MemberPhone"=>Input::get('MemberPhone'),    
+			       "BuildingStreet"=>Input::get('BuildingStreet'),
+			       "BuildingArea"=>Input::get('BuildingArea'),
+			       "City"=>Input::get('City'), 
+			       "activityCode"=>Input::get('activityCode'),
+			       "curPageNo"=>Input::get('curPageNo'),
+		      	),
+			),
+		);
+	$response = $client->__soapCall('process', $params);
+	$rsp = Response::json($response);
+	$rsp->header('Content-Type', 'application/json');
+	$rsp->header('charset', 'utf-8');
+
+	// foreach ($response->MemberDetails as $arr) 
+	// {
+		// 	echo($arr->MemberNameEN);
+		// 	echo('<br>');
+		// 	echo($arr->MemberEmail);
+		// 	echo('<br>');
+		// 	echo($arr->BuildingStreet);
+		// 	echo('<br>');
+		// 	echo($arr->BuildingArea);
+		// 	echo('<br>');
+		// 	echo($arr->City);
+		// 	echo('<hr>');
+	// }
+	// echo ("<h3>---FULL RESPONSE DUMP ---</h3>");
+	// echo('<br>');
+	// echo var_dump($response);
+}
+
 }
