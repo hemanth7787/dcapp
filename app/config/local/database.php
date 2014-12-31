@@ -23,7 +23,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'dc_app_db',
+			'database'  => 'dc_seed_test',
 			'username'  => 'dcapp',
 			'password'  => 'dcapp',
 			'charset'   => 'utf8',

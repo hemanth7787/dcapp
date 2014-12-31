@@ -38,6 +38,11 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->hasMany('BmCategory');
 	}
 
+	// public function ActivityGroupIdList()
+	// {
+ //  		return $this->hasMany('BmCategory')->select(array('category_id'));
+	// }
+
 	public function social()
 	{
 		return $this->hasOne('SocialAccount');
