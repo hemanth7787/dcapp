@@ -201,6 +201,7 @@ public function alpha()
 	$rsp = Response::json($response);
 	$rsp->header('Content-Type', 'application/json');
 	$rsp->header('charset', 'utf-8');
+	return $rsp;
 
 	// foreach ($response->MemberDetails as $arr) 
 	// {
