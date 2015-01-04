@@ -227,6 +227,16 @@ public function SectorWiseBusinessList()
 	
 }
 
+
+public function dcServerTest()
+{
+	$response = $this->SoapMemberDir(array());
+	$json_response = Response::json(array($response));
+	$json_response->header('Content-Type', 'application/json');
+	$json_response->header('charset', 'utf-8');
+	return $json_response;
+}
+
 private function SoapMemberDir($query)
 {
 	    $client = new SoapClient(

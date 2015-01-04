@@ -130,6 +130,9 @@ Route::get('admin/login', 'AdminController@loginIndex');
 Route::post('admin/login', 'AdminController@loginPost');
 Route::get('admin/logout', 'AdminController@logout');
 
+//test links
+Route::get('api/business-listing/dc-server-test','BusinessListingController@dcServerTest');
+
 
 
 Route::post('admin/users/operations/{id}', array(//'before' => 'loginrequired',
