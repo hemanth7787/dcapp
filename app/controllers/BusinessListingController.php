@@ -127,7 +127,13 @@ public function SectorWiseBusinessList()
 		// 	"curPageNo"=>""
 		// 	)
 		// );
-		$response = $this->memberDirDataWriteThrough($activity_codes[$page_no-1]);
+		$response = $this->memberDirDataWriteThrough(
+				array(
+					"activityCode"=> $activity_codes[$page_no-1],
+					"MemberNameEN"=> Input::get('Keyword'),
+					"BuildingArea"=> Input::get('location')
+				)
+			);
 		// if(isset($response->MemberDetails))
 		// {
 		// 	//
@@ -142,7 +148,7 @@ public function SectorWiseBusinessList()
 		// 		"curPageNo"=>Input::get('page_no')
 		// 		)
 		// 	);
-		$response = $this->memberDirDataWriteThrough("");
+		$response = $this->memberDirDataWriteThrough(array());
 	}
 
 	$json_response = Response::json(array("data"=>$response,"page_no"=>$page_no));
@@ -156,7 +162,7 @@ public function SectorWiseBusinessList()
 
 public function dcServerTest()
 {
-	$response = $this->memberDirDataWriteThrough("");
+	$response = $this->memberDirDataWriteThrough(array());
 	$json_response = Response::json(array("data"=>$response));
 	$json_response->header('Content-Type', 'application/json');
 	$json_response->header('charset', 'utf-8');
@@ -187,23 +193,32 @@ private function SoapMemberDir($query)
 	return $response;
 }
 
-private function memberDirDataWriteThrough($activity_code)
+private function memberDirDataWriteThrough($query)
 {
+	$activity_code = isset($query["activityCode"]) ? $query["activityCode"] :"";
 	// [Check if data exist in db else try to fetch from API].
 	// Not a fool proof method but this is the best method to be adopted 
 	// when API support is limited, and a db dump is not avaliable.
 
-	// TODO parse all pages of an activitu code using  process queues.
+	// TODO : parse all pages of an activity code using  process queues.
+
 	if ($activity_code == "")
 	{
 		$data_collection = DcMemberData::take(100)->get();
-		//DcMemberData::take(30)->skip(30)->get();  take = limit, skip = offset
+		//DcMemberData::take(30)->skip(30)->get();  //take = limit, skip = offset
 	}
 	else
 	{
-		$data_collection = DcMemberData::where("extra_data_activityCode",$activity_code)
-		->take(100)
-		->get();
+		$data_collection = DcMemberData::where("extra_data_activityCode",$activity_code);
+
+		if (isset($query["MemberNameEN"]))
+			$data_collection = $data_collection->where('MemberNameEN', 'LIKE', $query["MemberNameEN"]);
+		if (isset($query["BuildingArea"]))
+			$data_collection = $data_collection->where('BuildingArea', 'LIKE', $query["BuildingArea"]);
+		
+		$data_collection = $data_collection
+			->take(100)
+			->get();
 	}
 	if($data_collection->first())
 	{
@@ -238,7 +253,9 @@ private function memberDirDataWriteThrough($activity_code)
 	{
 		$response = $this->SoapMemberDir(
 			array(
-				"activityCode"=>$activity_code
+				"activityCode"=>$activity_code,
+				"MemberNameEN"=> $query["MemberNameEN"],
+				"BuildingArea"=> $query["BuildingArea"]
 				)
 			);
 
