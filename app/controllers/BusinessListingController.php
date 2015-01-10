@@ -120,13 +120,14 @@ public function SectorWiseBusinessList()
 			}
 		}
 
-		$response = $this->SoapMemberDir(
-			array(
-			"activityCode"=>$activity_codes[$page_no-1],
-			"City"=>"",
-			"curPageNo"=>""
-			)
-		);
+		// $response = $this->SoapMemberDir(
+		// 	array(
+		// 	"activityCode"=>$activity_codes[$page_no-1],
+		// 	"City"=>"",
+		// 	"curPageNo"=>""
+		// 	)
+		// );
+		$response = memberDirDataWriteThrough($activity_codes[$page_no-1]);
 		// if(isset($response->MemberDetails))
 		// {
 		// 	//
@@ -136,11 +137,12 @@ public function SectorWiseBusinessList()
 
 	else
 	{
-		$response = $this->SoapMemberDir(
-				array(
-				"curPageNo"=>Input::get('page_no')
-				)
-			);
+		// $response = $this->SoapMemberDir(
+		// 		array(
+		// 		"curPageNo"=>Input::get('page_no')
+		// 		)
+		// 	);
+		$response = $this->memberDirDataWriteThrough("");
 	}
 
 	$json_response = Response::json(array("data"=>$response,"page_no"=>$page_no));
@@ -154,7 +156,7 @@ public function SectorWiseBusinessList()
 
 public function dcServerTest()
 {
-	$response = $this->memberDirDataWriteThrough("F454003");
+	$response = $this->memberDirDataWriteThrough("");
 	$json_response = Response::json(array("data"=>$response));
 	$json_response->header('Content-Type', 'application/json');
 	$json_response->header('charset', 'utf-8');
@@ -192,8 +194,15 @@ private function memberDirDataWriteThrough($activity_code)
 	// when API support is limited, and a db dump is not avaliable.
 
 	// TODO parse all pages of an activitu code using  process queues.
-	$data_collection = DcMemberData::where("extra_data_activityCode",$activity_code)
+	if ($activity_code == "")
+	{
+		$data_collection = DcMemberData::where("extra_data_activityCode",$activity_code)
 		->get()->slice(0, 100);
+	}
+	else
+	{
+		$data_collection = DcMemberData::all()->slice(0, 100);
+	}
 	if($data_collection->first())
 	{
 		$memberlist = array();
