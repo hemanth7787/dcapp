@@ -127,7 +127,7 @@ public function SectorWiseBusinessList()
 		// 	"curPageNo"=>""
 		// 	)
 		// );
-		$response = memberDirDataWriteThrough($activity_codes[$page_no-1]);
+		$response = $this->memberDirDataWriteThrough($activity_codes[$page_no-1]);
 		// if(isset($response->MemberDetails))
 		// {
 		// 	//
