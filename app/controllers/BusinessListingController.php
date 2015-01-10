@@ -196,12 +196,14 @@ private function memberDirDataWriteThrough($activity_code)
 	// TODO parse all pages of an activitu code using  process queues.
 	if ($activity_code == "")
 	{
-		$data_collection = DcMemberData::all()->slice(0, 100);
+		$data_collection = DcMemberData::take(100)->get();
+		//DcMemberData::take(30)->skip(30)->get();  take = limit, skip = offset
 	}
 	else
 	{
 		$data_collection = DcMemberData::where("extra_data_activityCode",$activity_code)
-		->get()->slice(0, 100);
+		->take(100)
+		->get();
 	}
 	if($data_collection->first())
 	{
