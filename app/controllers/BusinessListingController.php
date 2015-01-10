@@ -96,83 +96,7 @@ class BusinessListingController extends \BaseController {
 	}
 
 	public function dummy(){
-		$client = new SoapClient('https://dcsoamw.dubaichamber.com:8012/DCCICommercialDirectory/ProxyServices/DCCICommercialDirectoryProxy');
-		$xml = '<?xml version="1.0" encoding="UTF-8"?>
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dcq="http://siebel.com/DCQueryMobCommDir" xmlns:dc="http://www.siebel.com/xml/DC%20Query%20Member%20Info">
-<soapenv:Header>
-<wsse:Security xmlns:wsse="http://schemas.xmlsoap.org/ws/2002/07/secext">
-<wsse:UsernameToken xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility">
-<wsse:Username>MOBILEUSER</wsse:Username>
-<wsse:Password Type="wsse:PasswordText">MOBILEUSER</wsse:Password>
-</wsse:UsernameToken>
-</wsse:Security>
-</soapenv:Header>
-   <soapenv:Body>
-      <dcq:QBECommDir>
-         <SiebelMessage>
-            <dc:ListOfDcQueryMemberInfo>
-               <!--Zero or more repetitions:-->
-               <dc:Account>
-                  <!--Optional:-->
-                  <dc:CSN/>
-                  <dc:DCNameArabic/>
-                  <dc:DCNameEnglish>* Futtaim *</dc:DCNameEnglish>
-                  <!--Optional:-->
-                  <dc:MainEmailAddress/>
-                  <!--Optional:-->
-                  <dc:MainFaxNumber/>
-                  <!--Optional:-->
-                  <dc:MainPhoneNumber/>
-                  <!--Optional:-->
-                  <dc:Name/>
-                  <!--Optional:-->
-                  <dc:ListOfAccount_BusinessAddress>
-                     <!--Zero or more repetitions:-->
-                     <dc:Account_BusinessAddress>
-                        <!--Optional:-->
-                        <dc:ApartmentNumber/>
-                        <dc:City/>
-                        <!--Optional:-->
-                        <dc:Country/>
-                        <!--Optional:-->
-                        <dc:DCAreaPOBox/>
-                        <!--Optional:-->
-                        <dc:DCBuildingNameArabic/>
-                        <!--Optional:-->
-                        <dc:DCBuildingNammeEnglish/>
-                        <!--Optional:-->
-                        <dc:Province/>
-                        <dc:Street/>
-                        <dc:StreetAddress/>
-                        <dc:AddressName/>
-                     </dc:Account_BusinessAddress>
-                  </dc:ListOfAccount_BusinessAddress>
-                  <!--Optional:-->
-                  <dc:ListOfAccount_DCAccountActivity>
-                     <!--Zero or more repetitions:-->
-                     <dc:Account_DCAccountActivity>
-                        <!--Optional:-->
-                        <dc:DCActivityCode/>
-                        <!--Optional:-->
-                        <dc:DCActivityDesArabic/>
-                        <!--Optional:-->
-                        <dc:DCActivityDescriptionEng/>
-                     </dc:Account_DCAccountActivity>
-                  </dc:ListOfAccount_DCAccountActivity>
-               </dc:Account>
-            </dc:ListOfDcQueryMemberInfo>
-         </SiebelMessage>
-      </dcq:QBECommDir>
-   </soapenv:Body>
-</soapenv:Envelope>';
-    			$params = array (
-    			"userName" => 'MOBILEUSER',
-    			"password" => 'MOBILEUSER',
-    			);
-$response = $client->__soapCall('authWithProfile', $params);
-				$parser = simplexml_load_string($response);
-				return var_dump($parser);
-
+		//
 	}
 
 
@@ -230,8 +154,8 @@ public function SectorWiseBusinessList()
 
 public function dcServerTest()
 {
-	$response = $this->SoapMemberDir(array());
-	$json_response = Response::json(array($response));
+	$response = $this->memberDirDataWriteThrough("F454003");
+	$json_response = Response::json(array("data"=>$response));
 	$json_response->header('Content-Type', 'application/json');
 	$json_response->header('charset', 'utf-8');
 	return $json_response;
@@ -259,6 +183,100 @@ private function SoapMemberDir($query)
 		);
 	$response = $client->__soapCall('process', $params);
 	return $response;
+}
+
+private function memberDirDataWriteThrough($activity_code)
+{
+	// [Check if data exist in db else try to fetch from API].
+	// Not a fool proof method but this is the best method to be adopted 
+	// when API support is limited, and a db dump is not avaliable.
+
+	// TODO parse all pages of an activitu code using  process queues.
+	$data_collection = DcMemberData::where("extra_data_activityCode",$activity_code)
+		->get()->slice(0, 100);
+	if($data_collection->first())
+	{
+		$memberlist = array();
+		foreach ($data_collection as $arr)
+		{
+			$memberlist[]= array(
+			"MemberNumber" => $arr->MemberNumber,
+			"MemberNameEN" => $arr->MemberNameEN,
+			"MemberEmail"  => $arr->MemberEmail,
+			"MemberPhone"  => $arr->MemberPhone,
+			"BuildingStreet" => $arr->BuildingStreet,
+			"BuildingArea"   => $arr->BuildingArea,
+			"City" => $arr->City,
+			"MemberNameAR" => $arr->MemberNameAR,
+			"MemberFax"    => $arr->MemberFax,
+			"BuildingNameEng" => $arr->BuildingNameEng,
+			"BuildingNameAra" => $arr->BuildingNameAra,
+			"BuildingNo" => $arr->BuildingNo,
+			"POBox"    => $arr->POBox,
+			"Country"  => $arr->Country,
+			"Province" => $arr->Province,
+			);
+		}
+		$member_data = 	array("MemberDetails"=>
+							$memberlist
+						);
+		return $member_data;
+
+	}
+	else
+	{
+		$response = $this->SoapMemberDir(
+			array(
+				"activityCode"=>$activity_code
+				)
+			);
+
+		$bulk_array = array();
+		if($response->MemberDetails)
+		{
+			// $count=0;
+			foreach ($response->MemberDetails as $arr) 
+			{
+		    	$bulk_array[]= array(
+				"MemberNumber" => $arr->MemberNumber,
+				"MemberNameEN" => $arr->MemberNameEN,
+				"MemberEmail"  => $arr->MemberEmail,
+				"MemberPhone"  => $arr->MemberPhone,
+				"BuildingStreet" => $arr->BuildingStreet,
+				"BuildingArea"   => $arr->BuildingArea,
+				"City" => $arr->City,
+				"MemberNameAR" => $arr->MemberNameAR,
+				"MemberFax"    => $arr->MemberFax,
+				"BuildingNameEng" => $arr->BuildingNameEng,
+				"BuildingNameAra" => $arr->BuildingNameAra,
+				"BuildingNo" => $arr->BuildingNo,
+				"POBox"    => $arr->POBox,
+				"Country"  => $arr->Country,
+				"Province" => $arr->Province,
+				// Extra data
+				"extra_data_activityCode"=> $activity_code
+				);
+				// $count++;
+				// if($count % 105 == 0)
+				// {
+				// 	DcMemberData::insert($bulk_array);
+				// 	$bulk_array = array();
+				// }
+			}
+		}
+		DcMemberData::insert($bulk_array);
+		return $response;
+	}
+
+}
+
+
+private function cleanString($strData)
+{
+	if($strData != "N/A")
+		return $strData;
+	else
+		return "";
 }
 
 }
