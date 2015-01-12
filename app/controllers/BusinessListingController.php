@@ -260,7 +260,7 @@ private function memberDirDataWriteThrough($query)
 			);
 
 		$bulk_array = array();
-		if($response->MemberDetails)
+		if(isset($response->MemberDetails))
 		{
 			// $count=0;
 			foreach ($response->MemberDetails as $arr) 
