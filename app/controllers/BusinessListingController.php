@@ -212,9 +212,9 @@ private function memberDirDataWriteThrough($query)
 		$data_collection = DcMemberData::where("extra_data_activityCode",$activity_code);
 
 		if (isset($query["MemberNameEN"]))
-			$data_collection = $data_collection->where('MemberNameEN', 'LIKE', $query["MemberNameEN"]);
+			$data_collection = $data_collection->where('MemberNameEN', 'LIKE', $query["MemberNameEN"]."%");
 		if (isset($query["BuildingArea"]))
-			$data_collection = $data_collection->where('BuildingArea', 'LIKE', $query["BuildingArea"]);
+			$data_collection = $data_collection->where('BuildingArea', 'LIKE', $query["BuildingArea"]."%");
 		
 		$data_collection = $data_collection
 			->take(100)
