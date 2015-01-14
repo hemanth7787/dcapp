@@ -22,7 +22,9 @@ DC mobile app API using Laravel PHP framework.
 
 7. Create tables in database using "php artisan migrate"
 
-8. Run test server using "php artisan serve"
+8. Run "php artisan migrate --package=tappleby/laravel-auth-token"
+
+9. Run test server using "php artisan serve"
 
 ### Contributing To Dcapp api
 

@@ -38,7 +38,7 @@ class CompanyProfileController extends \BaseController {
 
 			$rules = array(
 		    //'user_id'       => 'required|integer|exists:users,id',
-		    'company_name'  => 'required|alphaNum',
+		    'company_name'  => 'required',
 		    'designation'   => 'required|alphaNum',
 			'company_email' => 'required|email', 
 			'membership_number'      => 'required|alphaNum',
